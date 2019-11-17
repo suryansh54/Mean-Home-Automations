@@ -1,0 +1,21 @@
+.header-container {
+    background: #3F51B5;
+    padding: 10px;
+    height: 40px;
+}
+.footer-container {
+    background: #d8d8d8;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+}
+.body-container {
+    height: calc(100vh - 80px);
+}
+.custom-body-container {
+    height: 100%;
+}
+.custom-sidenav {
+    background: #efefef;
+    width: 200px;
+}

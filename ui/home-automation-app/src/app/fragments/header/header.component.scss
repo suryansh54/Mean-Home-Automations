@@ -1,0 +1,20 @@
+.custom-logo {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 100;
+}
+.custom-header-menu ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    li {
+        display: inline-block;
+        a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 12px;
+        }
+    }
+}
+

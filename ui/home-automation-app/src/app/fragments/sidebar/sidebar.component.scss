@@ -1,0 +1,41 @@
+.custom-basic-user-information {
+    height: 150px;
+    background: #292929;
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    .user-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background: #fff;
+        margin: 0 auto;
+    }
+    .user-name {
+        padding: 10px;
+        color: #fff;
+    }
+}
+
+.custom-menu ul {
+    padding-left: 0;
+    margin: 0;
+    li {
+        display: block;
+        a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+            &:hover {
+                background: #3f51b5;
+                color: #fff;
+            }
+        }
+        .active {
+            background: #3f51b5;
+            color: #fff;
+        }
+    }
+}
+
