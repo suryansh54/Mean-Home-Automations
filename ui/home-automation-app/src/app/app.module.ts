@@ -12,6 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 // Featured Components
@@ -24,6 +28,10 @@ import { ProfileComponent } from './featured-component/profile/profile.component
 import { GroupComponent } from './featured-component/group/group.component';
 import { FaqComponent } from './featured-component/faq/faq.component';
 import { FeedbackComponent } from './featured-component/feedback/feedback.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { SettingComponent } from './featured-component/setting/setting.component';
+import { NotificationComponent } from './featured-component/notification/notification.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -40,7 +48,9 @@ import { FeedbackComponent } from './featured-component/feedback/feedback.compon
     ProfileComponent,
     GroupComponent,
     FaqComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    SettingComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +58,13 @@ import { FeedbackComponent } from './featured-component/feedback/feedback.compon
     BrowserAnimationsModule,
     MatSidenavModule,
     MatButtonModule,
-    MatRippleModule
+    MatRippleModule,
+    MatBadgeModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

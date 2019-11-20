@@ -12,6 +12,9 @@ import { ProfileComponent } from './featured-component/profile/profile.component
 import { GroupComponent } from './featured-component/group/group.component';
 import { FaqComponent } from './featured-component/faq/faq.component';
 import { FeedbackComponent } from './featured-component/feedback/feedback.component';
+import { SettingComponent } from './featured-component/setting/setting.component';
+import { NotificationComponent } from './featured-component/notification/notification.component';
+
 
 const routes: Routes = [
   {
@@ -38,7 +41,7 @@ const routes: Routes = [
     component: UpdateComponent
   },
   {
-    path:'profile' ,
+    path:'acount-and-security' ,
     component: ProfileComponent
   },
   {
@@ -48,6 +51,14 @@ const routes: Routes = [
   {
     path:'feedback' ,
     component: FeedbackComponent
+  },
+  {
+    path:'setting' ,
+    component: SettingComponent
+  },
+  {
+    path:'notification' ,
+    component: NotificationComponent
   }
 ];
 

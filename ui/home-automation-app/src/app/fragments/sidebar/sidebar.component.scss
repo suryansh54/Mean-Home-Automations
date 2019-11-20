@@ -1,5 +1,7 @@
 .custom-menu {
     padding: 15px 35px;
+    height: calc(100% - 200px);
+    overflow: auto;
 }
 .custom-basic-user-information {
     height: 200px;
@@ -37,16 +39,27 @@
         margin: 10px 0;
         a {
             text-decoration: none;
-            color: #333;
+            color: #5a5a5a;
             padding: 15px 10px;
             display: block;
             font-size: 18px;
             &:hover {
                 background: rgba(0, 0, 0, 0.2);
-                color: #333;
+                color: #5a5a5a;
             }
             .icon {
                 margin-right: 10px;
+                float: left;
+                width: 23px;
+            }
+            .menu-text {
+                float: left;
+                width: calc(100% - 33px);
+                b {
+                    font-size: 12px;
+                    display: block;
+                    font-weight: 400;
+                }
             }
         }
         .active {
@@ -55,3 +68,6 @@
     }
 }
 
+.custom-side-menu-wrapper {
+    height: 100%;
+}
