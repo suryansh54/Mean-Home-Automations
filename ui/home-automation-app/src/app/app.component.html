@@ -8,16 +8,18 @@
     <mat-drawer #drawer class="custom-sidenav" mode="push">
       <app-sidebar></app-sidebar>
     </mat-drawer>
-  
+
     <div class="custom-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
+      <div class="common-header">
+        <button type="button" mat-button (click)="drawer.toggle()" title="Toggle Sidenav">
+            <i class="fas fa-bars"></i>
+        </button>
+      </div>
       <div class="body-content">
         <router-outlet></router-outlet>
       </div>
     </div>
-  
+
   </mat-drawer-container>
 </div>
 <div class="footer-container">
