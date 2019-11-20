@@ -1,18 +1,23 @@
 <div class="">
     <div class="custom-basic-user-information">
         <div class="user-photo">
-            <span>Photo</span>
+            <span>
+                <img src="assets/big.jpg" alt="Suryansh">
+            </span>
         </div>
-        <div class="user-name">Suryansh</div>
+        <div class="user-name">Suryansh Srivastava</div>
     </div>
     <div class="custom-menu">
             <ul>
-                <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a></li>
-                <li><a routerLink="/add-device" routerLinkActive="active">Add Devices</a></li>
-                <li><a routerLink="/devices" routerLinkActive="active">Devices</a></li>
-                <li><a routerLink="/firmware-update" routerLinkActive="active">Update</a></li>
-                <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
-                <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+                <li><a matRipple routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span class="icon"><i class="fas fa-box"></i></span>Dashboard</a></li>
+                <li><a matRipple routerLink="/add-device" routerLinkActive="active"><span class="icon"><i class="fas fa-plus"></i></span>Add Devices</a></li>
+                <li><a matRipple routerLink="/devices" routerLinkActive="active"><span class="icon"><i class="fas fa-cubes"></i></span>Devices</a></li>
+                <li><a matRipple routerLink="/group" routerLinkActive="active"><span class="icon"><i class="fas fa-layer-group"></i></span>Groups</a></li>
+                <li><a matRipple routerLink="/firmware-update" routerLinkActive="active"><span class="icon"><i class="fas fa-cloud-download-alt"></i></span>Update</a></li>
+                <li><a matRipple routerLink="/faq" routerLinkActive="active"><span class="icon"><i class="fas fa-question-circle"></i></span>FAQ</a></li>
+                <li><a matRipple routerLink="/feedback" routerLinkActive="active"><span class="icon"><i class="fas fa-comment-alt"></i></span>Feedback</a></li>
+                <li><a matRipple routerLink="/profile" routerLinkActive="active"><span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>Profile</a></li>
+                <li><a matRipple routerLink="/about" routerLinkActive="active"><span class="icon"><i class="fas fa-info-circle"></i></span>About</a></li>
             </ul>
     </div>
 </div>
