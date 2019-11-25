@@ -1,10 +1,10 @@
 <div class="custom-page-gap">    
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <h2 class="page-heading">Devices <span class="device-count">Total device {{devices.length}}</span></h2>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <div class="devices-option">
                     <ul class="d-flex justify-content-end"> 
                         <li><button mat-button><i class="fas fa-filter"></i>Filter</button></li>
@@ -16,12 +16,13 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4" *ngFor="let device of devices">
-                <div class="device-list">
+                <mat-card>
                     <div class="device-item">
                         <div class="device-wrapper">
                             <div class="device-icon device"><i class="far fa-lightbulb"></i></div>
                             <div class="device-name device">
-                                <div class="name">{{device.name}}</div>
+                                <div class="name"><a routerLink="/device/{{device.id}}">{{device.name}}</a></div>
+                                <div class="group">Bedroom</div>
                                 <div [ngClass]="{'online': device.status==1, 'offline':device.status==0 }"><b
                                         class="device-status">{{ device.status == 1 ? 'Online' : 'Offline' }}</b></div>
                             </div>
@@ -31,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </mat-card>
             </div>
         </div>
     </div>

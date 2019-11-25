@@ -35,10 +35,11 @@ import { FeedbackComponent } from './featured-component/feedback/feedback.compon
 import { MatBadgeModule } from '@angular/material/badge';
 import { SettingComponent } from './featured-component/setting/setting.component';
 import { NotificationComponent } from './featured-component/notification/notification.component';
+import { DeviceComponent } from './featured-component/devices/device/device.component'
 
 // import services
-import { TestService } from './services/test.service'
-
+import { TestService } from './services/test.service';
+import { DeviceService } from './services/device.service'
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TestService } from './services/test.service'
     FaqComponent,
     FeedbackComponent,
     SettingComponent,
-    NotificationComponent
+    NotificationComponent,
+    DeviceComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,7 @@ import { TestService } from './services/test.service'
     MatCardModule,
     HttpClientModule
   ],
-  providers: [TestService],
+  providers: [TestService, DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

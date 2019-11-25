@@ -7,6 +7,7 @@ import { DashboardComponent } from './featured-component/dashboard/dashboard.com
 import { AddDeviceComponent } from './featured-component/add-device/add-device.component';
 import { AboutComponent } from './featured-component/about/about.component';
 import { DevicesComponent } from './featured-component/devices/devices.component';
+import { DeviceComponent } from './featured-component/devices/device/device.component'
 import { UpdateComponent } from './featured-component/update/update.component';
 import { ProfileComponent } from './featured-component/profile/profile.component';
 import { GroupComponent } from './featured-component/group/group.component';
@@ -36,7 +37,12 @@ const routes: Routes = [
   {
     path:'devices' ,
     component: DevicesComponent
-  },{
+  },
+  {
+    path:'device/:id' ,
+    component: DeviceComponent
+  },
+  {
     path:'firmware-update' ,
     component: UpdateComponent
   },
