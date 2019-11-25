@@ -1,0 +1,107 @@
+.custom-page-gap {
+    padding: 20px 0;
+}
+.page-heading {
+    margin-top: 5px;
+    font-weight: 100;
+    margin-bottom: 0;
+    .device-count {
+        font-size: 12px;
+        display: block;
+        font-weight: 400;
+        color: #a6a6a6;
+    }
+}
+.devices-option{
+    ul {
+        padding-left: 0;
+        list-style: none;
+        li {
+            margin-left: 10px;
+            button {
+                color: #6a6a6a;
+                font-weight: 400;
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.device-item {
+    min-height: auto;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    .device-wrapper {
+        display: flex;
+        align-items: center;
+        flex: 1 1 33.33%;
+        &:before, &:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .device {
+            padding: 0 10px;           
+        }
+        .device-switch {
+            text-align: right;
+            flex: 0 0 70px;
+            max-width: 70px;
+        }
+        .device-icon {
+            font-size: 35px;
+            line-height: 1.2;
+            flex: 0 0 60px;
+            max-width: 60px;
+            color: #919191;
+            &:before {
+                content: "";
+                left: -30px;
+                top: -20px;
+                background: #fafafa;
+                display: block;
+                border-radius: 100%;
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                z-index: -1;
+            }
+        }
+        .device-name {
+            font-size: 14px;
+            font-weight: 100;
+            flex: 0 0 calc(100% - 130px);
+            max-width: calc(100% - 130px);
+            .online{
+                .device-status {
+                    background:#8BC34A;
+                    color: #fff;
+                }
+            }
+            .offline{
+                .device-status {
+                    background:#fa7269;
+                    color: #fff;
+                }
+            }
+            .device-status {
+                display: inline-block;
+                font-size: 12px;
+                font-weight: 600;
+                background: #c5cae9;
+                padding: 2px 6px;
+                border-radius: 4px;
+                margin-top: 4px;
+            }
+        }
+    }
+}
+
+
+

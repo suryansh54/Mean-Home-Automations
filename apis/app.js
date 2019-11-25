@@ -1,25 +1,18 @@
 const express = require('express');
-const cors = require('cors');
-const app = express()
+const app = express();
+const port = 3000;
+var cors = require('cors');
 
-app.use(cors());
-app.get('/', function (req, res, next) {
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', '*');
+// For cors 
+app.use(cors())
 
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+// Routing imports
+var authModule = require('./modules/auth');
+var osModule = require('./modules/os');
+var deviceModule = require('./modules/device');
 
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+app.use('/api', authModule);
+app.use('/api', osModule);
+app.use('/api', deviceModule);
 
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-    res.json({ text: "Hello world" })
-})
-
-app.listen(3000);
+app.listen(port,() => console.log(`Your server is runs into the port ${port}`)); // Creates a server
