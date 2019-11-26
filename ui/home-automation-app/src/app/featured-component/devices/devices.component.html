@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
-                <h2 class="page-heading">Devices <span class="device-count">Total device {{devices.length}}</span></h2>
+                <h2 class="page-heading">Devices <span class="device-count">Total device {{totalDevice}}</span></h2>
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
-                <div class="devices-option">
+                <div class="option">
                     <ul class="d-flex justify-content-end"> 
                         <li><button mat-button><i class="fas fa-filter"></i>Filter</button></li>
                         <li><button mat-button><i class="fas fa-sort"></i>Sort & View</button></li>
@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4" *ngFor="let device of devices">
-                <mat-card>
+                <mat-card  [ngClass]="{'works': device.status==1, 'no-works':device.status==0 }">
                     <div class="device-item">
                         <div class="device-wrapper">
                             <div class="device-icon device"><i class="far fa-lightbulb"></i></div>

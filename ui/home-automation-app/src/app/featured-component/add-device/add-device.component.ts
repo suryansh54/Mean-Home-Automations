@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TestService } from '../../services/test.service'
 
 @Component({
   selector: 'app-add-device',
@@ -8,12 +7,9 @@ import { TestService } from '../../services/test.service'
 })
 export class AddDeviceComponent implements OnInit {
 
-  constructor(private testService: TestService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.testService.getTestData().subscribe((data)=>{
-      console.log("Test Data", data);
-    })
   }
 
 }

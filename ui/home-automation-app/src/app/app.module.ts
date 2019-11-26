@@ -38,7 +38,6 @@ import { NotificationComponent } from './featured-component/notification/notific
 import { DeviceComponent } from './featured-component/devices/device/device.component'
 
 // import services
-import { TestService } from './services/test.service';
 import { DeviceService } from './services/device.service'
 
 @NgModule({
@@ -78,7 +77,7 @@ import { DeviceService } from './services/device.service'
     MatCardModule,
     HttpClientModule
   ],
-  providers: [TestService, DeviceService],
+  providers: [DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

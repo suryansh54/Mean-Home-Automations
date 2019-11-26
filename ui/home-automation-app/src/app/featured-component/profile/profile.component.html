@@ -1,75 +1,93 @@
 <div class="custom-page-gap">
-    <h2 class="page-heading">Account And Security</h2>
-    <mat-accordion>
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Account
-                </mat-panel-title>
-                <mat-panel-description>
-                    Edit your name, age, personal information
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="custom-expansion-content">
-                <mat-form-field>
-                    <input matInput placeholder="Name">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Email">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Date of birth">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Profession">
-                </mat-form-field>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
+                <h2 class="page-heading">Account And Security <span class="device-count">Last change: 24-Nov-2019</span>
+                </h2>
             </div>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Location
-                </mat-panel-title>
-                <mat-panel-description>
-                    Allow location for your devices
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <mat-slide-toggle>Location</mat-slide-toggle>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Privacy
-                </mat-panel-title>
-                <mat-panel-description>
-                    Check your privacy, Who will see your account
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <mat-slide-toggle>Location</mat-slide-toggle>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Security
-                </mat-panel-title>
-                <mat-panel-description>
-                    Change password
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="custom-expansion-content">
-                <mat-form-field>
-                    <input matInput placeholder="Old Password" type="password">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="New Password" type="password">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Confirm Password" type="password">
-                </mat-form-field>
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
+                <div class="option">
+                    <ul class="d-flex justify-content-end">
+                        <li><button mat-button><i class="fas fa-search"></i>Search</button></li>
+                    </ul>
+                </div>
             </div>
-        </mat-expansion-panel>
-    </mat-accordion>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Account
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Edit your name, age, personal information
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-expansion-content">
+                            <mat-form-field>
+                                <input matInput placeholder="Name">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Email">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Date of birth">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Profession">
+                            </mat-form-field>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Location
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Allow location for your devices
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-slide-toggle>Location</mat-slide-toggle>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Privacy
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Check your privacy, Who will see your account
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <mat-slide-toggle>Location</mat-slide-toggle>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Security
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Change password
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="custom-expansion-content">
+                            <mat-form-field>
+                                <input matInput placeholder="Old Password" type="password">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="New Password" type="password">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Confirm Password" type="password">
+                            </mat-form-field>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
 </div>

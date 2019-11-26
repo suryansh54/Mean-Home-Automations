@@ -8,12 +8,16 @@ import { DeviceService } from '../../services/device.service'
 })
 export class DevicesComponent implements OnInit {
   devices: any;
+  totalDevice: number;
   constructor(private device: DeviceService) { }
 
   // Get devices
   deviceList(){
     this.device.getDevices().subscribe((data) => {
       this.devices = data;
+      this.totalDevice = this.devices.length;
+    },error=>{
+      console.log(error);
     })
   }
   ngOnInit() {
