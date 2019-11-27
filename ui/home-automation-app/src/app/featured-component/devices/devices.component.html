@@ -21,7 +21,7 @@
                         <div class="device-wrapper">
                             <div class="device-icon device"><i class="far fa-lightbulb"></i></div>
                             <div class="device-name device">
-                                <div class="name"><a routerLink="/device/{{device.id}}">{{device.name}}</a></div>
+                                <div class="name"><a name="go-to-device" routerLink="/device/{{device.id}}">{{device.name}}</a></div>
                                 <div class="group">Bedroom</div>
                                 <div [ngClass]="{'online': device.status==1, 'offline':device.status==0 }"><b
                                         class="device-status">{{ device.status == 1 ? 'Online' : 'Offline' }}</b></div>

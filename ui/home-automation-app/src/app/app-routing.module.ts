@@ -16,12 +16,28 @@ import { FeedbackComponent } from './featured-component/feedback/feedback.compon
 import { SettingComponent } from './featured-component/setting/setting.component';
 import { NotificationComponent } from './featured-component/notification/notification.component';
 
+// Auth Components
+import { LoginComponent } from './auth-components/login/login.component';
+import { SignupComponent } from './auth-components/signup/signup.component';
+import { ForgotPasswordComponent } from './auth-components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
     path:'' ,
     component: DashboardComponent
   }, 
+  {
+    path:'login' ,
+    component: LoginComponent
+  }, 
+  {
+    path:'signup' ,
+    component: SignupComponent
+  }, 
+  {
+    path:'forgot-password' ,
+    component: ForgotPasswordComponent
+  },
   {
     path:'add-device' ,
     component: AddDeviceComponent
@@ -47,7 +63,7 @@ const routes: Routes = [
     component: UpdateComponent
   },
   {
-    path:'acount-and-security' ,
+    path:'account-and-security' ,
     component: ProfileComponent
   },
   {

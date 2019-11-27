@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Auth Module
+import { AuthModule } from './auth-components/auth.module'; 
+
+// Fragments Components
 import { HeaderComponent } from './fragments/header/header.component';
 import { FooterComponent } from './fragments/footer/footer.component';
 import { SidebarComponent } from './fragments/sidebar/sidebar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Angular Material imports
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -22,6 +26,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 
+// import services
+import { DeviceService } from './services/device.service';
+import { AuthService } from './services/auth-services/auth.service';
+
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
 import { AddDeviceComponent } from './featured-component/add-device/add-device.component';
@@ -35,10 +43,7 @@ import { FeedbackComponent } from './featured-component/feedback/feedback.compon
 import { MatBadgeModule } from '@angular/material/badge';
 import { SettingComponent } from './featured-component/setting/setting.component';
 import { NotificationComponent } from './featured-component/notification/notification.component';
-import { DeviceComponent } from './featured-component/devices/device/device.component'
-
-// import services
-import { DeviceService } from './services/device.service'
+import { DeviceComponent } from './featured-component/devices/device/device.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +68,8 @@ import { DeviceService } from './services/device.service'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    AuthModule,
     MatSidenavModule,
     MatButtonModule,
     MatRippleModule,
@@ -74,10 +81,9 @@ import { DeviceService } from './services/device.service'
     MatDatepickerModule,
     MatTabsModule,
     MatProgressBarModule,
-    MatCardModule,
-    HttpClientModule
+    MatCardModule
   ],
-  providers: [DeviceService],
+  providers: [AuthService, DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

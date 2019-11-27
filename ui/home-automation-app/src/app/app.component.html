@@ -1,18 +1,18 @@
-<div class="header-container-wrapper">
+<div class="header-container-wrapper" *ngIf="showFragments">
   <div class="header-container">
     <app-header></app-header>
   </div>
 </div>
-<div class="body-container">
+<div class="body-container" [ngClass]="{'full-height': showFragments == false }">
   <mat-drawer-container class="custom-body-container" autosize>
     <mat-drawer #drawer class="custom-sidenav" mode="push">
-      <app-sidebar></app-sidebar>
+      <app-sidebar *ngIf="showFragments"></app-sidebar>
     </mat-drawer>
 
     <div class="custom-sidenav-content">
-      <div class="common-header">
+      <div class="common-header" *ngIf="showFragments">
         <button type="button" mat-button (click)="drawer.toggle()" title="Toggle Sidenav">
-            <i class="fas fa-bars"></i>
+          <i class="fas fa-bars"></i>
         </button>
       </div>
       <div class="body-content">
@@ -22,6 +22,6 @@
 
   </mat-drawer-container>
 </div>
-<div class="footer-container">
+<div class="footer-container" *ngIf="showFragments">
   <app-footer></app-footer>
 </div>
