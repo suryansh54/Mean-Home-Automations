@@ -17,8 +17,7 @@ import { SettingComponent } from './featured-component/setting/setting.component
 import { NotificationComponent } from './featured-component/notification/notification.component';
 
 // Auth Components
-import { LoginComponent } from './auth-components/login/login.component';
-import { SignupComponent } from './auth-components/signup/signup.component';
+import { AuthComponent } from './auth-components/auth/auth.component';
 import { ForgotPasswordComponent } from './auth-components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
@@ -27,12 +26,8 @@ const routes: Routes = [
     component: DashboardComponent
   }, 
   {
-    path:'login' ,
-    component: LoginComponent
-  }, 
-  {
-    path:'signup' ,
-    component: SignupComponent
+    path:'auth' ,
+    component: AuthComponent
   }, 
   {
     path:'forgot-password' ,

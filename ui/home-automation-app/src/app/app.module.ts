@@ -14,7 +14,7 @@ import { FooterComponent } from './fragments/footer/footer.component';
 import { SidebarComponent } from './fragments/sidebar/sidebar.component';
 
 // Angular Material imports
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -25,6 +25,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 // import services
 import { DeviceService } from './services/device.service';
@@ -81,7 +82,8 @@ import { DeviceComponent } from './featured-component/devices/device/device.comp
     MatDatepickerModule,
     MatTabsModule,
     MatProgressBarModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ],
   providers: [AuthService, DeviceService],
   bootstrap: [AppComponent]

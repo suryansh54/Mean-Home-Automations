@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceService } from '../../services/device.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-devices',
@@ -9,7 +10,7 @@ import { DeviceService } from '../../services/device.service'
 export class DevicesComponent implements OnInit {
   devices: any;
   totalDevice: number;
-  constructor(private device: DeviceService) { }
+  constructor(private device: DeviceService, private router: Router) { }
 
   // Get devices
   deviceList(){
@@ -19,6 +20,10 @@ export class DevicesComponent implements OnInit {
     },error=>{
       console.log(error);
     })
+  }
+
+  routeToAddDevice(){
+    this.router.navigateByUrl('/add-device');
   }
   ngOnInit() {
     this.deviceList();

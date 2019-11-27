@@ -1,0 +1,49 @@
+<div class="custom-login-signup">
+    <div class="auth-bg" style="background-image:url('../../../assets/auth_bg.png')"></div>
+    <div class="custom-container-fluid">
+        <div class="custom-row">
+            <div class="custom-col">
+                <div class="sign-up">
+                    <h1>Sign Up</h1>
+                    <h4 class="sub-heading">New user signup here!</h4>
+                    <form class="form" [formGroup]="signUpForm">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Name" required autocomplete="off"  formControlName="name">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Email" required autocomplete="off"  formControlName="email">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Password" type="password" required autocomplete="off"  formControlName="password">
+                            <mat-hint align="end">Password should be greater than 6 in length</mat-hint>
+                        </mat-form-field>
+                        <div class="button-wrapper">
+                            <button mat-raised-button color="primary" (click)="signup()" [disabled]="!signUpForm.valid">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="custom-col">
+                <div class="logo">
+                    <span>Home Automation App</span>
+                </div>
+                <div class="login">
+                    <h1>Login</h1>
+                    <h4 class="sub-heading">Existing user login</h4>
+                    <form class="form" [formGroup]="loginForm">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Email" required autocomplete="off"  formControlName="email">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Password" type="password" required autocomplete="off"  formControlName="password">
+                            <mat-hint align="end">Password should be greater than 6 in length</mat-hint>
+                        </mat-form-field>
+                        <div class="button-wrapper">
+                            <button mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

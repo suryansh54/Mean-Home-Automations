@@ -16,7 +16,7 @@ export class AppComponent {
   showCommonFragments(): void {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        if (this.router.url == '/login' || this.router.url == '/signup' || this.router.url == '/forgot-password') {
+        if (this.router.url == '/auth' || this.router.url == '/forgot-password') {
           this.showFragments = false;
         } else {
           this.showFragments = true;
