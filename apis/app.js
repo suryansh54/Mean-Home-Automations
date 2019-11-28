@@ -16,10 +16,13 @@ app.use(cors());
 var authModule = require('./modules/auth');
 var osModule = require('./modules/os');
 var deviceModule = require('./modules/device');
+var wifi = require('./modules/wifi_scan');
 
 app.use('/api', authModule);
 app.use('/api', osModule);
 app.use('/api', deviceModule);
+app.use('/api', wifi);
+
 
 app.listen(port,() => console.log(`Your server is runs into the port ${port}`)); // Creates a server
 

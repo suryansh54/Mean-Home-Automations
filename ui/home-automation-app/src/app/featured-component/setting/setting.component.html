@@ -1,1 +1,34 @@
-<p>setting works!</p>
+<div class="custom-page-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
+                <h2 class="page-heading">Setting<span class="device-count">Last change: 24-Nov-2019</span>
+                </h2>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
+                <div class="option">
+                    <ul class="d-flex justify-content-end">
+                        <li><button mat-button><i class="fas fa-search"></i>Search</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field>
+                    <mat-label>Select Wifi</mat-label>
+                    <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option>Custom</mat-option>
+                        <mat-optgroup label="Connected WiFi network">
+                            <mat-option *ngFor="let wifi of currentWifi" [value]="wifi.ssid"><i class="right-gap fas fa-wifi"></i>{{wifi.ssid}}</mat-option>
+                        </mat-optgroup>
+                        <mat-optgroup label="Available WiFi networks">
+                            <mat-option *ngFor="let wifi of wifiListArr" [value]="wifi.ssid"><i class="right-gap fas fa-wifi"></i>{{wifi.ssid}}</mat-option>
+                        </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

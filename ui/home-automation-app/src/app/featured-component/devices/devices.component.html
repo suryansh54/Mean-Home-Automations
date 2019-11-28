@@ -1,4 +1,4 @@
-<div class="custom-page-gap">    
+<div class="custom-page-gap">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
@@ -6,34 +6,40 @@
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <div class="option">
-                    <ul class="d-flex justify-content-end"> 
+                    <ul class="d-flex justify-content-end">
                         <li><button mat-button><i class="fas fa-filter"></i>Filter</button></li>
                         <li><button mat-button><i class="fas fa-sort"></i>Sort & View</button></li>
                         <li><button mat-button><i class="fas fa-search"></i>Search</button></li>
-                        <li><button matTooltip="Add more device to more control and automation" matTooltipPosition="above" mat-button class="add-devices" (click)="routeToAddDevice()"><i class="fas fa-plus"></i>Add Device</button></li>
+                        <li><button matTooltip="Add more device to more control and automation"
+                                matTooltipPosition="above" mat-button class="add-devices"
+                                (click)="routeToAddDevice()"><i class="fas fa-plus"></i>Add Device</button></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4" *ngFor="let device of devices">
-                <mat-card  [ngClass]="{'works': device.status==1, 'no-works':device.status==0 }">
-                    <div class="device-item">
-                        <div class="device-wrapper">
-                            <div class="device-icon device"><i class="far fa-lightbulb"></i></div>
-                            <div class="device-name device">
-                                <div class="name"><a name="go-to-device" routerLink="/device/{{device.id}}">{{device.name}}</a></div>
-                                <div class="group">Bedroom</div>
-                                <div [ngClass]="{'online': device.status==1, 'offline':device.status==0 }"><b
-                                        class="device-status">{{ device.status == 1 ? 'Online' : 'Offline' }}</b></div>
-                            </div>
-                            <div class="device-switch device">
-                                <mat-slide-toggle></mat-slide-toggle>
-                                <!--<div class="device-more-option" title="Device Option"><i class="fas fa-cog"></i></div>-->
+                <div class="custom-device-list">
+                    <mat-card [ngClass]="{'works': device.status==1, 'no-works':device.status==0 }">
+                        <div class="device-item">
+                            <div class="device-wrapper">
+                                <div class="device-icon device"><i class="far fa-lightbulb"></i></div>
+                                <div class="device-name device">
+                                    <div class="name"><a name="go-to-device"
+                                            routerLink="/device/{{device.id}}">{{device.name}}</a></div>
+                                    <div class="group">Bedroom</div>
+                                    <div [ngClass]="{'online': device.status==1, 'offline':device.status==0 }"><b
+                                            class="device-status">{{ device.status == 1 ? 'Online' : 'Offline' }}</b>
+                                    </div>
+                                </div>
+                                <div class="device-switch device">
+                                    <mat-slide-toggle></mat-slide-toggle>
+                                    <!--<div class="device-more-option" title="Device Option"><i class="fas fa-cog"></i></div>-->
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </mat-card>
+                    </mat-card>
+                </div>
             </div>
         </div>
     </div>

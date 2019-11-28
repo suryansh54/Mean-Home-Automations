@@ -5,20 +5,24 @@
 .add-devices {
     color: #2196F3;
 }
-mat-card {
-    margin-bottom: 10px;
-    font-family: "Open Sans", sans-serif;
-    overflow: hidden;
-    &:before {
-        content: "";
-        left: -45px;
-        top: -14px;
-        background: #f0f0f0;
-        display: block;
-        border-radius: 100%;
-        position: absolute;
-        width: 120px;
-        height: 120px;
+
+.custom-device-list {
+    mat-card {
+        margin-bottom: 10px;
+        font-family: "Open Sans", sans-serif;
+        overflow: hidden;
+        box-shadow: 0 0 15px #EEF0F4;
+        &:before {
+            content: "";
+            left: -45px;
+            top: -14px;
+            background:#EEF0F4;
+            display: block;
+            border-radius: 100%;
+            position: absolute;
+            width: 120px;
+            height: 120px;
+        }
     }
 }
 .device-item {
@@ -37,7 +41,7 @@ mat-card {
         .device {
             padding: 0 10px;      
             a {
-                color: #1c1c1c;
+                color: #9198B2;
                 text-decoration: none;
             }     
         }
@@ -51,7 +55,7 @@ mat-card {
             line-height: 1.2;
             flex: 0 0 60px;
             max-width: 60px;
-            color: #919191;
+            color: #9198B2;
         }
         .device-name {
             font-size: 14px;

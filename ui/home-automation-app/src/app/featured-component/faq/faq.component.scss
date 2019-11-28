@@ -40,3 +40,44 @@
 .about-section-1-wrapper .navigation:not(:first-child) {
     margin-left: -130px;
 }
+
+
+.questions-wrapper {
+    background: #F1F3F5;
+    margin-bottom: 20px;
+    .question-group-heading {
+        padding: 20px;
+        color: rgb(73, 80, 87);
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18.4px;
+    }
+    .question-group-wrapper {
+        mat-expansion-panel {
+            box-shadow: none;
+            background: none;
+        }
+        mat-expansion-panel mat-panel-title {
+            color:rgb(134, 142, 150);
+            cursor:pointer;
+            display:block;
+            font-size: 14px;
+            line-height:20px;
+        }
+        mat-expansion-panel-header {
+            &:hover {
+                background-color: #e7f5ff !important;
+                mat-panel-title {
+                    color: #228be6;
+                }
+            }
+        }
+        .mat-expansion-panel-spacing {
+            margin: 0 0;
+        }
+        .mat-expansion-indicator::after {
+            color: #868e96;
+        }
+    }
+}

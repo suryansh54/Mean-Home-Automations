@@ -23,6 +23,15 @@
             font-weight: 600;
         }
     }
+    .custom-eco-mode {
+        a {
+            color: #8BC34A !important;
+            cursor: pointer;
+            i {
+                margin-right: 10px;
+            }
+        }
+    } 
 }
 
 .header-profile-image {

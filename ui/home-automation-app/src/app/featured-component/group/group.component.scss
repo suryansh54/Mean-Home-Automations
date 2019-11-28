@@ -1,0 +1,63 @@
+.add-group {
+    color: #2196F3;
+}
+
+
+.custom-group-wrapper ul {
+    padding-left: 0;
+    list-style: none;
+    overflow: hidden;
+    li {
+        float: left;
+        cursor: pointer;
+        .group-item-icons {
+            padding: 20px 20px 10px 20px;
+            color: #9198B2;
+            font-size: 25px;
+            background: #EEF0F4;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            .number-devices {
+                display: block;
+                font-size: 10px;
+                font-weight: 600;
+                color: #9198b2;
+            }
+        }
+        .group-item-name {
+            padding: 5px 10px;
+            background: #fff;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            color: #9198B2;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        a {
+            transform: translateY(0);
+            transition: transform 0.2s linear;
+            position: relative;
+            display: block;
+            margin: 10px 15px;
+            max-width: 130px;
+            width: 130px;
+            box-shadow: 0 0 15px #EEF0F4;
+            cursor: pointer;
+            background: #fff;
+            &:hover {
+                transform: translateY(-5px);
+                .group-item-icons {
+                    background-color: #262C3E;
+                    color: #fff;
+                    transition: all 0.1s linear;
+                    .number-devices {
+                        color: #fff;
+                    }
+                }
+                .group-item-name {
+                    color: #262C3E;
+                }
+            }
+        }
+    }
+}

@@ -26,10 +26,13 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSelectModule} from '@angular/material/select';
 
 // import services
 import { DeviceService } from './services/device.service';
 import { AuthService } from './services/auth-services/auth.service';
+import { LocationService } from './services/location.service';
+import { WifiService } from './services/machine-service/wifi.service';
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -83,9 +86,10 @@ import { DeviceComponent } from './featured-component/devices/device/device.comp
     MatTabsModule,
     MatProgressBarModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSelectModule
   ],
-  providers: [AuthService, DeviceService],
+  providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
