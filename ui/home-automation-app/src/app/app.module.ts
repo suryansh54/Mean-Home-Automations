@@ -48,6 +48,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { SettingComponent } from './featured-component/setting/setting.component';
 import { NotificationComponent } from './featured-component/notification/notification.component';
 import { DeviceComponent } from './featured-component/devices/device/device.component';
+import { AutomationComponent } from './featured-component/automation/automation.component';
+import { RoutineComponent } from './featured-component/routine/routine.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { DeviceComponent } from './featured-component/devices/device/device.comp
     FeedbackComponent,
     SettingComponent,
     NotificationComponent,
-    DeviceComponent
+    DeviceComponent,
+    AutomationComponent,
+    RoutineComponent
   ],
   imports: [
     BrowserModule,

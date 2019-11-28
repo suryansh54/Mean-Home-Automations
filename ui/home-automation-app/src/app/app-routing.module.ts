@@ -15,6 +15,8 @@ import { FaqComponent } from './featured-component/faq/faq.component';
 import { FeedbackComponent } from './featured-component/feedback/feedback.component';
 import { SettingComponent } from './featured-component/setting/setting.component';
 import { NotificationComponent } from './featured-component/notification/notification.component';
+import { AutomationComponent } from './featured-component/automation/automation.component';
+import { RoutineComponent } from './featured-component/routine/routine.component';
 
 // Auth Components
 import { AuthComponent } from './auth-components/auth/auth.component';
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path:'forgot-password' ,
     component: ForgotPasswordComponent
+  }, 
+  {
+    path:'automation' ,
+    component: AutomationComponent
+  }, 
+  {
+    path:'routine' ,
+    component: RoutineComponent
   },
   {
     path:'add-device' ,
