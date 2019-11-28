@@ -4,8 +4,8 @@
   </div>
 </div>
 <div class="body-container" [ngClass]="{'full-height': showFragments == false }">
-  <mat-drawer-container class="custom-body-container" autosize>
-    <mat-drawer #drawer class="custom-sidenav" mode="push">
+  <mat-drawer-container class="custom-body-container">
+    <mat-drawer #drawer class="custom-sidenav" mode="over" from="right">
       <app-sidebar *ngIf="showFragments" (click)="drawer.toggle()"></app-sidebar>
     </mat-drawer>
 

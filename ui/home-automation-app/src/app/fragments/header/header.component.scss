@@ -1,8 +1,8 @@
 .custom-logo {
-    color: #fff;
     font-size: 16px;
-    font-weight: 100;
     padding: 15px 0;
+    color: #03A9F4;
+    user-select: none;
 }
 
 .custom-header-menu {
@@ -16,10 +16,11 @@
         display: inline-block;
         margin: 0 10px;
         a {
-            color: #fff;
+            color: #585858;
             text-decoration: none;
             padding: 10px;
-            font-size: 15px;
+            font-size: 12px;
+            font-weight: 600;
         }
     }
 }

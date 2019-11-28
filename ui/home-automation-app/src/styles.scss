@@ -26,7 +26,8 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
             margin-left: 10px;
             button {
                 color: #6a6a6a;
-                font-weight: 400;
+                font-size: 12px;
+                font-weight: 600;
                 i {
                     margin-right: 10px;
                 }
@@ -34,3 +35,39 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
         }
     }
 }
+
+
+.custom-tab-wrapper {
+    .mat-tab-labels {
+        justify-content: center;
+    }
+    .mat-tab-header,
+    .mat-tab-nav-bar {
+        border-bottom: 0;
+        .mat-tab-label-content {
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+    
+    .mat-tab-nav-bar.mat-primary .mat-ink-bar,
+    .mat-tab-group.mat-primary .mat-ink-bar {
+        background: #0255e3;
+        width: auto !important;
+        left: auto !important;
+    }
+    .mat-tab-label {
+        padding: 5px 10px!important;
+        min-width: auto;
+        height: auto !important;
+        margin: 0 30px;
+    }
+    .mat-tab-label-container {
+        margin: 20px;
+    }
+    .mat-tab-label.mat-tab-label-active {
+        color: #2196F3;
+        opacity: 1;
+    }
+}
+

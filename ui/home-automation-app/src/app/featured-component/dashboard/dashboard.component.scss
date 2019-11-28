@@ -1,0 +1,20 @@
+.custom-dashboard-wrapper mat-card {
+    margin-bottom: 10px;
+}
+
+.dashboard-item {
+    .dashboard-item-heading {
+        font-weight: 600;
+        font-size: 12px;
+    }
+    .total-count {
+        font-size: 30px;
+        display: block;
+        b {
+            font-size: 15px;
+            margin-left: 10px;
+            font-weight: 100;
+            color: #000;
+        }
+    }
+}

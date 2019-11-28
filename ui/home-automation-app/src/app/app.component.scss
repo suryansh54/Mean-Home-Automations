@@ -1,15 +1,17 @@
 .header-container {
-    background: #0255E3;
     height: 50px;
+    box-shadow:0 0 1px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1px;
 }
 .footer-container {
     background: #fafafa;
     padding: 10px;
     text-align: center;
     height: 40px;
+    display: none;
 }
 .body-container {
-    height: calc(100vh - 90px);
+    height: calc(100vh - 51px);
 }
 .custom-body-container {
     height: 100%;
@@ -21,9 +23,7 @@
 .mat-drawer-container{
     background: #fff;
 }
-.common-header {
-    background: #fafafa;
-}
+
 .body-container.full-height {
     height: 100%;
     overflow-y: auto;
