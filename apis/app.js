@@ -13,15 +13,17 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(cors());
 
 // Routing imports
-var authModule = require('./modules/auth');
-var osModule = require('./modules/os');
-var deviceModule = require('./modules/device');
-var wifi = require('./modules/wifi_scan');
+const authModule = require('./modules/auth');
+const osModule = require('./modules/os');
+const deviceModule = require('./modules/device');
+const wifi = require('./modules/wifi_scan');
+const dynamicCrud = require('./modules/dynamic-crud/crud_routes');
 
-app.use('/api', authModule);
-app.use('/api', osModule);
-app.use('/api', deviceModule);
-app.use('/api', wifi);
+app.use('/v1/api', authModule);
+app.use('/v1/api', osModule);
+app.use('/v1/api', deviceModule);
+app.use('/v1/api', wifi);
+app.use('/v1/api', dynamicCrud);
 
 
 app.listen(port,() => console.log(`Your server is runs into the port ${port}`)); // Creates a server
