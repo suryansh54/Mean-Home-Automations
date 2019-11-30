@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
+::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(125, 125, 125, 0.3);
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+  }
 * { font-family: 'Open Sans', sans-serif; }
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Open Sans', sans-serif; }
@@ -75,3 +86,117 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
     font-weight: 600;
     font-size: 14px;
 }
+
+.dark-theme {
+    .mat-radio-outer-circle {
+        background: #282828;
+        border: 0;
+    }
+    .mat-radio-inner-circle {
+        background: #888585 !important;
+    }
+} 
+
+.light-theme {
+    .mat-radio-outer-circle {
+        background: #d2d2d2;
+        border: 0;
+    }
+    .mat-radio-inner-circle {
+        background: #7b7b7b !important;
+    }
+}
+
+/*-------------Dark theme styles--------| START ---*/
+.mat-card {
+    transform: none !important;
+}
+html #app .dark {
+    .header-container {
+        background: #383838;
+        border-color: #383838;
+        .custom-header-menu {
+            a {
+                color: #fff;
+            }
+        }
+        .custom-logo {
+            color: white;
+        }
+    }
+    .mat-drawer-container {
+        background:#282828;
+    }
+    .page-heading {
+        color: #fff;
+    }
+    .option ul li button {
+        color: #d8d8d8;
+    }
+    .mat-card {
+        background: #383838;
+        transform: none !important;
+    }
+    .dashboard-item {
+        .dashboard-item-heading {
+            color: #cecece;
+        }
+        .dashboard-item-body {
+            color: #fff;
+            b {
+                color: #fff;
+            }
+        }
+    }
+    .custom-tab-wrapper {
+        .mat-tab-label {
+            color: #fff;
+            opacity: 1;
+        }
+        .mat-tab-label.mat-tab-label-active {
+            color: #8bc34a;
+            opacity: 1;
+        }
+    }
+    .side-navigation-toggle-btn {
+        color: white;
+    }
+    .custom-basic-user-information {
+        background: #282828;
+        .user-name {
+            color: #fff;
+        }
+        .user-id {
+            color: #c1c1c1;
+        }
+    }
+    .custom-menu {
+        background: #2f2f2f;
+        a {
+            color: #fff;
+        }
+        .active {
+            background:#282828;
+        }
+    }
+    mat-card {
+        box-shadow: 0 0 15px #252424;
+        transition: none;
+    }
+    .custom-device-list {
+        mat-card {
+            &:before {
+                background: #5f5c5c;
+            }
+        }
+    } 
+    .device-item {
+        .device-wrapper {
+            .device-icon {
+                color: #888888;
+            }
+        }
+    }
+}
+
+/*-------------Dark theme styles--------| END ---*/

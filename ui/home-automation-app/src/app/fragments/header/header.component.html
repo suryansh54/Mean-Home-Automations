@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-6">
+        <div class="col-4">
             <div class="custom-logo">
                 Home Automation
             </div>
@@ -10,13 +10,22 @@
                 <input type="search" class="search-input" placeholder="Search..." autocomplete="off">
             </div>
         </div>-->
-        <div class="col-6">
+        <div class="col-8">
             <div class="custom-header-menu d-flex justify-content-end">
                 <ul>
+                    <li>
+                        <div class="theme-selector">
+                            <mat-radio-group aria-label="Select a theme" (change)="selectTheme($event)">
+                                <mat-radio-button class="dark-theme" value="dark" matTooltip="Dark theme"></mat-radio-button>
+                                <mat-radio-button class="light-theme" value="light" matTooltip="Light theme"></mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </li>
                     <li class="custom-eco-mode"><a name="Eco mode"><i class="fas fa-leaf"></i>Eco Mode</a></li>
                     <li><a name="home" routerLink="/"><i class="fas fa-home"></i></a></li>
                     <li><a name="notification" routerLink="/notification"><i class="fas fa-bell"></i></a></li>
-                    <li><a name="account-and-security" routerLink="/account-and-security"><span class="header-profile-image"><img src="assets/photo.jpg" alt="Suryansh"></span></a></li>
+                    <li><a name="account-and-security" routerLink="/account-and-security"><span
+                                class="header-profile-image"><img src="assets/photo.jpg" alt="Suryansh"></span></a></li>
                 </ul>
             </div>
         </div>

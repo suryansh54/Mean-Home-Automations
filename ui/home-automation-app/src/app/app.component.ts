@@ -7,8 +7,8 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'home-automation-app';
   showFragments: boolean = true;
+  theme:string;
   constructor(private router: Router, private route: ActivatedRoute){
     
   }
@@ -27,6 +27,13 @@ export class AppComponent {
 
   ngOnInit(){
     this.showCommonFragments();
+  }
+
+  
+
+  receiveMessage($event) {
+    this.theme = $event
+    console.log($event)
   }
 
 }

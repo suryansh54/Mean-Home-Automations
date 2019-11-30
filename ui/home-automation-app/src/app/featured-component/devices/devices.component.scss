@@ -11,7 +11,7 @@
         margin-bottom: 10px;
         font-family: "Open Sans", sans-serif;
         overflow: hidden;
-        box-shadow: 0 0 15px #EEF0F4;
+        transition: none !important;
         &:before {
             content: "";
             left: -45px;

@@ -1,27 +1,29 @@
-<div class="header-container-wrapper" *ngIf="showFragments">
-  <div class="header-container">
-    <app-header></app-header>
-  </div>
-</div>
-<div class="body-container" [ngClass]="{'full-height': showFragments == false }">
-  <mat-drawer-container class="custom-body-container">
-    <mat-drawer #drawer class="custom-sidenav" mode="over" from="right">
-      <app-sidebar *ngIf="showFragments" (click)="drawer.toggle()"></app-sidebar>
-    </mat-drawer>
-
-    <div class="custom-sidenav-content">
-      <div class="common-header" *ngIf="showFragments">
-        <button type="button" mat-button (click)="drawer.toggle()" title="Toggle Sidenav">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <div class="body-content">
-        <router-outlet></router-outlet>
-      </div>
+<div [class]="theme">
+  <div class="header-container-wrapper" *ngIf="showFragments">
+    <div class="header-container">
+      <app-header (messageEvent)="receiveMessage($event)"></app-header>
     </div>
+  </div>
+  <div class="body-container" [ngClass]="{'full-height': showFragments == false }">
+    <mat-drawer-container class="custom-body-container">
+      <mat-drawer #drawer class="custom-sidenav" mode="over" from="right">
+        <app-sidebar *ngIf="showFragments" (click)="drawer.toggle()"></app-sidebar>
+      </mat-drawer>
 
-  </mat-drawer-container>
-</div>
-<div class="footer-container" *ngIf="showFragments">
-  <app-footer></app-footer>
+      <div class="custom-sidenav-content">
+        <div class="common-header" *ngIf="showFragments">
+          <button class="side-navigation-toggle-btn" type="button" mat-button (click)="drawer.toggle()" title="Toggle Sidenav">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="body-content">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+
+    </mat-drawer-container>
+  </div>
+  <div class="footer-container" *ngIf="showFragments">
+    <app-footer></app-footer>
+  </div>
 </div>

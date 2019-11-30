@@ -1,7 +1,7 @@
 .header-container {
     height: 50px;
     box-shadow:0 0 1px rgba(0, 0, 0, 0.5);
-    margin-bottom: 1px;
+    background: #f9f9f9;
 }
 .footer-container {
     background: #fafafa;
@@ -11,7 +11,7 @@
     display: none;
 }
 .body-container {
-    height: calc(100vh - 51px);
+    height: calc(100vh - 50px);
 }
 .custom-body-container {
     height: 100%;
@@ -28,3 +28,4 @@
     height: 100%;
     overflow-y: auto;
 }
+
