@@ -22,7 +22,7 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
     margin-top: 5px;
     font-weight: 100;
     margin-bottom: 0;
-    .device-count {
+    .sub-heading {
         font-size: 12px;
         display: block;
         font-weight: 400;
@@ -108,10 +108,67 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
 }
 
 /*-------------Dark theme styles--------| START ---*/
-.mat-card {
-    transform: none !important;
-}
 html #app .dark {
+    p {
+        color: #fff;
+    }
+    /*---------------Material overwrite-----------|START-------*/
+    .mat-drawer-container {
+        background:#282828;
+    }
+    .mat-card {
+        background: #383838;
+        box-shadow: 0 0 15px #252424;
+    }
+    .custom-tab-wrapper {
+        .mat-tab-label {
+            color: #fff;
+            opacity: 1;
+        }
+        .mat-tab-label.mat-tab-label-active {
+            color: #8bc34a;
+            opacity: 1;
+        }
+    }
+    .mat-progress-bar-fill::after {
+        background-color: #8BC34A;
+    }
+    .custom-device-list {
+        mat-card {
+            &:before {
+                background: #5f5c5c;
+            }
+        }
+    } 
+    .mat-slide-toggle-thumb {
+        background-color: #383838;
+    }
+    mat-slide-toggle {
+        .mat-slide-toggle-bar {
+            background: #5f5c5c !important;
+        }
+    }
+    /*---------------Material overwrite-----------|END-------*/
+
+    /*---------------Common class overwrite-----------|START-------*/
+    .text {
+        color: #cecece;
+    }
+    .page-heading {
+        color: #fff;
+    }
+    .option {
+        ul {
+            li {
+                button {
+                    color: #cecece;
+                }
+            }
+        }
+    } 
+    /*---------------Common class overwrite-----------|END-------*/
+    
+    /*---------------Header overwrite-----------|START-------*/
     .header-container {
         background: #383838;
         border-color: #383838;
@@ -124,23 +181,36 @@ html #app .dark {
             color: white;
         }
     }
-    .mat-drawer-container {
-        background:#282828;
+    /*---------------Header overwrite-----------|END---------*/
+    
+    /*---------------Side Navigation overwrite-----------|START-------*/
+    .side-navigation-toggle-btn {
+        color: white;
     }
-    .page-heading {
-        color: #fff;
-    }
-    .option ul li button {
-        color: #d8d8d8;
-    }
-    .mat-card {
-        background: #383838;
-        transform: none !important;
-    }
-    .dashboard-item {
-        .dashboard-item-heading {
-            color: #cecece;
+    mat-drawer {
+        .custom-basic-user-information {
+            background: #282828;
+            .user-name {
+                color: #fff;
+            }
+            .user-id {
+                color: #c1c1c1;
+            }
         }
+        .custom-menu {
+            background: #2f2f2f;
+            a {
+                color: #fff;
+            }
+            .active {
+                background:#282828;
+            }
+        }
+    }
+    /*---------------Side Navigation overwrite-----------|END---------*/
+
+    /*---------------Dashboard overwrite-----------|START---------*/
+    .dashboard-item {
         .dashboard-item-body {
             color: #fff;
             b {
@@ -148,52 +218,72 @@ html #app .dark {
             }
         }
     }
-    .custom-tab-wrapper {
-        .mat-tab-label {
-            color: #fff;
-            opacity: 1;
-        }
-        .mat-tab-label.mat-tab-label-active {
-            color: #8bc34a;
-            opacity: 1;
-        }
-    }
-    .side-navigation-toggle-btn {
-        color: white;
-    }
-    .custom-basic-user-information {
-        background: #282828;
-        .user-name {
-            color: #fff;
-        }
-        .user-id {
-            color: #c1c1c1;
-        }
-    }
-    .custom-menu {
-        background: #2f2f2f;
-        a {
-            color: #fff;
-        }
-        .active {
-            background:#282828;
-        }
-    }
-    mat-card {
-        box-shadow: 0 0 15px #252424;
-        transition: none;
-    }
-    .custom-device-list {
-        mat-card {
-            &:before {
-                background: #5f5c5c;
-            }
-        }
-    } 
+    /*---------------Dashboard overwrite-----------|END---------*/
+
+    /*---------------Device overwrite-----------|START---------*/
     .device-item {
         .device-wrapper {
             .device-icon {
                 color: #888888;
+            }
+        }
+    }
+    /*---------------Device overwrite-----------|END---------*/
+
+    /*---------------Device Group overwrite-----------|START---------*/
+    .custom-group-wrapper {
+        a {
+            box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+            background: transparent;
+            .group-item-wrapper {
+                .group-item-icons {
+                    color: #c3c3c3;
+                    background: #383838;
+                }
+            }
+        }
+    }
+    /*---------------Device Group overwrite-----------|END---------*/
+
+    /*-----------------FAQ Accordion------------------|START---------*/
+    .questions-wrapper {
+        background: #383838;
+        .mat-expansion-indicator:after {
+            color: #adadad !important;
+        }
+        .question-group-wrapper {
+            mat-expansion-panel-header {
+                &:hover {
+                    background-color: #6b6b6b !important;
+                    mat-panel-title {
+                        color: #ffffff;
+                    }
+                }
+                
+            }
+        }
+    }
+    /*-----------------FAQ Accordion------------------|END---------*/
+    .custom-account-and-security {
+        .mat-expansion-panel {
+            background: #383838;
+        }
+        .mat-expansion-indicator:after {
+            color: #adadad !important;
+        }
+        mat-expansion-panel-header {
+            .mat-expansion-panel-header-title {
+                color: rgba(255, 255, 255, 0.87);
+            }
+            .mat-expansion-indicator::after,
+            .mat-expansion-panel-header-description {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            &:hover {
+                background-color: #6b6b6b !important;
+                mat-panel-title {
+                    color: #ffffff;
+                }
             }
         }
     }
