@@ -28,6 +28,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 // import services
 import { DeviceService } from './services/device.service';
@@ -93,7 +94,8 @@ import { RoutineComponent } from './featured-component/routine/routine.component
     MatCardModule,
     MatTooltipModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    DragDropModule
   ],
   providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]

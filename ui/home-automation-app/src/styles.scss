@@ -151,6 +151,9 @@ html #app .dark {
     /*---------------Material overwrite-----------|END-------*/
 
     /*---------------Common class overwrite-----------|START-------*/
+    .side-navigation-toggle-btn {
+        background: #525252;
+    }
     .text {
         color: #cecece;
     }
@@ -264,29 +267,19 @@ html #app .dark {
         }
     }
     /*-----------------FAQ Accordion------------------|END---------*/
-    .custom-account-and-security {
-        .mat-expansion-panel {
-            background: #383838;
-        }
-        .mat-expansion-indicator:after {
-            color: #adadad !important;
-        }
-        mat-expansion-panel-header {
-            .mat-expansion-panel-header-title {
-                color: rgba(255, 255, 255, 0.87);
-            }
-            .mat-expansion-indicator::after,
-            .mat-expansion-panel-header-description {
-                color: rgba(255, 255, 255, 0.5);
-            }
-            &:hover {
-                background-color: #6b6b6b !important;
-                mat-panel-title {
-                    color: #ffffff;
-                }
-            }
+    
+    /*-----------------Routine Page------------------|START---------*/
+    .routine-item {
+        background: #383838;
+        box-shadow: 0 0 10px #272727;
+        color: #fff;
+    }
+    .custom-select-routine {
+        a{
+            box-shadow: 0 0 10px #060606;
         }
     }
+    /*-----------------Routine Page------------------|END---------*/
 }
 
 /*-------------Dark theme styles--------| END ---*/
