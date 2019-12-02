@@ -28,6 +28,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
 // import services
@@ -35,6 +36,12 @@ import { DeviceService } from './services/device.service';
 import { AuthService } from './services/auth-services/auth.service';
 import { LocationService } from './services/location.service';
 import { WifiService } from './services/machine-service/wifi.service';
+
+// Modal Import 
+import { CreateRoutineModal } from './featured-component/routine/routine.component';
+import { CreateGroupModal } from './featured-component/group/group.component';
+import { CreateAutomationModal } from './featured-component/automation/automation.component';
+import { EcoModeModal } from './fragments/header/header.component';
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -52,6 +59,7 @@ import { NotificationComponent } from './featured-component/notification/notific
 import { DeviceComponent } from './featured-component/devices/device/device.component';
 import { AutomationComponent } from './featured-component/automation/automation.component';
 import { RoutineComponent } from './featured-component/routine/routine.component';
+
 
 @NgModule({
   declarations: [
@@ -72,7 +80,17 @@ import { RoutineComponent } from './featured-component/routine/routine.component
     NotificationComponent,
     DeviceComponent,
     AutomationComponent,
-    RoutineComponent
+    RoutineComponent,
+    CreateRoutineModal,
+    CreateGroupModal,
+    CreateAutomationModal,
+    EcoModeModal
+  ],
+  entryComponents: [
+    CreateRoutineModal,
+    CreateGroupModal,
+    CreateAutomationModal,
+    EcoModeModal
   ],
   imports: [
     BrowserModule,
@@ -95,7 +113,8 @@ import { RoutineComponent } from './featured-component/routine/routine.component
     MatTooltipModule,
     MatSelectModule,
     MatRadioModule,
-    DragDropModule
+    DragDropModule,
+    MatDialogModule
   ],
   providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]

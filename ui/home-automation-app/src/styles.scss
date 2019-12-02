@@ -47,6 +47,50 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
     }
 }
 
+/*---------------------Modal Style----------|START---------*/
+.custom-modal-wrapper {
+    .modal-heading {
+        font-size: 18px;
+        font-weight: 100;
+    }
+}
+
+/*---------------------Modal Style----------|END-----------*/
+.add-button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #b4b4b4;
+    border-radius: 100%;
+    user-select: none;
+    cursor: pointer;
+    display: block;
+    margin: 15px 20px;
+    &:before {
+        content: "";
+        width: 1px;
+        height: 20px;
+        background: #b4b4b4;
+        display: block;
+        left: 50%;
+        position: absolute;
+        top: 10px;
+    }
+    &:after {
+        content: "";
+        width: 1px;
+        height: 20px;
+        background: #b4b4b4;
+        display: block;
+        left: 50%;
+        position: absolute;
+        top: 10px;
+        transform: rotate(90deg);
+    }
+}
+.float-left {
+    float: left;
+}
 
 .custom-tab-wrapper {
     .mat-tab-labels {
