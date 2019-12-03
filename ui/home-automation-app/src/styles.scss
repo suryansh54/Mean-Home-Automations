@@ -19,7 +19,7 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
     padding: 20px 0;
 }
 .page-heading {
-    margin-top: 5px;
+    margin-top: 0px;
     font-weight: 100;
     margin-bottom: 0;
     .sub-heading {
@@ -50,10 +50,33 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
 /*---------------------Modal Style----------|START---------*/
 .custom-modal-wrapper {
     .modal-heading {
-        font-size: 18px;
-        font-weight: 100;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 400;
+        color: #616161;
+    }
+    .modal-footer {
+        margin-top: 10px;
+    }
+    .mat-form-field {
+        width: 100%;
+    }
+    .modal-footer {
+        .model-action-wrapper {
+            text-align: right;
+            .cancel {
+                color: #989898;
+            }
+            .action-btn.normal {
+                font-weight: 600;
+                color: #3F51B5;
+                margin-left: 10px;
+            }
+        }
     }
 }
+
+
 
 /*---------------------Modal Style----------|END-----------*/
 .add-button {

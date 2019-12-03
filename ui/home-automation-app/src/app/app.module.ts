@@ -59,6 +59,7 @@ import { NotificationComponent } from './featured-component/notification/notific
 import { DeviceComponent } from './featured-component/devices/device/device.component';
 import { AutomationComponent } from './featured-component/automation/automation.component';
 import { RoutineComponent } from './featured-component/routine/routine.component';
+import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { RoutineComponent } from './featured-component/routine/routine.component
     CreateRoutineModal,
     CreateGroupModal,
     CreateAutomationModal,
-    EcoModeModal
+    EcoModeModal,
+    BreadcrumbComponent
   ],
   entryComponents: [
     CreateRoutineModal,

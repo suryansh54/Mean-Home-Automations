@@ -19,7 +19,7 @@ export class GroupComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateGroupModal, {
-      width: '250px'
+      width: '350px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

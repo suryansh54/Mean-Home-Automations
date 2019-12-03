@@ -20,7 +20,7 @@ export class AutomationComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateAutomationModal, {
-      width: '250px'
+      width: '350px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
