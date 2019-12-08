@@ -1,0 +1,195 @@
+/* .example-list {
+    width: 500px;
+    max-width: 100%;
+    border: solid 1px #ccc;
+    min-height: 60px;
+    display: block;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  } */
+
+
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+            0 8px 10px 1px rgba(0, 0, 0, 0.14),
+            0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+.routine-item {
+    padding: 10px 10px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    font-size: 14px;
+    background: #ffffff;
+    margin-bottom: 60px;
+    box-shadow: 0 0 10px #e6e6e6;
+    border-radius: 20px;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: calc(50% - 5px);
+        width: 5px;
+        height: 48px;
+        border-left: 5px dotted #FF9800;
+    }
+    &:after {
+        content: ">";
+        position: absolute;
+        top: calc(100% + 40.5px);
+        left: calc(50% + 3.8px);
+        width: 20px;
+        height: 20px;
+        color: #FF9800;
+        font-size: 40px;
+        transform: rotate(90deg);
+        font-family: monospace;
+    }
+    &:last-child:after,
+    &:last-child:before {
+        display: none;
+    }
+    .routine-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        div {
+            float: left;
+        }
+        .routine-icon {
+            font-size: 32px;
+            padding: 10px 20px;
+        }
+        .routine-name {
+            font-weight: 600;
+            font-size: 17px;
+            padding: 10px 20px;
+        }
+        .routine-time {
+            padding: 10px 20px;
+            .time {
+                font-size: 20px;
+            }
+            .routine-description {
+                display: block;
+                font-size: 12px;
+                color: #868686;
+            }
+        }
+        .routine-option {
+            padding: 10px 20px;
+        }
+        
+    }
+}
+
+.custom-select-routine {
+    ul {
+    padding-left: 0;
+    list-style: none;
+    overflow: hidden;
+    margin-bottom: 10px;
+        li {
+            float: left;
+            margin: 0px 10px 20px;
+            a {
+                display: block;
+                border-radius: 10px;
+                box-shadow: 0 0 10px #c1c1c1;
+                color: #fff;
+                padding: 10px;
+                width: 200px;
+                min-height: 100px;
+            }
+            &:nth-child(1) a{
+                background: linear-gradient(45deg, #002990 0%, #00d9ff 100%);
+            }
+            &:nth-child(2) a{
+                background: linear-gradient(45deg, #FFC107 0%, #E91E63 100%);
+            }
+            &:nth-child(3) a{
+                background: linear-gradient(45deg, #00BCD4 0%, #4CAF50 100%);
+            }
+            &:nth-child(4) a{
+                background: linear-gradient(45deg, #FF5722 0%, #FFEB3B 100%);
+            }
+            &:nth-child(5) a{
+                background: linear-gradient(45deg, #9C27B0 0%, #3F51B5 100%);
+            }
+        }
+    }
+}
+
+.routine-box {
+    .routine-name {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .routine-total-items {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 0px 0px;
+        b {
+            margin: 0 5px;
+        }
+    }
+}

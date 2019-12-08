@@ -1,0 +1,26 @@
+.custom-breadcrumb-wrapper ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    margin-top: 10px;
+    li {
+        float: left;
+        margin-right: 10px;
+        &:first-child {
+            a {
+                padding-left: 0;
+            }
+        }
+        a {
+            font-size: 12px;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: #737373;
+        }
+        .arrow-icon {
+            font-size: 10px;
+            color: #737373;
+        }
+    }
+}

@@ -1,1 +1,112 @@
-<p>routine works!</p>
+<div class="custom-page-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
+                <h2 class="float-left page-heading">Routine<span class="sub-heading">Routine</span></h2>
+                <a (click)="openDialog()" class="float-left add-button"></a>
+            </div>
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
+                <div class="option">
+                    <ul class="d-flex justify-content-end">
+                        <li><button mat-button><i class="fas fa-search"></i>Search</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="custom-select-routine">
+                    <ul>
+                        <li>
+                            <a>
+                                <div class="routine-box" title="Click to select">
+                                    <div class="routine-name">
+                                        Morning routine
+                                    </div>
+                                    <div class="routine-total-items">
+                                        <span>5 devices</span><b>|</b><span>6 Steps</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="routine-box" title="Click to select">
+                                    <div class="routine-name">
+                                        Morning routine
+                                    </div>
+                                    <div class="routine-total-items">
+                                        <span>5 devices</span><b>|</b><span>6 Steps</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="routine-box" title="Click to select">
+                                    <div class="routine-name">
+                                        Morning routine
+                                    </div>
+                                    <div class="routine-total-items">
+                                        <span>5 devices</span><b>|</b><span>6 Steps</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="routine-box" title="Click to select">
+                                    <div class="routine-name">
+                                        Morning routine
+                                    </div>
+                                    <div class="routine-total-items">
+                                        <span>5 devices</span><b>|</b><span>6 Steps</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <div class="routine-box" title="Click to select">
+                                    <div class="routine-name">
+                                        Morning routine
+                                    </div>
+                                    <div class="routine-total-items">
+                                        <span>5 devices</span><b>|</b><span>6 Steps</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-8">
+                <div class="custom-routine">
+                    <div cdkDropList class="tree routines" (cdkDropListDropped)="drop($event)">
+                        <div class="routine-item" *ngFor="let routine of routines" cdkDrag>
+                            <div class="routine-wrapper">
+                                <div class="routine-icon">
+                                    <i class="far fa-lightbulb"></i>
+                                </div>
+                                <div class="routine-name">
+                                    {{routine}}
+                                </div>
+                                <div class="routine-time">
+                                    <span class="time">7:45 PM</span>
+                                    <span class="routine-description">Hello routine description</span>
+                                </div>
+                                <div class="routine-option">
+                                    <span class="option"><i class="fas fa-ellipsis-v"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
