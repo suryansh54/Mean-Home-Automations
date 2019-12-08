@@ -1,7 +1,7 @@
 <div [class]="theme">
   <div class="header-container-wrapper" *ngIf="showFragments">
     <div class="header-container">
-      <app-header (messageEvent)="receiveMessage($event)"></app-header>
+      <app-header (messageEvent)="receiveMessage($event)" [childMessage]="parentMessage"></app-header>
     </div>
   </div>
   <div class="body-container" [ngClass]="{'full-height': showFragments == false }">

@@ -9,6 +9,7 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 export class AppComponent {
   showFragments: boolean = true;
   theme:string;
+  parentMessage: string = "Message from Parent";
   constructor(private router: Router, private route: ActivatedRoute){
     
   }
@@ -35,5 +36,8 @@ export class AppComponent {
     this.theme = $event
     console.log($event)
   }
-
+  
+  ngDoCheck(){
+    console.log("Console Fron ngDoCheck")
+  }
 }

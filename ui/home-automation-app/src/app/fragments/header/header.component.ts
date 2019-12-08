@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +6,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  @Input() childMessage: string;
+  constructor() { 
+    console.log("Console from Constructor");
+    
+  }
   message: string = "light";
   @Output() messageEvent = new EventEmitter<string>();
-
+  
   ngOnInit() {
+    console.log("Console from ngOnInit");
     this.messageEvent.emit(this.message);
+    console.log(this.childMessage)
   }
 
   selectTheme(event) {
