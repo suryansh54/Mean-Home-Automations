@@ -33,7 +33,7 @@ app.listen(port,() => console.log(`Your server is runs into the port ${port}`));
   // Routes
   /**
    * @swagger
-   * /api/os:
+   * /v1/api/os:
    *  get:
    *    description: Use to request all customers
    *    responses:

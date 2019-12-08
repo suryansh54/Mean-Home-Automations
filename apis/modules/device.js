@@ -7,7 +7,7 @@ router.get('/devices', function (req, res) {
         [
             {
                 id:1,
-                name:"Bedroom Light",
+                name:"Bedroom Light XYZ",
                 type: "Switch",
                 mode: "Single",
                 status: 1
