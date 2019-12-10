@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-=======
-import { Component, OnInit, Output, EventEmitter, Inject } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 export interface DialogData {
   animal: string;
   name: string;
 }
->>>>>>> 79b5a37885cbfc80d5cee42fd75bba0ae704a16c
 
 @Component({
   selector: 'app-header',
@@ -16,16 +12,11 @@ export interface DialogData {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-<<<<<<< HEAD
   @Input() childMessage: string;
-  constructor() { 
-    console.log("Console from Constructor");
-    
-  }
-=======
 
-  constructor(public dialog: MatDialog) { }
->>>>>>> 79b5a37885cbfc80d5cee42fd75bba0ae704a16c
+  constructor(public dialog: MatDialog) {
+    console.log("Console from Constructor");
+   }
   message: string = "light";
   @Output() messageEvent = new EventEmitter<string>();
   
