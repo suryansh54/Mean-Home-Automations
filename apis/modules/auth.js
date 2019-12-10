@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
+var jwt = require('jsonwebtoken');
+
 
 router.get('/token', function (req, res) {
-    res.send('token')
+    var token = jwt.sign({ userId: '16d271f7-ede5-4bda-93ef-36c5a4648864' }, 'shhhhh');
+    res.status(200).send({token: token});
 })
 
 router.get('/user/all', function (req, res) {

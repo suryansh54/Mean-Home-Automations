@@ -1,6 +1,6 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuard as AuthRoute } from './services/auth-services/auth.guard';
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -25,7 +25,8 @@ import { ForgotPasswordComponent } from './auth-components/forgot-password/forgo
 const routes: Routes = [
   {
     path:'' ,
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthRoute]
   }, 
   {
     path:'auth' ,
