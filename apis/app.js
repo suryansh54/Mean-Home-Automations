@@ -12,6 +12,14 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 // For cors 
 app.use(cors());
 
+// Body Parser
+var bodyParser = require('body-parser')
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
 // Routing imports
 const authModule = require('./modules/auth');
 const osModule = require('./modules/os');
