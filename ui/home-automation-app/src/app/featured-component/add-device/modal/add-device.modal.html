@@ -9,7 +9,7 @@
                 <mat-label>Group</mat-label>
                 <mat-select required autocomplete="off" formControlName="deviceGroupName">
                     <mat-option value="Bedroom">Bedroom</mat-option>
-                    <mat-option value="Create Group">Create Group</mat-option>
+                    <mat-option value="Create Group" (click)="openGroupModel()">Create Group</mat-option>
                 </mat-select>
             </mat-form-field>
         </form>

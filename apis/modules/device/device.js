@@ -46,8 +46,8 @@ router.post('/device', (req, res) => {
 });
 
 // https://stackoverflow.com/questions/39102845/my-document-is-not-getting-deleted-in-mongodb-in-nodejs
-router.delete('/device', function (req, res) {
-    const id = new ObjectID(req.body.id);
+router.delete('/device/:id', function (req, res) {
+    const id = new ObjectID(req.params.id);
     if (mongoose.Types.ObjectId.isValid(id)) {
         deviceModel.collection.deleteOne({ _id: id })
             .then(data => res.status(200).json({ "data": "Device deleted successfully" }))

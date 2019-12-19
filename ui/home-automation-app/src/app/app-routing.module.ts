@@ -17,6 +17,7 @@ import { SettingComponent } from './featured-component/setting/setting.component
 import { NotificationComponent } from './featured-component/notification/notification.component';
 import { AutomationComponent } from './featured-component/automation/automation.component';
 import { RoutineComponent } from './featured-component/routine/routine.component';
+import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
 
 // Auth Components
 import { AuthComponent } from './auth-components/auth/auth.component';
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path:'device/:id' ,
     component: DeviceComponent
+  },
+  {
+    path:'device/setting/:id' ,
+    component: DeviceSettingComponent
   },
   {
     path:'firmware-update' ,

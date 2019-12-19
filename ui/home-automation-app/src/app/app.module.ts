@@ -45,8 +45,7 @@ import { CreateGroupModal } from './featured-component/group/group.component';
 import { CreateAutomationModal } from './featured-component/automation/automation.component';
 import { AddDeviceModal } from './featured-component/add-device/add-device.component';
 import { EcoModeModal } from './fragments/header/header.component';
-
-
+import { RemoveDeviceModal } from './featured-component/devices/device/device-setting/device-setting.component';
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -65,6 +64,7 @@ import { DeviceComponent } from './featured-component/devices/device/device.comp
 import { AutomationComponent } from './featured-component/automation/automation.component';
 import { RoutineComponent } from './featured-component/routine/routine.component';
 import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component';
+import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
 
 
 @NgModule({
@@ -92,14 +92,17 @@ import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component
     CreateAutomationModal,
     EcoModeModal,
     AddDeviceModal,
-    BreadcrumbComponent
+    RemoveDeviceModal,
+    BreadcrumbComponent,
+    DeviceSettingComponent
   ],
   entryComponents: [
     CreateRoutineModal,
     CreateGroupModal,
     CreateAutomationModal,
     EcoModeModal,
-    AddDeviceModal
+    AddDeviceModal,
+    RemoveDeviceModal
   ],
   imports: [
     BrowserModule,

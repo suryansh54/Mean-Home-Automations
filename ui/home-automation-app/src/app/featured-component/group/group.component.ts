@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DeviceService } from '../../services/fragments_services/device.service';
 
 export interface DialogData {
   animal: string;
@@ -13,19 +14,26 @@ export interface DialogData {
 })
 export class GroupComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public deviceService: DeviceService) { }
 
   ngOnInit() {
+    
   }
+  
+  ngDoCheck() {
+
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateGroupModal, {
-      width: '350px'
+      width: '500px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
+
 }
 
 @Component({

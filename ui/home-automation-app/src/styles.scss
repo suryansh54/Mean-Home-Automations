@@ -15,6 +15,14 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Open Sans', sans-serif; }
 
+img {
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;          /* Firefox */
+    image-rendering: -o-crisp-edges;            /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
+    -ms-interpolation-mode: nearest-neighbor;   /* IE (non-standard property) */
+}
+
 .custom-page-gap {
     padding: 20px 0;
 }

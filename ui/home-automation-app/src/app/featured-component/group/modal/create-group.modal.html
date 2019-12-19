@@ -1,9 +1,31 @@
 <div class="custom-modal-wrapper">
     <div class="modal-heading">Create Group</div>
     <div class="modal-body">
+        <div class="group-icon-selection">
+            <ul>
+                <li><a><i class="fas fa-bed"></i></a></li>
+                <li><a><i class="fas fa-home"></i></a></li>
+                <li><a><i class="fas fa-person-booth"></i></a></li>
+            </ul>
+        </div>
         <mat-form-field>
             <input matInput placeholder="Group name">
         </mat-form-field>
+        <div class="recommend-group">
+            <span>Recommend</span>
+            <ul>
+                <li><a>Living Room</a></li>
+                <li><a>Master Bedroom</a></li>
+                <li><a>Second Bedroom</a></li>
+                <li><a>Dining Room</a></li>
+                <li><a>Kitchen</a></li>
+                <li><a>Study Room</a></li>
+                <li><a>Porch</a></li>
+                <li><a>Balcony</a></li>
+                <li><a>Kids Room</a></li>
+                <li><a>Closet</a></li>
+            </ul>
+        </div>
     </div>
     <div class="modal-footer">
         <div class="model-action-wrapper">
@@ -14,5 +36,61 @@
 </div>
 
 <style>
+.recommend-group span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.recommend-group ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.recommend-group ul li {
+    float: left;
+}
+
+.recommend-group ul li a {
+    font-size: 12px;
+    padding: 5px 15px;
+    border: 1px solid #cacaca;
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    color: #656565;
+    user-select: none;
+}
+
+.group-icon-selection ul {
+    padding-left: 0;
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+}
+
+.group-icon-selection ul li {
+    float: left;
+}
+
+.group-icon-selection ul li a {
+    font-size: 32px;
+    background: #EEF0F4;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+    color: #9198B2;
+    display: block;
+    border-radius: 5px;
+}
+
+.group-icon-selection ul li a:hover {
+    box-shadow: 0 0 15px #EEF0F4;
+}
 
 </style>
