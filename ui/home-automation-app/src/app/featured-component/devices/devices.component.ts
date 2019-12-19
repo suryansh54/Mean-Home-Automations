@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DeviceService } from '../../services/device.service'
+import { DeviceService } from '../../services/fragments_services/device.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,11 +11,12 @@ export class DevicesComponent implements OnInit {
   devices: any;
   totalDevice: number;
   constructor(private device: DeviceService, private router: Router) { }
-
+  deviceLoader: boolean = true;
   // Get devices
   deviceList(){
-    this.device.getDevices().subscribe((data) => {
-      this.devices = data;
+    this.device.getDevices().subscribe((device: any) => {
+      this.devices = device.data;
+      this.deviceLoader = false;
       this.totalDevice = this.devices.length;
     },error=>{
       console.log(error);

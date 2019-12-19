@@ -13,4 +13,4 @@ mongoose.connect(mongoConnectionString, {
     console.log(`db error ${err.message}`);
 });
 
-var Test = require('./crud-model/test.model');
+var Test = require('./dynamic-crud/crud-model/test.model');

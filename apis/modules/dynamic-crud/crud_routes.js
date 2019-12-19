@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 var mongoose = require('mongoose');
-const connection = require('./mongoose_connection');
+const connection = require('../connection');
 const crudModel = mongoose.model('test1');
 var ObjectID = require('mongodb').ObjectID;
 

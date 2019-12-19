@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Auth Module
 import { AuthModule } from './auth-components/auth.module'; 
@@ -30,9 +31,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 // import services
-import { DeviceService } from './services/device.service';
+import { DeviceService } from './services/fragments_services/device.service';
 import { AuthService } from './services/auth-services/auth.service';
 import { LocationService } from './services/location.service';
 import { WifiService } from './services/machine-service/wifi.service';
@@ -41,7 +43,10 @@ import { WifiService } from './services/machine-service/wifi.service';
 import { CreateRoutineModal } from './featured-component/routine/routine.component';
 import { CreateGroupModal } from './featured-component/group/group.component';
 import { CreateAutomationModal } from './featured-component/automation/automation.component';
+import { AddDeviceModal } from './featured-component/add-device/add-device.component';
 import { EcoModeModal } from './fragments/header/header.component';
+
+
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -86,13 +91,15 @@ import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component
     CreateGroupModal,
     CreateAutomationModal,
     EcoModeModal,
+    AddDeviceModal,
     BreadcrumbComponent
   ],
   entryComponents: [
     CreateRoutineModal,
     CreateGroupModal,
     CreateAutomationModal,
-    EcoModeModal
+    EcoModeModal,
+    AddDeviceModal
   ],
   imports: [
     BrowserModule,
@@ -116,7 +123,10 @@ import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component
     MatSelectModule,
     MatRadioModule,
     DragDropModule,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]

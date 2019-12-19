@@ -1,0 +1,27 @@
+<div class="custom-modal-wrapper">
+    <div class="modal-heading">Add Device</div>
+    <div class="modal-body">
+        <form class="form" [formGroup]="addDeviceForm">
+            <mat-form-field>
+                <input matInput placeholder="Device name" required autocomplete="off"  formControlName="deviceName">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Group</mat-label>
+                <mat-select required autocomplete="off" formControlName="deviceGroupName">
+                    <mat-option value="Bedroom">Bedroom</mat-option>
+                    <mat-option value="Create Group">Create Group</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="model-action-wrapper">
+            <button mat-button class="cancel" (click)="onNoClick()">Cancel</button>
+            <button mat-button class="action-btn normal" (click)="addDevice()" [disabled]="!addDeviceForm.valid">Add Device</button>
+        </div>
+    </div>
+</div>
+
+<style>
+
+</style>

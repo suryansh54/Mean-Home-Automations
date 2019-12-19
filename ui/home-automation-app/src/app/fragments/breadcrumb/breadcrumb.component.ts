@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class BreadcrumbComponent implements OnInit {
 
   constructor(private router: Router, private routes: ActivatedRoute) { 
-    router.events.subscribe((url:any) => console.log(url));
+    router.events.subscribe((url:any) => url);
   }
 
   ngOnInit() {

@@ -34,10 +34,10 @@ export class AppComponent {
 
   receiveMessage($event) {
     this.theme = $event
-    console.log($event)
+    // console.log($event)
   }
   
   ngDoCheck(){
-    console.log("Console Fron ngDoCheck")
+    // console.log("Console Fron ngDoCheck")
   }
 }

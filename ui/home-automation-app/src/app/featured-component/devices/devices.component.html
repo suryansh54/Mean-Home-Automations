@@ -18,17 +18,20 @@
             </div>
         </div>
         <div class="row">
+            <div class="custom-loading" *ngIf="deviceLoader">
+                <mat-spinner></mat-spinner>
+            </div>
             <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4" *ngFor="let device of devices">
                 <div class="custom-device-list">
-                    <mat-card [ngClass]="{'works': device.status==1, 'no-works':device.status==0 }">
+                    <mat-card [ngClass]="{'works': device.DeviceCurrentStatus==1, 'no-works':device.DeviceCurrentStatus==0 }">
                         <div class="device-item">
                             <div class="device-wrapper">
                                 <div class="device-icon device"><i class="far fa-lightbulb"></i></div>
                                 <div class="device-name device">
-                                    <div class="name"><a name="go-to-device" class="text" routerLink="/device/{{device.id}}">{{device.name}}</a></div>
-                                    <div class="group">Bedroom</div>
-                                    <div [ngClass]="{'online': device.status==1, 'offline':device.status==0 }"><b
-                                            class="device-status">{{ device.status == 1 ? 'Online' : 'Offline' }}</b>
+                                    <div class="name"><a name="go-to-device" class="text" routerLink="/device/{{device._id}}">{{device.DeviceName}}</a></div>
+                                    <div class="group">{{device.DeviceGroup}}</div>
+                                    <div [ngClass]="{'online': device.DeviceCurrentStatus==1, 'offline':device.DeviceCurrentStatus==0 }"><b
+                                            class="device-status">{{ device.DeviceCurrentStatus == 1 ? 'Online' : 'Offline' }}</b>
                                     </div>
                                 </div>
                                 <div class="device-switch device">

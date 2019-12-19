@@ -15,15 +15,15 @@ export class HeaderComponent implements OnInit {
   @Input() childMessage: string;
 
   constructor(public dialog: MatDialog) {
-    console.log("Console from Constructor");
+    // console.log("Console from Constructor");
    }
   message: string = "light";
   @Output() messageEvent = new EventEmitter<string>();
   
   ngOnInit() {
-    console.log("Console from ngOnInit");
+    // console.log("Console from ngOnInit");
     this.messageEvent.emit(this.message);
-    console.log(this.childMessage)
+    // console.log(this.childMessage)
   }
 
   selectTheme(event) {

@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DeviceService } from '../../services/fragments_services/device.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-add-device',
@@ -7,9 +16,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDeviceComponent implements OnInit {
 
-  constructor() { }
+  constructor(public deviceService: DeviceService, public dialog: MatDialog, public router: Router) { }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.openDialog();
+    }, 3000)
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddDeviceModal, {
+      width: '350px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+}
+
+@Component({
+  selector: 'add-device-modal',
+  templateUrl: 'modal/add-device.modal.html',
+})
+
+export class AddDeviceModal {
+
+  addDeviceForm = new FormGroup({
+    deviceName: new FormControl('', [Validators.required]),
+    deviceGroupName: new FormControl('', [Validators.required])
+  });
+
+  constructor(
+    public dialogRef: MatDialogRef<AddDeviceModal>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, public deviceService: DeviceService, public router: Router) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  addDevice() {
+    const addDeviceFormData = this.addDeviceForm.value;
+    this.deviceService.createDevice(addDeviceFormData.deviceName, addDeviceFormData.deviceGroupName).subscribe(data => {
+      this.dialogRef.close();
+      this.router.navigateByUrl('/devices');
+    })
+  }
 }

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3200;
 const cors = require('cors');
+const connection = require('./modules/connection');
 
 // Swagger Setup
 const swaggerUi = require('swagger-ui-express');
@@ -23,15 +24,17 @@ app.use(bodyParser.json())
 // Routing imports
 const authModule = require('./modules/auth');
 const osModule = require('./modules/os');
-const deviceModule = require('./modules/device');
+const deviceModule = require('./modules/device/device');
 const wifi = require('./modules/wifi_scan');
 const dynamicCrud = require('./modules/dynamic-crud/crud_routes');
+const device = require('./modules/device/device');
 
 app.use('/v1/api', authModule);
 app.use('/v1/api', osModule);
 app.use('/v1/api', deviceModule);
 app.use('/v1/api', wifi);
 app.use('/v1/api', dynamicCrud);
+app.use('/v1/api', device);
 
 
 app.listen(port, () => console.log(`Your server is runs into the port ${port}`)); // Creates a server
