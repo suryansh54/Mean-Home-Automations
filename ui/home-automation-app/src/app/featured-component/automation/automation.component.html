@@ -8,7 +8,12 @@
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <div class="option">
                     <ul class="d-flex justify-content-end">
-                        <li><button mat-button><i class="fas fa-search"></i>Search</button></li>
+                        <li>
+                            <div class="search-wrapper" [ngClass]="status ? 'open-search' : 'close-search'">
+                                <input type="text">
+                                <button mat-button (click)="search()"><i class="fas fa-search"></i>Search</button>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

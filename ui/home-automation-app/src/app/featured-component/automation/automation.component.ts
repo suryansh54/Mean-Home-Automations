@@ -12,8 +12,12 @@ export interface DialogData {
   styleUrls: ['./automation.component.scss']
 })
 export class AutomationComponent implements OnInit {
-
+  status: boolean = false;
   constructor(public dialog: MatDialog) { }
+
+  search(){
+    this.status = !this.status;       
+  }
 
   ngOnInit() {
   }

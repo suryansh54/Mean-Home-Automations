@@ -1,9 +1,27 @@
 <div class="custom-modal-wrapper">
     <div class="modal-heading">Create Routine</div>
     <div class="modal-body">
+        <div class="routine-icon-selection">
+            <ul>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+                <li><a></a></li>
+            </ul>
+        </div>
         <mat-form-field>
             <input matInput placeholder="Routine name">
         </mat-form-field>
+        <div class="recommend-routine">
+            <span>Recommend</span>
+            <ul>
+                <li><a>Morning Routine</a></li>
+                <li><a>Yoga Routine</a></li>
+                <li><a>Meditation Routine</a></li>
+                <li><a>Walk Routine</a></li>
+            </ul>
+        </div>
     </div>
     <div class="modal-footer">
         <div class="model-action-wrapper">
@@ -14,5 +32,79 @@
 </div>
 
 <style>
+.recommend-routine span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.recommend-routine ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
+    display: block;
+}
+
+.recommend-routine ul li {
+    float: left;
+}
+
+.recommend-routine ul li a {
+    font-size: 12px;
+    padding: 5px 15px;
+    border: 1px solid #cacaca;
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    color: #656565;
+    user-select: none;
+}
+
+.routine-icon-selection ul {
+    padding-left: 0;
+    list-style: none;
+    overflow: hidden;
+    margin: 0;
+}
+
+.routine-icon-selection ul li {
+    float: left;
+}
+
+.routine-icon-selection ul li a {
+    font-size: 32px;
+    background: #EEF0F4;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+    color: #9198B2;
+    display: block;
+    border-radius: 5px;
+    width: 80px;
+    height: 50px;
+}
+
+.routine-icon-selection ul li:nth-child(1) a{
+    background: linear-gradient(45deg, #002990 0%, #00d9ff 100%);
+}
+.routine-icon-selection ul li:nth-child(2) a{
+    background: linear-gradient(45deg, #FFC107 0%, #E91E63 100%);
+}
+.routine-icon-selection ul li:nth-child(3) a{
+    background: linear-gradient(45deg, #00BCD4 0%, #4CAF50 100%);
+}
+.routine-icon-selection ul li:nth-child(4) a{
+    background: linear-gradient(45deg, #FF5722 0%, #FFEB3B 100%);
+}
+.routine-icon-selection ul li:nth-child(5) a{
+    background: linear-gradient(45deg, #9C27B0 0%, #3F51B5 100%);
+}
+
+.routine-icon-selection ul li a:hover {
+    box-shadow: 0 0 15px #EEF0F4;
+}
 
 </style>

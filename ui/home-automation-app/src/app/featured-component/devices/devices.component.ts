@@ -10,7 +10,13 @@ import { Router } from '@angular/router';
 export class DevicesComponent implements OnInit {
   devices: any;
   totalDevice: number;
+  status: boolean = false;
   constructor(private device: DeviceService, private router: Router) { }
+
+  search(){
+    this.status = !this.status;       
+  }
+  
   deviceLoader: boolean = true;
   // Get devices
   deviceList(){

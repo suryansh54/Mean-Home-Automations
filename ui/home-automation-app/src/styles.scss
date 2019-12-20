@@ -29,7 +29,7 @@ img {
 .page-heading {
     margin-top: 0px;
     font-weight: 100;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     .sub-heading {
         font-size: 12px;
         display: block;
@@ -38,17 +38,53 @@ img {
     }
 }
 .option{
+    margin-top: 10px;
     ul {
         padding-left: 0;
         list-style: none;
+        margin: 0;
         li {
             margin-left: 10px;
             button {
                 color: #6a6a6a;
                 font-size: 12px;
                 font-weight: 600;
+                height: 48px;
                 i {
                     margin-right: 10px;
+                }
+            }
+            .search-wrapper {
+                position: relative;
+                button {
+                    position: absolute;
+                    right: 0;
+                    height: 48px;
+                }
+                input {
+                    background-color: #ffffff;
+                    -webkit-transition: all 100ms ease-in;
+                    -moz-transition: all 100ms ease-in;
+                    transition:all 100ms ease-in;
+                    border: 1px solid #EBEBEB;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    height: 48px;
+                    outline: 0;
+                    width: 400px;
+                    padding: 10px 80px 10px 10px;
+                }
+            }
+            .close-search {
+                input {
+                    visibility: hidden;
+                    width:0;
+                }
+            }
+            .open-search {
+                input {
+                    visibility: visible;
+                    width:400px;
                 }
             }
         }

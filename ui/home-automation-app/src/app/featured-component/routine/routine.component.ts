@@ -13,9 +13,13 @@ export interface DialogData {
   styleUrls: ['./routine.component.scss']
 })
 export class RoutineComponent implements OnInit {
-
+  status: boolean = false;
   constructor(public dialog: MatDialog) { }
-
+  
+  search(){
+      this.status = !this.status;       
+  }
+  
   routines: Array<any> = ["Light", "Fan", "Apple TV", "Heater", "Time", "Charge" ];
 
   drop(event: CdkDragDrop<string[]>) {
@@ -24,7 +28,7 @@ export class RoutineComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateRoutineModal, {
-      width: '350px'
+      width: '500px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

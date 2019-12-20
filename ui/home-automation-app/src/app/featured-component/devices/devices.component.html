@@ -2,17 +2,20 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
-                <h2 class="page-heading">Devices <span class="sub-heading">{{totalDevice}} Devices | 6 Sensor</span></h2>
+                <h2 class="page-heading float-left">Devices <span class="sub-heading">{{totalDevice}} Devices | 6 Sensor</span></h2>
+                <a matTooltip="Add more device to more control and automation" matTooltipPosition="above" (click)="routeToAddDevice()" class="float-left add-button"></a>
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <div class="option">
                     <ul class="d-flex justify-content-end">
                         <li><button mat-button><i class="fas fa-filter"></i>Filter</button></li>
                         <li><button mat-button><i class="fas fa-sort"></i>Sort & View</button></li>
-                        <li><button mat-button><i class="fas fa-search"></i>Search</button></li>
-                        <li><button matTooltip="Add more device to more control and automation"
-                                matTooltipPosition="above" mat-button class="add-devices"
-                                (click)="routeToAddDevice()"><i class="fas fa-plus"></i>Add Device</button></li>
+                        <li>
+                            <div class="search-wrapper" [ngClass]="status ? 'open-search' : 'close-search'">
+                                <input type="text">
+                                <button mat-button (click)="search()"><i class="fas fa-search"></i>Search</button>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
