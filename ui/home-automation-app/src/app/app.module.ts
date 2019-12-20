@@ -32,6 +32,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatTableModule} from '@angular/material/table';
 
 // import services
 import { DeviceService } from './services/fragments_services/device.service';
@@ -65,6 +66,7 @@ import { AutomationComponent } from './featured-component/automation/automation.
 import { RoutineComponent } from './featured-component/routine/routine.component';
 import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component';
 import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
+import { CameraComponent } from './featured-component/devices/device/camera/camera.component';
 
 
 @NgModule({
@@ -94,7 +96,8 @@ import { DeviceSettingComponent } from './featured-component/devices/device/devi
     AddDeviceModal,
     RemoveDeviceModal,
     BreadcrumbComponent,
-    DeviceSettingComponent
+    DeviceSettingComponent,
+    CameraComponent
   ],
   entryComponents: [
     CreateRoutineModal,
@@ -129,7 +132,8 @@ import { DeviceSettingComponent } from './featured-component/devices/device/devi
     MatDialogModule,
     MatProgressSpinnerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]

@@ -12,6 +12,15 @@
     }
     .device-navigation {
         background: #f9f9f9;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(45deg, #43C7BD 0%, #00d9ff 100%);
+            top: -2px;
+        }
         ul {
             padding-left: 0;
             list-style: none;

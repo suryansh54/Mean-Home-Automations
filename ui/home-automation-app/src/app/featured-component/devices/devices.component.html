@@ -2,8 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
-                <h2 class="page-heading float-left">Devices <span class="sub-heading">{{totalDevice}} Devices | 6 Sensor</span></h2>
-                <a matTooltip="Add more device to more control and automation" matTooltipPosition="above" (click)="routeToAddDevice()" class="float-left add-button"></a>
+                <h2 class="page-heading float-left">Devices <span class="sub-heading">{{totalDevice}} Devices | 6
+                        Sensor</span></h2>
+                <a matTooltip="Add more device to more control and automation" matTooltipPosition="above"
+                    (click)="routeToAddDevice()" class="float-left add-button"></a>
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <div class="option">
@@ -21,25 +23,66 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-12">
+                <div class="custom-tab-wrapper">
+                    <mat-tab-group>
+                        <mat-tab label="All">
+                            <div class="custom-device-accordion">
+                                <mat-accordion>
+                                    <mat-expansion-panel>
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                <span>Bedroom</span>
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+
+                                    </mat-expansion-panel>
+                                    <mat-expansion-panel>
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                <span>Garden</span>
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <p>I'm visible because I am open</p>
+                                    </mat-expansion-panel>
+                                </mat-accordion>
+                            </div>
+
+                        </mat-tab>
+                        <mat-tab label="Lights"> Content 2 </mat-tab>
+                        <mat-tab label="Camera">
+                            <app-camera></app-camera>
+                        </mat-tab>
+                        <mat-tab label="Sensors"> Content 2 </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="custom-loading" *ngIf="deviceLoader">
                 <mat-spinner></mat-spinner>
             </div>
             <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4" *ngFor="let device of devices">
                 <div class="custom-device-list">
-                    <mat-card [ngClass]="{'works': device.DeviceCurrentStatus==1, 'no-works':device.DeviceCurrentStatus==0 }">
+                    <mat-card
+                        [ngClass]="{'works': device.DeviceCurrentStatus==1, 'no-works':device.DeviceCurrentStatus==0 }">
                         <div class="device-item">
                             <div class="device-wrapper">
-                                <div class="device-icon device"><i class="far fa-lightbulb"></i></div>
+                                <div class="device-icon device"><i class="far fa-lightbulb"></i>
+                                </div>
                                 <div class="device-name device">
-                                    <div class="name"><a name="go-to-device" class="text" routerLink="/device/{{device._id}}">{{device.DeviceName}}</a></div>
+                                    <div class="name"><a name="go-to-device" class="text"
+                                            routerLink="/device/{{device._id}}">{{device.DeviceName}}</a>
+                                    </div>
                                     <div class="group">{{device.DeviceGroup}}</div>
-                                    <div [ngClass]="{'online': device.DeviceCurrentStatus==1, 'offline':device.DeviceCurrentStatus==0 }"><b
+                                    <div
+                                        [ngClass]="{'online': device.DeviceCurrentStatus==1, 'offline':device.DeviceCurrentStatus==0 }">
+                                        <b
                                             class="device-status">{{ device.DeviceCurrentStatus == 1 ? 'Online' : 'Offline' }}</b>
                                     </div>
                                 </div>
                                 <div class="device-switch device">
                                     <mat-slide-toggle></mat-slide-toggle>
-                                    <!--<div class="device-more-option" title="Device Option"><i class="fas fa-cog"></i></div>-->
                                 </div>
                             </div>
                         </div>

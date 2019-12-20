@@ -28,7 +28,7 @@ export class RoutineComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateRoutineModal, {
-      width: '500px'
+      width: '600px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
