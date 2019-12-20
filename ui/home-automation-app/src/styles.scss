@@ -238,6 +238,7 @@ img {
 /*-------------Loading------------------|END-----*/
 
 /*---------------Devices Page accordion-----------|START--------*/
+
 .custom-device-accordion {
     width: 100%;
     .mat-expansion-indicator {
@@ -247,8 +248,11 @@ img {
             position: relative;
         }
     }
+    .mat-expansion-panel-body {
+        padding: 0 0 16px;
+    }
     .mat-expansion-panel-header {
-        padding: 0;
+        padding: 0 4px;
     }
     mat-expansion-panel {
         box-shadow: none;
@@ -492,6 +496,28 @@ html #app .dark {
     }
 
     /*-------------Loading------------------|END-----*/
+    /*---------------Devices Page accordion-----------|START--------*/
+    .custom-device-accordion {
+        .mat-expansion-panel {
+            background: transparent;
+            mat-panel-title {
+                span {
+                    background: #282828;
+                }
+            }
+            .mat-content {
+                &:before {
+                    background: #5f5c5c;
+                }
+            }
+        }
+        .mat-expansion-indicator {
+            &:after {
+                color: #5f5c5c;
+            }
+        }
+    }
+    /*---------------Devices Page accordion-----------|END--------*/
 }
 
 /*-------------Dark theme styles--------| END ---*/
