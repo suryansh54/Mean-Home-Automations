@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxContentLoadingModule } from 'ngx-content-loading';
 
 // Auth Module
 import { AuthModule } from './auth-components/auth.module'; 
@@ -133,7 +134,8 @@ import { CameraComponent } from './featured-component/devices/device/camera/came
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    NgxContentLoadingModule
   ],
   providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]

@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <div class="custom-tab-wrapper">
                     <mat-tab-group>
@@ -57,10 +57,14 @@
                     </mat-tab-group>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+    
         <div class="row">
-            <div class="custom-loading" *ngIf="deviceLoader">
-                <mat-spinner></mat-spinner>
+            <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4" *ngFor="let loader of [1,2,3,4,5,6,7,8,9]">
+                <ngx-content-loading *ngIf="deviceLoader" [speed]="'1500ms'" [width]="1000">
+                    <svg:g ngx-rect width="100%" height="100" y="0" x="0" rx="5" ry="5"></svg:g>
+                </ngx-content-loading>
             </div>
             <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4" *ngFor="let device of devices">
                 <div class="custom-device-list">
