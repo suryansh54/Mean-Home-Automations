@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
+  help: string = "sjdhfksdhf"
+  isSpecial: boolean = false;
+  name: string = "Hello";
   constructor() { }
-
+  onClickSuryansh(){
+    alert('Hello');
+  }
   ngOnInit() {
   }
 
+  getVal() {
+    return 5;
+  }
 }

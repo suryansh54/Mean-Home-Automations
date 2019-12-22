@@ -1,0 +1,16 @@
+<div class="custom-modal-wrapper">
+    <div class="modal-heading">Upload profile image</div>
+    <div class="modal-body">
+        <input type="file" multiple name="photo" ng2FileSelect [uploader]="uploader" />
+        <h3>Percentage completed: {{percentage}}</h3>
+        <button type="button" class="btn btn-success btn-s" 
+        (click)="uploader.uploadAll()" 
+        [disabled]="!uploader.getNotUploadedItems().length" >
+            Upload an Image
+        </button>
+    </div>
+</div>
+
+<style>
+    
+</style>

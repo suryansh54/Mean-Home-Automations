@@ -34,6 +34,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTableModule} from '@angular/material/table';
+import { FileUploadModule } from 'ng2-file-upload';
+
 
 // import services
 import { DeviceService } from './services/fragments_services/device.service';
@@ -48,6 +50,8 @@ import { CreateAutomationModal } from './featured-component/automation/automatio
 import { AddDeviceModal } from './featured-component/add-device/add-device.component';
 import { EcoModeModal } from './fragments/header/header.component';
 import { RemoveDeviceModal } from './featured-component/devices/device/device-setting/device-setting.component';
+import { ProfileImageModal } from './featured-component/profile/profile.component';
+
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -69,7 +73,7 @@ import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component
 import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
 import { CameraComponent } from './featured-component/devices/device/camera/camera.component';
 
-
+const modals = [CreateRoutineModal,CreateGroupModal,CreateAutomationModal,EcoModeModal,AddDeviceModal,RemoveDeviceModal,ProfileImageModal]
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,23 +94,13 @@ import { CameraComponent } from './featured-component/devices/device/camera/came
     DeviceComponent,
     AutomationComponent,
     RoutineComponent,
-    CreateRoutineModal,
-    CreateGroupModal,
-    CreateAutomationModal,
-    EcoModeModal,
-    AddDeviceModal,
-    RemoveDeviceModal,
     BreadcrumbComponent,
     DeviceSettingComponent,
-    CameraComponent
+    CameraComponent,
+    ...modals // Import all modal
   ],
   entryComponents: [
-    CreateRoutineModal,
-    CreateGroupModal,
-    CreateAutomationModal,
-    EcoModeModal,
-    AddDeviceModal,
-    RemoveDeviceModal
+    ...modals // Import all modal
   ],
   imports: [
     BrowserModule,
@@ -135,7 +129,8 @@ import { CameraComponent } from './featured-component/devices/device/camera/came
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    NgxContentLoadingModule
+    NgxContentLoadingModule,
+    FileUploadModule
   ],
   providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]
