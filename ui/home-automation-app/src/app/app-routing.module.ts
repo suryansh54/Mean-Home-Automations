@@ -19,6 +19,7 @@ import { AutomationComponent } from './featured-component/automation/automation.
 import { RoutineComponent } from './featured-component/routine/routine.component';
 import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
 import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
+import { ModeComponent } from './featured-component/mode/mode.component';
 
 // Auth Components
 import { AuthComponent } from './auth-components/auth/auth.component';
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path:'routine' ,
     component: RoutineComponent
+  },
+  {
+    path:'mode' ,
+    component: ModeComponent
   },
   {
     path:'add-device' ,

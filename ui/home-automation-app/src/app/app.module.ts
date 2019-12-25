@@ -74,6 +74,7 @@ import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component
 import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
 import { CameraComponent } from './featured-component/devices/device/camera/camera.component';
 import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
+import { ModeComponent } from './featured-component/mode/mode.component';
 
 const modals = [CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
 const matModules = [MatSidenavModule ,MatButtonModule ,MatRippleModule ,MatBadgeModule ,MatExpansionModule ,MatFormFieldModule ,MatInputModule ,MatSlideToggleModule ,MatDatepickerModule ,MatTabsModule ,MatProgressBarModule ,MatCardModule ,MatTooltipModule ,MatSelectModule ,MatRadioModule ,DragDropModule ,MatDialogModule ,MatProgressSpinnerModule ,MatTableModule , MatBottomSheetModule, MatNativeDateModule]
@@ -102,7 +103,8 @@ const matModules = [MatSidenavModule ,MatButtonModule ,MatRippleModule ,MatBadge
     DeviceSettingComponent,
     CameraComponent,
     ...modals,
-    RolesComponent // Import all modal
+    RolesComponent,
+    ModeComponent // Import all modal
   ],
   entryComponents: [
     ...modals // Import all modal
