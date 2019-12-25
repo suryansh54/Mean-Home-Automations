@@ -50,7 +50,7 @@ import { CreateRoutineModal } from './featured-component/routine/routine.compone
 import { CreateGroupModal } from './featured-component/group/group.component';
 import { CreateAutomationModal } from './featured-component/automation/automation.component';
 import { AddDeviceModal } from './featured-component/add-device/add-device.component';
-import { EcoModeModal } from './fragments/header/header.component';
+import { ModeModal } from './fragments/header/header.component';
 import { RemoveDeviceModal } from './featured-component/devices/device/device-setting/device-setting.component';
 import { ProfileImageModal } from './featured-component/profile/profile.component';
 
@@ -75,8 +75,8 @@ import { DeviceSettingComponent } from './featured-component/devices/device/devi
 import { CameraComponent } from './featured-component/devices/device/camera/camera.component';
 import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
 
-const modals = [CreateRoutineModal,CreateGroupModal,CreateAutomationModal,EcoModeModal,AddDeviceModal,RemoveDeviceModal,ProfileImageModal]
-const matModules = [MatSidenavModule,MatButtonModule,MatRippleModule,MatBadgeModule,MatExpansionModule,MatFormFieldModule,MatInputModule,MatSlideToggleModule,MatDatepickerModule,MatTabsModule,MatProgressBarModule,MatCardModule,MatTooltipModule,MatSelectModule,MatRadioModule,DragDropModule,MatDialogModule,MatProgressSpinnerModule,MatTableModule, MatBottomSheetModule, MatNativeDateModule]
+const modals = [CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
+const matModules = [MatSidenavModule ,MatButtonModule ,MatRippleModule ,MatBadgeModule ,MatExpansionModule ,MatFormFieldModule ,MatInputModule ,MatSlideToggleModule ,MatDatepickerModule ,MatTabsModule ,MatProgressBarModule ,MatCardModule ,MatTooltipModule ,MatSelectModule ,MatRadioModule ,DragDropModule ,MatDialogModule ,MatProgressSpinnerModule ,MatTableModule , MatBottomSheetModule, MatNativeDateModule]
 
 @NgModule({
   declarations: [

@@ -3,6 +3,17 @@
 [tabindex] {
     outline: 0;
 }
+/*----------------Animation-----------------------|START-----------*/
+@keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to{
+      transform: rotate(359deg);
+    }
+  }
+/*----------------Animation-----------------------|END-----------*/
+
 /*----------------Custom Grid-----------------------|START-----------*/
 .custom-row {
     display: flex;
@@ -52,6 +63,22 @@
     }
 }
 /*----------------Notification CSS-----------------------|END-----------*/
+
+.mat-dialog-container {
+    padding: 0 !important;
+    .modal-heading {
+        padding: 18px 20px;
+    }
+    .modal-body {
+        padding: 18px 20px;
+    }
+    .modal-footer {
+        padding: 18px 20px;
+    }
+    a {
+        outline: 0;
+    }
+}
 
 /*----------------Profile image CSS Override-----------------------|START-----------*/
 .user-image {
@@ -480,10 +507,14 @@ html #app .dark {
         .custom-basic-user-information {
             background: #282828;
             .user-name {
-                color: #fff;
+                a {
+                    color: #fff;
+                }
             }
             .user-id {
-                color: #c1c1c1;
+                a {
+                    color: #c1c1c1;
+                }
             }
         }
         .custom-menu {

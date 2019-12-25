@@ -18,22 +18,26 @@
         height: 100px;
         border-radius: 30%;
         background: #fff;
-        margin: 0 auto;
+        margin: 10px auto 0px;
         img {
             border-radius: 30%;
             width: 100px;
             height: 100px;
         }
     }
-    .user-name {
+    .user-name a{
         padding:10px 10px 5px;
         color: #3c3c3c;
         font-weight: 600;
         font-size: 14px;
+        text-decoration: none;
+        display: block;
     }
-    .user-id {
+    .user-id a{
         font-size: 12px;
         color: #848484;
+        text-decoration: none;
+        display: block;
     }
 }
 
@@ -84,30 +88,32 @@
     margin-top: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
-    padding: 10px 15px;
     ul {
         padding-left: 0;
         list-style: none;
         margin: 0;
         li {
-            display: inline-block;
+            float: left;
             font-size: 12px;
+            position: relative;
             &:last-child {
-                a:before {
+                &:before {
                     display: none;
                 }
             }
+            &:before {
+                content: "|";
+                position: absolute;
+                right: -4px;
+                top: 9px;
+                color: rgba(255, 255, 255);
+            }
             a {
-                color: #ffffffc4;
+                color: rgba(255, 255, 255);
                 display: block;
-                padding: 2px 20px;
                 position: relative;
-                &:before {
-                    content: "|";
-                    position: absolute;
-                    right: 0;
-                    top: 1px;
-                }
+                text-decoration: none;
+                padding: 10px 20px;
             }
         }
     }

@@ -1,0 +1,152 @@
+<div class="custom-modal-wrapper">
+    <div class="mode-body">
+        <div class="modal-heading">
+            <span class="heading-inner">Mode</span>
+            <span class="heading-button"><a matTooltip="Create custom mode" matTooltipPosition="above"
+                    href="javascript:;"><i class="fas fa-plus"></i></a></span>
+        </div>
+        <div class="modal-body">
+            <div class="custom-select-mode">
+                <mat-form-field>
+                    <mat-label>Mode</mat-label>
+                    <mat-select>
+                        <mat-option value="abc">Eco Mode</mat-option>
+                        <mat-option value="abc">Saving Mode</mat-option>
+                        <mat-option value="abc">Create Mode</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="custom-mode-icon">
+                <div class="eco-mode-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+            </div>
+            <div class="custom-mode-description">
+                <ul>
+                    <li><span class="mode-status">Turn AC to 24 degree</span><span class="mode-icon"><i
+                                class="fas fa-check"></i></span></li>
+                    <li><span class="mode-status">On motion detector</span><span class="mode-icon"><i
+                                class="fas fa-check"></i></span></li>
+                    <li><span class="mode-status">Security mode enable</span><span class="mode-icon"><span
+                                class="loading"><i class="fas fa-circle-notch"></i></span></span></li>
+                    <li><span class="mode-status">Enable Camera</span><span class="mode-icon"><i
+                                class="fas fa-check"></i></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="footer-two-equal-btn-wrapper">
+                <a mat-ripple class="close-mode" href="javascript:;">Close</a>
+                <a mat-ripple class="active-mode" href="javascript:;">Active</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .mode-body .modal-footer {
+        margin-top: 20px;
+        padding: 0 !important;
+    }
+
+    .mode-body .modal-heading {
+        background: #f7f7f7;
+    }
+
+    .mode-body .custom-mode-icon {
+        padding: 10px 10px 20px;
+    }
+
+    .mode-body .modal-heading .heading-button a {
+        color: #616161;
+        margin: 0px 10px;
+        float: right;
+    }
+
+    .mode-body .modal-body {
+        padding: 0 24px !important;
+    }
+
+    .mode-body .footer-two-equal-btn-wrapper {
+        overflow: hidden;
+    }
+
+    .mode-body .loading {
+        animation: spin .8s linear 0s infinite;
+    }
+
+    .mode-body .footer-two-equal-btn-wrapper>a {
+        float: left;
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+        user-select: none;
+    }
+
+    .mode-body .active-mode {
+        background: linear-gradient(45deg, #00BCD4 0%, #4CAF50 100%);
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .mode-body .close-mode {
+        background: #f1f1f1;
+        color: #333;
+    }
+
+    .mode-body .eco-mode-icon {
+        font-size: 60px;
+        color: #8BC34A;
+        position: relative;
+        width: 120px;
+        height: 120px;
+        display: block;
+        text-align: center;
+        border-radius: 50%;
+        padding: 6px;
+        box-sizing: border-box;
+        text-decoration: none;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(0deg, #ddd, #fff);
+        transition: .2s;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .mode-body .eco-mode-icon i {
+        height: 100%;
+        background: linear-gradient(0deg, #fff, #ddd);
+        border-radius: 50%;
+        font-size: 52px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mode-body .eco-mode-icon:active {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .mode-body .custom-mode-description ul {
+        padding-left: 0;
+        list-style: none;
+        font-size: 12px;
+        display: block;
+    }
+
+    .mode-body .custom-mode-description ul li {
+        overflow: hidden;
+        padding: 2px 0;
+    }
+
+    .mode-body .custom-mode-description ul li span {
+        float: left;
+    }
+
+    .mode-body .custom-mode-description ul li span.mode-icon {
+        float: right;
+    }
+</style>

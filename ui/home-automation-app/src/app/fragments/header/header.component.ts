@@ -31,8 +31,8 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(EcoModeModal, {
-      width: '250px'
+    const dialogRef = this.dialog.open(ModeModal, {
+      width: '400px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -44,13 +44,13 @@ export class HeaderComponent implements OnInit {
 
 
 @Component({
-  selector: 'create-automation-modal',
-  templateUrl: 'modal/eco-mode.modal.html',
+  selector: 'mode-modal',
+  templateUrl: 'modal/mode.modal.html',
 })
-export class EcoModeModal {
+export class ModeModal {
 
   constructor(
-    public dialogRef: MatDialogRef<EcoModeModal>,
+    public dialogRef: MatDialogRef<ModeModal>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
   onNoClick(): void {
