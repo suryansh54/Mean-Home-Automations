@@ -1,25 +1,42 @@
 <div class="custom-modal-wrapper">
     <div class="mode-body">
-        <div class="modal-heading">
-            <span class="heading-inner">Mode</span>
-            <span class="heading-button"><a matTooltip="Create custom mode" matTooltipPosition="above"
-                    href="javascript:;"><i class="fas fa-plus"></i></a></span>
-        </div>
         <div class="modal-body">
-            <div class="custom-select-mode">
-                <mat-form-field>
-                    <mat-label>Mode</mat-label>
-                    <mat-select>
-                        <mat-option value="abc">Eco Mode</mat-option>
-                        <mat-option value="abc">Saving Mode</mat-option>
-                        <mat-option value="abc">Create Mode</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
-            <div class="custom-mode-icon">
-                <div class="eco-mode-icon">
-                    <i class="fas fa-leaf"></i>
-                </div>
+            <div class="custom-header-module">
+                <div class="header">
+                    <div class="mode-header">
+                        <span class="heading-inner">Mode</span>
+                        <span class="heading-button"><a matTooltip="Create custom mode" matTooltipPosition="above" href="javascript:;"><i class="fas fa-plus"></i></a></span>
+                    </div>
+                    <div class="inner-header flex">
+                        <div class="custom-select-mode">
+                            <mat-form-field>
+                                <mat-label>Select Mode</mat-label>
+                                <mat-select>
+                                    <mat-option value="abc">Eco Mode</mat-option>
+                                    <mat-option value="abc">Saving Mode</mat-option>
+                                    <mat-option value="abc">Create Mode</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="eco-mode-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <div>
+                      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs>
+                          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                        </defs>
+                        <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                
             </div>
             <div class="custom-mode-description">
                 <ul>
@@ -49,22 +66,25 @@
         padding: 0 !important;
     }
 
-    .mode-body .modal-heading {
-        background: #f7f7f7;
+    .mode-body .mode-header {
+        padding: 20px 20px 5px;
+        font-size: 16px;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.8);
     }
 
     .mode-body .custom-mode-icon {
-        padding: 10px 10px 20px;
+        padding: 0;
     }
 
-    .mode-body .modal-heading .heading-button a {
-        color: #616161;
+    .mode-body .mode-header .heading-button a {
+        color: rgba(255, 255, 255, 0.8);
         margin: 0px 10px;
         float: right;
     }
 
     .mode-body .modal-body {
-        padding: 0 24px !important;
+        padding: 0 0px !important;
     }
 
     .mode-body .footer-two-equal-btn-wrapper {
@@ -75,7 +95,7 @@
         animation: spin .8s linear 0s infinite;
     }
 
-    .mode-body .footer-two-equal-btn-wrapper>a {
+    .mode-body .footer-two-equal-btn-wrapper > a {
         float: left;
         width: 50%;
         text-align: center;
@@ -87,7 +107,7 @@
     }
 
     .mode-body .active-mode {
-        background: linear-gradient(45deg, #00BCD4 0%, #4CAF50 100%);
+        background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
         color: #fff;
         font-weight: 600;
     }
@@ -149,4 +169,85 @@
     .mode-body .custom-mode-description ul li span.mode-icon {
         float: right;
     }
+    .mode-body  .header {
+        position:relative;
+        text-align:center;
+        background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+        color:white;
+    }
+
+    .mode-body .inner-header {
+        height: 200px;
+        width: 100%;
+        margin: 0;
+        padding: 0 24px;
+    }
+
+    .mode-body .flex { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .mode-body  .waves {
+        position:relative;
+        width: 100%;
+        height:15vh;
+        margin-bottom:-7px; 
+        min-height:100px;
+        max-height:150px;
+    }
+    .mode-body .custom-mode-description {
+        padding: 10px 20px 0;
+    }
+
+    .mode-body .content {
+        position:relative;
+        height:20vh;
+        text-align:center;
+        background-color: white;
+    }
+
+    .mode-body .parallax > use {
+        animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+    }
+    .mode-body .parallax > use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+    }
+    .mode-body .parallax > use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+    .mode-body .parallax > use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+    .mode-body .parallax > use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
+}
 </style>
