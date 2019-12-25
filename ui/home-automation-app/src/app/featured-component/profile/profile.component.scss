@@ -7,3 +7,25 @@
     padding: 0 5%;
     margin: 0 auto;
 }
+
+.add-user-form {
+    display: flex;
+    align-items: center;
+    .user-form-wrapper {
+        display: block;
+        margin-bottom: 10px;
+        width: 33.33% !important;
+        -ms-flex: 0 0 33.33%;
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+        padding: 0 10px
+    }
+    mat-form-field {
+        width: 100% !important;
+    }
+}
+
+.save-manage-user {
+    margin: 10px 0;
+    text-align: right;
+}

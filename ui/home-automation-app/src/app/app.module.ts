@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxContentLoadingModule } from 'ngx-content-loading';
+import { FileUploadModule } from 'ng2-file-upload';
 
 // Auth Module
 import { AuthModule } from './auth-components/auth.module'; 
@@ -16,25 +17,26 @@ import { FooterComponent } from './fragments/footer/footer.component';
 import { SidebarComponent } from './fragments/sidebar/sidebar.component';
 
 // Angular Material imports
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
-import {MatRippleModule} from '@angular/material/core';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatCardModule} from '@angular/material/card';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatSelectModule} from '@angular/material/select';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatDialogModule} from '@angular/material/dialog';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatTableModule} from '@angular/material/table';
-import { FileUploadModule } from 'ng2-file-upload';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule, MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 // import services
@@ -63,7 +65,6 @@ import { ProfileComponent } from './featured-component/profile/profile.component
 import { GroupComponent } from './featured-component/group/group.component';
 import { FaqComponent } from './featured-component/faq/faq.component';
 import { FeedbackComponent } from './featured-component/feedback/feedback.component';
-import { MatBadgeModule } from '@angular/material/badge';
 import { SettingComponent } from './featured-component/setting/setting.component';
 import { NotificationComponent } from './featured-component/notification/notification.component';
 import { DeviceComponent } from './featured-component/devices/device/device.component';
@@ -72,8 +73,11 @@ import { RoutineComponent } from './featured-component/routine/routine.component
 import { BreadcrumbComponent } from './fragments/breadcrumb/breadcrumb.component';
 import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
 import { CameraComponent } from './featured-component/devices/device/camera/camera.component';
+import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
 
 const modals = [CreateRoutineModal,CreateGroupModal,CreateAutomationModal,EcoModeModal,AddDeviceModal,RemoveDeviceModal,ProfileImageModal]
+const matModules = [MatSidenavModule,MatButtonModule,MatRippleModule,MatBadgeModule,MatExpansionModule,MatFormFieldModule,MatInputModule,MatSlideToggleModule,MatDatepickerModule,MatTabsModule,MatProgressBarModule,MatCardModule,MatTooltipModule,MatSelectModule,MatRadioModule,DragDropModule,MatDialogModule,MatProgressSpinnerModule,MatTableModule, MatBottomSheetModule, MatNativeDateModule]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +101,8 @@ const modals = [CreateRoutineModal,CreateGroupModal,CreateAutomationModal,EcoMod
     BreadcrumbComponent,
     DeviceSettingComponent,
     CameraComponent,
-    ...modals // Import all modal
+    ...modals,
+    RolesComponent // Import all modal
   ],
   entryComponents: [
     ...modals // Import all modal
@@ -108,29 +113,11 @@ const modals = [CreateRoutineModal,CreateGroupModal,CreateAutomationModal,EcoMod
     BrowserAnimationsModule,
     HttpClientModule,
     AuthModule,
-    MatSidenavModule,
-    MatButtonModule,
-    MatRippleModule,
-    MatBadgeModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSlideToggleModule,
-    MatDatepickerModule,
-    MatTabsModule,
-    MatProgressBarModule,
-    MatCardModule,
-    MatTooltipModule,
-    MatSelectModule,
-    MatRadioModule,
-    DragDropModule,
-    MatDialogModule,
-    MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule,
     NgxContentLoadingModule,
-    FileUploadModule
+    FileUploadModule,
+    ...matModules // Mat Modules
   ],
   providers: [AuthService, DeviceService, LocationService, WifiService],
   bootstrap: [AppComponent]

@@ -1,5 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
 
+[tabindex] {
+    outline: 0;
+}
+/*----------------Custom Grid-----------------------|START-----------*/
+.custom-row {
+    display: flex;
+    [class*="custom-col"] {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .custom-col-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    .custom-col-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+}
+/*----------------Custom Grid-----------------------|END-----------*/
+
+/*----------------Notification CSS-----------------------|START-----------*/
+.notify-block {
+    background: #dfedf9;
+    border: 1px solid #2196F3;
+    border-left-width: 10px;
+    padding: 10px 10px 8px 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #404040;
+    button {
+        font-size: 12px;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+    a {
+        color: #404040;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    i {
+        top: -1px;
+        margin-right: 10px;
+    }
+}
+/*----------------Notification CSS-----------------------|END-----------*/
+
+/*----------------Profile image CSS Override-----------------------|START-----------*/
+.user-image {
+    display: inline-block;
+}
+.profile-image-wrapper {
+    position: relative;
+    border-radius: 30%;
+    cursor: pointer;
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 30%;
+    }
+    mat-spinner {
+        width: 30px !important;
+        height: 30px !important;
+        margin: 0;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        svg {
+            width: 30px !important;
+            height: 30px !important;
+            circle {
+                stroke: #ffffff;
+                stroke-width: 5% !important;
+            }
+        }
+    }
+    img {
+        display: block;
+        border-radius: 30%;
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+    }
+}
+
+/*----------------Profile image CSS Override-----------------------|END-----------*/
+
 ::-webkit-scrollbar {
     width: 5px;
   }
@@ -194,7 +288,6 @@ img {
 }
 
 .mat-select {
-    font-weight: 600;
     font-size: 14px;
 }
 

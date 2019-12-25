@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { LocationService } from '../../services/location.service'
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
+import { FormBuilder, FormGroup, FormArray, AbstractControl } from '@angular/forms';
 
 
 const uoloadURL = 'http://localhost:3200/v1/api/upload';
@@ -17,47 +18,40 @@ export interface DialogData {
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private location: LocationService, public dialog: MatDialog) { }
-  title: string = 'AGM project';
-  latitude: number;
-  longitude: number;
-  zoom:number;
-  percentage: any;
+  constructor(private location: LocationService, public dialog: MatDialog, private fb: FormBuilder) {
+    this.userForm = this.fb.group({
+      userId: this.fb.array([
+        this.fb.control(null)
+      ])
+    })
+  }
+  percentage: number;
 
   public uploader: FileUploader = new FileUploader({
-		url: uoloadURL,
-		itemAlias: 'photo'
-	});
+    url: uoloadURL,
+    itemAlias: 'photo'
+  });
 
-  private setCurrentLocation() {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        this.zoom = 15;
-        console.log(position.coords.longitude, position.coords.latitude);
-      });
-    }
-  }
 
   fileUploadsMethod() {
     this.uploader.onAfterAddingFile = (file) => {
-			file.withCredentials = false;
-		};
-		this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-			form.append('data', "Send data to Server.");
-		};
-		this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-			console.log('ImageUpload:uploaded:', item, status, response);
-			console.log('File uploaded successfully');
-		};
-		this.uploader.onProgressItem = (progress: any) => {
-			this.percentage = progress['progress'];
-		};
+      file.withCredentials = false;
+    };
+    this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
+      form.append('data', "Send data to Server.");
+    };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+      console.log('ImageUpload:uploaded:', item, status, response);
+      console.log('File uploaded successfully');
+      this.percentage = 0;
+    };
+    this.uploader.onProgressItem = (progress: any) => {
+      this.percentage = progress['progress'];
+      console.log('ABC');
+    };
   }
   ngOnInit() {
     this.fileUploadsMethod();
-    this.setCurrentLocation();
   }
 
   openDialog(): void {
@@ -73,6 +67,25 @@ export class ProfileComponent implements OnInit {
   selectUserImage() {
     this.openDialog()
   }
+
+  userForm: FormGroup;
+  addPhone(): void {
+    (this.userForm.get('userId') as FormArray).push(
+      this.fb.control(null)
+    );
+  }
+
+  removePhone(index) {
+    (this.userForm.get('userId') as FormArray).removeAt(index);
+  }
+
+  getuserIdFormControls(): AbstractControl[] {
+    return (<FormArray>this.userForm.get('userId')).controls
+  }
+
+  send(values) {
+    console.log(values);
+  }
 }
 
 
@@ -84,12 +97,12 @@ export class ProfileImageModal {
   percentage: any;
 
   public uploader: FileUploader = new FileUploader({
-		url: uoloadURL,
-		itemAlias: 'photo'
-	});
+    url: uoloadURL,
+    itemAlias: 'photo'
+  });
   constructor(
     public dialogRef: MatDialogRef<ProfileImageModal>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -97,22 +110,21 @@ export class ProfileImageModal {
 
   fileUploadsMethod() {
     this.uploader.onAfterAddingFile = (file) => {
-			file.withCredentials = false;
-		};
-		this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-			form.append('data', "Send data to Server.");
-		};
-		this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-			console.log('ImageUpload:uploaded:', item, status, response);
-			console.log('File uploaded successfully');
-		};
-		this.uploader.onProgressItem = (progress: any) => {
-			this.percentage = progress['progress'];
-		};
+      file.withCredentials = false;
+    };
+    this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
+      form.append('data', "Send data to Server.");
+    };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+      console.log('ImageUpload:uploaded:', item, status, response);
+      console.log('File uploaded successfully');
+    };
+    this.uploader.onProgressItem = (progress: any) => {
+      this.percentage = progress['progress'];
+    };
   }
 
   ngOnInit() {
     this.fileUploadsMethod();
   }
-
 }

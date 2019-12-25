@@ -14,14 +14,14 @@ let storage = multer.diskStorage({
         cb(null, DIR);
     },
     filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now() + '.' + path.extname(file.originalname));
+        cb(null, file.fieldname + '-' + Date.now() + '' + path.extname(file.originalname));
     }
 });
 
 let upload = multer({ storage: storage });
 
 router.post('/upload', upload.single('photo'), (req, res) => {
-    console.log(__dirname)
+    console.log(req.file.filename)
     if (!req.file) {
         console.log("No file received");
         return res.send({
@@ -31,7 +31,7 @@ router.post('/upload', upload.single('photo'), (req, res) => {
     } else {
         return res.send({
             success: true,
-            path: `localhost:3200/uploads/${req.file}`
+            path: `${__dirname}/uploads/${req.file.filename}`
         })
     }
 })

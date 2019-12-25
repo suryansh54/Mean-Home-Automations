@@ -18,6 +18,7 @@ import { NotificationComponent } from './featured-component/notification/notific
 import { AutomationComponent } from './featured-component/automation/automation.component';
 import { RoutineComponent } from './featured-component/routine/routine.component';
 import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
+import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
 
 // Auth Components
 import { AuthComponent } from './auth-components/auth/auth.component';
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path:'account-and-security' ,
     component: ProfileComponent
+  },
+  {
+    path:'roles' ,
+    component: RolesComponent
   },
   {
     path:'faq' ,
