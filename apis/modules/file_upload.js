@@ -31,7 +31,7 @@ router.post('/upload', upload.single('photo'), (req, res) => {
     } else {
         return res.send({
             success: true,
-            path: 'localhost:3200/uploads/'
+            path: `localhost:3200/uploads/${req.file}`
         })
     }
 })
