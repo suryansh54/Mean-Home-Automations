@@ -4,7 +4,7 @@
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <h2 class="page-heading float-left">Roles<span class="sub-heading">Manage your family, Relatives, Rooms
                         (Hotel, Guest)</span></h2>
-                <a class="float-left add-button"></a>
+                <a (click)="createRole()" class="float-left add-button"></a>
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <div class="option">
@@ -38,6 +38,7 @@
                                         <li><a matRipple matTooltip="5 Devices" matTooltipPosition="above" class="device">5D</a></li>
                                         <li><a matRipple matTooltip="2 Camera" matTooltipPosition="above"class="camera">2C</a></li>
                                         <li><a matRipple matTooltip="2 Sensors" matTooltipPosition="above"class="sensor">2S</a></li>
+                                        <li><a matRipple matTooltip="Add Resources" matTooltipPosition="above"class="add-resources"><i class="fas fa-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -60,7 +61,7 @@
 
                         <ng-container matColumnDef="delete">
                             <th mat-header-cell *matHeaderCellDef class="table-col-05"></th>
-                            <td mat-cell *matCellDef="let role"> <button class="custom-table-btn"
+                            <td mat-cell *matCellDef="let role"> <button (click)="deleteRole()" class="custom-table-btn"
                                     mat-button>Delete</button> </td>
                         </ng-container>
 

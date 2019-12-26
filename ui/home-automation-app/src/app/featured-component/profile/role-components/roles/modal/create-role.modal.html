@@ -1,0 +1,18 @@
+<div class="custom-modal-wrapper">
+    <div class="modal-heading">Create Role</div>
+    <div class="modal-body">
+        <mat-form-field>
+            <input matInput placeholder="Role name" [(ngModel)]="roleName">
+        </mat-form-field>
+    </div>
+    <div class="modal-footer">
+        <div class="model-action-wrapper">
+            <button mat-button class="cancel" (click)="onNoClick()">Cancel</button>
+            <button mat-button class="action-btn normal" (click)="addRole(roleName)">Add Role</button>
+        </div>
+    </div>
+</div>
+
+<style>
+
+</style>

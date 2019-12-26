@@ -55,7 +55,10 @@ import { AddDeviceModal } from './featured-component/add-device/add-device.compo
 import { ModeModal } from './fragments/header/header.component';
 import { RemoveDeviceModal } from './featured-component/devices/device/device-setting/device-setting.component';
 import { ProfileImageModal } from './featured-component/profile/profile.component';
-
+import { CreateRoleModal } from './featured-component/profile/role-components/roles/roles.component';
+import { DeleteRoleModal } from './featured-component/profile/role-components/roles/roles.component';
+import { CreateModeModal } from './featured-component/mode/mode.component';
+import { DeleteModeModal } from './featured-component/mode/mode.component';
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -79,7 +82,7 @@ import { RolesComponent } from './featured-component/profile/role-components/rol
 import { ModeComponent } from './featured-component/mode/mode.component';
 import { RoleComponent } from './featured-component/profile/role-components/roles/role/role.component';
 
-const modals = [CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
+const modals = [CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
 const matModules = [MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
 
 @NgModule({

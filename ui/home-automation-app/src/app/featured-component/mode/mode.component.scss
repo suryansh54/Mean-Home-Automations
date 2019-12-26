@@ -1,0 +1,103 @@
+.custom-table-wrapper {
+    overflow: auto;
+    margin-top: 10px;
+    table {
+        width: 100%;
+        .table-col-01 {
+            width: 30%;
+        }
+        
+        .table-col-02 {
+            width: 30%;
+        }
+        
+        .table-col-03 {
+            width: 20%;
+        }
+        
+        .table-col-04 {
+            width: 10%;
+        }
+        
+        .table-col-05 {
+            width: 10%;
+        }
+
+        .status-chip {
+            background: #585858;
+            padding: 4px 10px;
+            display: inline-block;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+        
+        .active.status-chip {
+            background: #4CAF50;
+        }
+        
+        .deactive.status-chip {
+            background: #F44336;
+        }
+
+        .custom-table-btn {
+            color: #545454;
+            background: #f3f6fb;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .mode-link {
+            text-decoration: none;
+            color: #1f1f1f;
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+  }
+  
+.mode-resources {
+    ul {
+        padding-left: 0;
+        list-style: none;
+        margin: 0;
+        li {
+            display: inline-block;
+            a {
+                margin-right: -8px;
+                font-size: 12px;
+                padding: 5px 10px;
+                color: #fff;
+                font-weight: 600;
+                text-decoration: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                border: 2px solid #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .add-resources {
+                background: #eef0f4;
+                color: black;
+                cursor: pointer;
+            }
+            .device {
+                background-color: #1BCAB1;
+            }
+            .camera {
+                background-color: #C06FF5;
+            }
+            .sensor {
+                background-color: #EA3A58;
+            }
+            .ac {
+                background-color: #2164F6;
+            }
+        }
+    }
+}
+
+

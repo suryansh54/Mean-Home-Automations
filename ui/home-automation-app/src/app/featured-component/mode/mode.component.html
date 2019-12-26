@@ -3,23 +3,73 @@
         <div class="row">
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <h2 class="page-heading float-left">Mode<span class="sub-heading">Create mode for devices</span></h2>
-                <a class="float-left add-button"></a>
+                <a (click)="createMode()" class="float-left add-button"></a>
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-1 col-xl-6">
                 <div class="option">
                     <ul class="d-flex justify-content-end">
-                        <li><button mat-button><i class="fas fa-search"></i>Search</button></li>
+                        <li>
+                            <div class="search-wrapper" [ngClass]="searchStatus ? 'open-search' : 'close-search'">
+                                <input type="text" (keyup)="applyFilter($event.target.value)">
+                                <button mat-button (click)="search()"><i class="fas fa-search"></i>Search</button>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <ul>
-                    <li>CRUD Mode</li>
-                    <li>Add multiple Devices</li>
-                </ul>
+                <div class="custom-table-wrapper">
+                    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                        <ng-container matColumnDef="name">
+                            <th mat-sort-header mat-header-cell *matHeaderCellDef class="table-col-01"> Mode Name </th>
+                            <td mat-cell *matCellDef="let mode"> <a class="mode-link"
+                                    routerLink="/mode/{{mode.id}}">{{mode.name}}</a> </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="resources">
+                            <th mat-sort-header mat-header-cell *matHeaderCellDef class="table-col-02"> Mode Resources
+                            </th>
+                            <td mat-cell *matCellDef="let mode">
+                                <div class="mode-resources">
+                                    <ul>
+                                        <li><a matRipple matTooltip="5 Devices" matTooltipPosition="above" class="device">5D</a></li>
+                                        <li><a matRipple matTooltip="2 Camera" matTooltipPosition="above"class="camera">2C</a></li>
+                                        <li><a matRipple matTooltip="2 Sensors" matTooltipPosition="above"class="sensor">2S</a></li>
+                                        <li><a matRipple matTooltip="Add Resources" matTooltipPosition="above"class="add-resources"><i class="fas fa-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="status">
+                            <th mat-sort-header mat-header-cell *matHeaderCellDef class="table-col-03"> Mode Saving
+                            </th>
+                            <td mat-cell *matCellDef="let mode">
+                                {{mode.saving}} %
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="edit">
+                            <th mat-header-cell *matHeaderCellDef class="table-col-04"></th>
+                            <td mat-cell *matCellDef="let mode"> <button class="custom-table-btn"
+                                    mat-button>Edit</button> </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="delete">
+                            <th mat-header-cell *matHeaderCellDef class="table-col-05"></th>
+                            <td mat-cell *matCellDef="let mode"> <button (click)="deleteMode()" class="custom-table-btn"
+                                    mat-button>Delete</button> </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
