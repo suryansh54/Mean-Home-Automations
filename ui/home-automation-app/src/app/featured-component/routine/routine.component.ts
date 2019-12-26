@@ -13,11 +13,11 @@ export interface DialogData {
   styleUrls: ['./routine.component.scss']
 })
 export class RoutineComponent implements OnInit {
-  status: boolean = false;
+  searchStatus: boolean = false;
   constructor(public dialog: MatDialog) { }
   
   search(){
-      this.status = !this.status;       
+      this.searchStatus = !this.searchStatus;       
   }
   
   routines: Array<any> = ["Light", "Fan", "Apple TV", "Heater", "Time", "Charge" ];

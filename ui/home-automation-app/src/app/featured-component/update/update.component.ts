@@ -9,14 +9,14 @@ export class UpdateComponent implements OnInit {
 
   displayedColumns = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  status: boolean = false;
+  searchStatus: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
 
   search(){
-    this.status = !this.status;       
+      this.searchStatus = !this.searchStatus;       
   }
   
 }

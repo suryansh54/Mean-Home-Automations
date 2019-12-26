@@ -37,6 +37,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 // import services
@@ -75,9 +77,10 @@ import { DeviceSettingComponent } from './featured-component/devices/device/devi
 import { CameraComponent } from './featured-component/devices/device/camera/camera.component';
 import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
 import { ModeComponent } from './featured-component/mode/mode.component';
+import { RoleComponent } from './featured-component/profile/role-components/roles/role/role.component';
 
 const modals = [CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
-const matModules = [MatSidenavModule ,MatButtonModule ,MatRippleModule ,MatBadgeModule ,MatExpansionModule ,MatFormFieldModule ,MatInputModule ,MatSlideToggleModule ,MatDatepickerModule ,MatTabsModule ,MatProgressBarModule ,MatCardModule ,MatTooltipModule ,MatSelectModule ,MatRadioModule ,DragDropModule ,MatDialogModule ,MatProgressSpinnerModule ,MatTableModule , MatBottomSheetModule, MatNativeDateModule]
+const matModules = [MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
 
 @NgModule({
   declarations: [
@@ -104,7 +107,8 @@ const matModules = [MatSidenavModule ,MatButtonModule ,MatRippleModule ,MatBadge
     CameraComponent,
     ...modals,
     RolesComponent,
-    ModeComponent // Import all modal
+    ModeComponent,
+    RoleComponent // Import all modal
   ],
   entryComponents: [
     ...modals // Import all modal

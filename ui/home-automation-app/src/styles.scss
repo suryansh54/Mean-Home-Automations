@@ -14,6 +14,32 @@
   }
 /*----------------Animation-----------------------|END-----------*/
 
+/*----------------Table-----------------------|START-----------*/
+.custom-table-wrapper {
+    table {
+        thead {
+            tr {
+                background: #F8FAFB !important;
+                th, button {
+                    color: #545454;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    border-color: transparent;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    padding: 22px 0;
+                    border-bottom-color: rgba(0,0,0,.05);
+                }
+            }
+        }
+    }
+}
+/*----------------Table-----------------------|END-----------*/
+
 /*----------------------Custom Dropdown Style----------|START--------------*/
 .custom-select-mode {
     width: 100%;

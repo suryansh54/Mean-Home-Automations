@@ -113,7 +113,7 @@
                                 </mat-panel-description>
                             </mat-expansion-panel-header>
                             <div class="custom-expansion-content">
-                                <div class="notify-block"><i class="fas fa-info-circle"></i><span>Create custom roles for device resources <a routerLink="/roles"><b>Manage Roles</b></a></span></div>
+                                <div class="notify-block"><i class="fas fa-info-circle"></i><span>Create custom roles for device resources <a routerLink="/role"><b>Manage Roles</b></a></span></div>
                                 <form [formGroup]="userForm" (ngSubmit)="send(userForm.value)">
                                     <div *ngFor="let phone of getuserIdFormControls(); let i = index"
                                         class="add-user-form">

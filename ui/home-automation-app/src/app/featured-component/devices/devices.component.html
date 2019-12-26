@@ -13,7 +13,7 @@
                         <li><button mat-button><i class="fas fa-filter"></i>Filter</button></li>
                         <li><button mat-button><i class="fas fa-sort"></i>Sort & View</button></li>
                         <li>
-                            <div class="search-wrapper" [ngClass]="status ? 'open-search' : 'close-search'">
+                            <div class="search-wrapper" [ngClass]="searchStatus ? 'open-search' : 'close-search'">
                                 <input type="text">
                                 <button mat-button (click)="search()"><i class="fas fa-search"></i>Search</button>
                             </div>

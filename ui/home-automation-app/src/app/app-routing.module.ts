@@ -20,6 +20,7 @@ import { RoutineComponent } from './featured-component/routine/routine.component
 import { DeviceSettingComponent } from './featured-component/devices/device/device-setting/device-setting.component';
 import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
 import { ModeComponent } from './featured-component/mode/mode.component';
+import { RoleComponent } from './featured-component/profile/role-components/roles/role/role.component';
 
 // Auth Components
 import { AuthComponent } from './auth-components/auth/auth.component';
@@ -32,75 +33,79 @@ const routes: Routes = [
     canActivate: [AuthRoute]
   }, 
   {
-    path:'auth' ,
+    path:'auth',
     component: AuthComponent
   }, 
   {
-    path:'forgot-password' ,
+    path:'forgot-password',
     component: ForgotPasswordComponent
   }, 
   {
-    path:'automation' ,
+    path:'automation',
     component: AutomationComponent
   }, 
   {
-    path:'routine' ,
+    path:'routine',
     component: RoutineComponent
   },
   {
-    path:'mode' ,
+    path:'mode',
     component: ModeComponent
   },
   {
-    path:'add-device' ,
+    path:'add-device',
     component: AddDeviceComponent
   }, 
   {
-    path:'about' ,
+    path:'about',
     component: AboutComponent
   }, 
   {
-    path:'group' ,
+    path:'group',
     component: GroupComponent
   },
   {
-    path:'devices' ,
+    path:'devices',
     component: DevicesComponent
   },
   {
-    path:'device/:id' ,
+    path:'device/:id',
     component: DeviceComponent
   },
   {
-    path:'device/setting/:id' ,
+    path:'device/setting/:id',
     component: DeviceSettingComponent
   },
   {
-    path:'firmware-update' ,
+    path:'firmware-update',
     component: UpdateComponent
   },
   {
-    path:'account-and-security' ,
+    path:'account-and-security',
     component: ProfileComponent
   },
   {
-    path:'roles' ,
+    path:'role',
     component: RolesComponent
   },
   {
-    path:'faq' ,
+    path:'role/:id',
+    component: RoleComponent
+  },
+  {
+    path:'faq',
     component: FaqComponent
   },
   {
-    path:'feedback' ,
+    path:'feedback',
     component: FeedbackComponent
   },
   {
-    path:'setting' ,
+    path:'setting',
     component: SettingComponent
   },
   {
-    path:'notification' ,
+    path:'notification',
     component: NotificationComponent
   }
 ];

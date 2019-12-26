@@ -13,11 +13,11 @@ export interface DialogData {
   styleUrls: ['./group.component.scss']
 })
 export class GroupComponent implements OnInit {
-  status: boolean = false;
+  searchStatus: boolean = false;
   constructor(public dialog: MatDialog, public deviceService: DeviceService) { }
 
   search(){
-    this.status = !this.status;       
+      this.searchStatus = !this.searchStatus;       
   }
 
   ngOnInit() {
