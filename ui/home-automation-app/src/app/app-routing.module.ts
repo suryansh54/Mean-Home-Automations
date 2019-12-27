@@ -89,7 +89,7 @@ const routes: Routes = [
     component: RolesComponent
   },
   {
-    path:'role/:id',
+    path:'role/:id/:activeTabId',
     component: RoleComponent
   },
   {

@@ -2,13 +2,60 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <ul>
-                    <li>CRUD roles</li>
-                    <li>Add Devices</li>
-                    <li>Share link to customer, Hotel guest, Access control</li>
-                    <li>Video, Song casting</li>
-                    <li>Security, Call, TV, Privilage Access</li>
-                </ul>
+                <div class="custom-tab-wrapper custom-dashboard-wrapper">
+                    <mat-tab-group [selectedIndex]="tabActiveId">
+                        <mat-tab label="Role Information">
+                            <ul>
+                                <li>CRUD roles</li>
+                                <li>Add Devices</li>
+                                <li>Share link to customer, Hotel guest, Access control</li>
+                                <li>Video, Song casting</li>
+                                <li>Security, Call, TV, Privilage Access</li>
+                            </ul>
+                        </mat-tab>
+                        <mat-tab label="Role Resources Permissions">
+                            <div class="drag-drop-container">
+                                <h2>All Resources list</h2>
+
+                                <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo"
+                                    [cdkDropListConnectedTo]="[doneList]" class="example-list"
+                                    (cdkDropListDropped)="drop($event)">
+                                    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                                </div>
+                            </div>
+
+                            <div class="drag-drop-container">
+                                <h2>Resources access to <b>Security Guard</b></h2>
+
+                                <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
+                                    [cdkDropListConnectedTo]="[todoList]" class="example-list"
+                                    (cdkDropListDropped)="drop($event)">
+                                    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Role Status">
+                            <div class="custom-role-status-box">
+                                <div class="status-box-heading">Role Status<b>Enable and disable role as per timing and
+                                        portfolio</b></div>
+                                <div class="mat-slide-toggle-wrapper">
+                                    <mat-slide-toggle class="green small" [checked]="(1 == 1) ? 'true' : 'false'">
+                                    </mat-slide-toggle>
+                                </div>
+                            </div>
+                            <div class="custom-role-status-box">
+                                <div class="status-box-heading">Role Time<b>Provide access as per time</b></div>
+                                <div class="mat-slide-toggle-wrapper">
+                                    <mat-slide-toggle class="green small" [checked]="(0 == 1) ? 'true' : 'false'">
+                                    </mat-slide-toggle>
+                                </div>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Role Actions">
+                            <button mat-stroked-button color="warn">Delete Role</button>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
             </div>
         </div>
     </div>

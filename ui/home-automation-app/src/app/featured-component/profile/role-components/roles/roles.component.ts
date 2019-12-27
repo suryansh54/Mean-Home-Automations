@@ -36,6 +36,7 @@ export interface DialogData {
 })
 export class RolesComponent implements OnInit {
   searchStatus: boolean = false;
+  checked: boolean = false;
   constructor(public dialog: MatDialog) { }
   displayedColumns = ['name', 'resources', 'status', 'edit', 'delete'];
   public dataSource = new MatTableDataSource<Roles>(ELEMENT_DATA);
@@ -96,8 +97,11 @@ export class CreateRoleModal {
   }
 
   addRole(roleName: string) {
-    console.log(roleName);
-    this.dialogRef.close();
+    if(roleName) {
+      this.dialogRef.close();
+    } else {
+      alert('Value required');
+    }
   }
 }
 
