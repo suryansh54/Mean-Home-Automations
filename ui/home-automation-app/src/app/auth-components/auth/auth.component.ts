@@ -25,7 +25,7 @@ export class AuthComponent implements OnInit {
   // Validation methods
 
   login() {
-    sessionStorage.setItem('token','xyz');
+    sessionStorage.setItem('token','some_jwt_dummy_token');
     this.router.navigateByUrl('/')
   }
   ngOnInit() {

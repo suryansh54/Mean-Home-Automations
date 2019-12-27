@@ -30,17 +30,17 @@ export class RoleComponent implements OnInit {
     }
   }
 
-  todo = [
-    'All Devices',
-    'All Camera',
-    'All Sensors',
-    'Device - 1',
-    'Security Calls',
-    'TV'
+  resource = [
+    {value: 'All Devices', disabled: false},
+    {value: 'All Camera', disabled: false},
+    {value: 'All Sensors', disabled: false},
+    {value: 'Device - 1', disabled: false},
+    {value: 'Security Calls', disabled: false},
+    {value: 'TV', disabled: false}
   ];
 
-  done = [
-    'Emergency Call'
+  access = [
+    {value: 'Emergency Call', disabled: true}
   ];
 
   drop(event: CdkDragDrop<string[]>) {

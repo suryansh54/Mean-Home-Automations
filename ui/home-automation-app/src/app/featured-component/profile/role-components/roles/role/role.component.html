@@ -17,20 +17,20 @@
                             <div class="drag-drop-container">
                                 <h2>All Resources list</h2>
 
-                                <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo"
-                                    [cdkDropListConnectedTo]="[doneList]" class="example-list"
+                                <div cdkDropList #resourceList="cdkDropList" [cdkDropListData]="resource"
+                                    [cdkDropListConnectedTo]="[accessList]" class="example-list"
                                     (cdkDropListDropped)="drop($event)">
-                                    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                                    <div class="example-box" *ngFor="let item of resource" cdkDrag [cdkDragDisabled]="item.disabled">{{item.value}}</div>
                                 </div>
                             </div>
 
                             <div class="drag-drop-container">
                                 <h2>Resources access to <b>Security Guard</b></h2>
 
-                                <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done"
-                                    [cdkDropListConnectedTo]="[todoList]" class="example-list"
+                                <div cdkDropList #accessList="cdkDropList" [cdkDropListData]="access"
+                                    [cdkDropListConnectedTo]="[resourceList]" class="example-list"
                                     (cdkDropListDropped)="drop($event)">
-                                    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                                    <div class="example-box" *ngFor="let item of access" cdkDrag [cdkDragDisabled]="item.disabled">{{item.value}}</div>
                                 </div>
                             </div>
                         </mat-tab>
