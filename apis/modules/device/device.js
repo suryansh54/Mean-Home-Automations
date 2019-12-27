@@ -13,7 +13,7 @@ function verifyToken(req, res, next) {
     if(token === 'null') {
         return res.status(401).send('Unauthorized request');
     }
-    req.userId = token;
+    req.userId = token; // Not ready for production Yet
     next()
 }
 
