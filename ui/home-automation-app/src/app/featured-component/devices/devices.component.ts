@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeviceService } from '../../services/fragments_services/device.service'
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-devices',
@@ -24,7 +25,13 @@ export class DevicesComponent implements OnInit {
       this.devices = device.data;
       this.deviceLoader = false;
       this.totalDevice = this.devices.length;
-    },error=>{
+    },error => {
+      if(error instanceof HttpErrorResponse) {
+        if(error.status === 401) {
+          alert('Unauthorized access');
+          this.router.navigateByUrl('/auth');
+        }
+      }
       console.log(error);
     })
   }

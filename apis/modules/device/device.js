@@ -1,11 +1,23 @@
 const express = require('express');
 const router = express.Router();
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const deviceModel = require('./device.model');
-var ObjectID = require('mongodb').ObjectID;
+const ObjectID = require('mongodb').ObjectID;
 
+function verifyToken(req, res, next) {
+    if(!req.headers.authorization) {
+        return res.status(401).send('Unauthorized request');
+    }
+    let token = req.headers.authorization.split(' ')[1];
+    console.log("Token from Angular UI ", token)
+    if(token === 'null') {
+        return res.status(401).send('Unauthorized request');
+    }
+    req.userId = token;
+    next()
+}
 
-router.get('/device/all', (req, res) => {
+router.get('/device/all', verifyToken, (req, res) => {
     deviceModel.find({})
         .then(data => res.status(200).json({ "data": data }))
         .catch(err => console.log(err))

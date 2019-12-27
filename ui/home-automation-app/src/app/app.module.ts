@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -47,6 +47,7 @@ import { DeviceService } from './services/fragments_services/device.service';
 import { AuthService } from './services/auth-services/auth.service';
 import { LocationService } from './services/location.service';
 import { WifiService } from './services/machine-service/wifi.service';
+import { TokenInterceptorService } from './services/auth-services/token-interceptor.service';
 
 // Modal Import 
 import { CreateRoutineModal } from './featured-component/routine/routine.component';
@@ -129,7 +130,15 @@ const matModules = [MatSnackBarModule, MatSidenavModule, MatPaginatorModule, Mat
     FileUploadModule,
     ...matModules // Mat Modules
   ],
-  providers: [AuthService, DeviceService, LocationService, WifiService],
+  providers: [
+    AuthService, 
+    DeviceService, 
+    LocationService, 
+    WifiService, 
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){}
+}
