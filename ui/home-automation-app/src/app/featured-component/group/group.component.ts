@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ElementRef, ViewChild } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DeviceService } from '../../services/fragments_services/device.service';
 
@@ -16,8 +16,21 @@ export class GroupComponent implements OnInit {
   searchStatus: boolean = false;
   constructor(public dialog: MatDialog, public deviceService: DeviceService) { }
 
-  search(){
-      this.searchStatus = !this.searchStatus;       
+  @ViewChild("searchBox", {static: false}) searchElement: ElementRef;
+  
+  searching(text: string) {
+    console.log("Search Logic here", text)
+  }
+
+  searchEventHandler(){
+    this.searchStatus = !this.searchStatus;   
+    let searchedText:string = this.searchElement.nativeElement.value.trim();
+    setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
+    if(searchedText.length > 0) {
+      this.searchStatus = true;   
+      setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
+      this.searching(searchedText);
+    } 
   }
 
   ngOnInit() {

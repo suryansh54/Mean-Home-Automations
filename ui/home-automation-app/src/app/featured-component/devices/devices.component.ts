@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { DeviceService } from '../../services/fragments_services/device.service'
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -14,8 +14,21 @@ export class DevicesComponent implements OnInit {
   searchStatus: boolean = false;
   constructor(private device: DeviceService, private router: Router) { }
 
-  search(){
-      this.searchStatus = !this.searchStatus;       
+  @ViewChild("searchBox", {static: false}) searchElement: ElementRef;
+  
+  searching(text: string) {
+    console.log("Search Logic here", text)
+  }
+
+  searchEventHandler(){
+    this.searchStatus = !this.searchStatus;   
+    let searchedText:string = this.searchElement.nativeElement.value.trim();
+    setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
+    if(searchedText.length > 0) {
+      this.searchStatus = true;   
+      setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
+      this.searching(searchedText);
+    } 
   }
   
   deviceLoader: boolean = true;

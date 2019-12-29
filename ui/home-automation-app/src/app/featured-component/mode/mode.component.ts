@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject, ElementRef } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
@@ -37,15 +37,28 @@ export class ModeComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild("searchBox", {static: false}) searchElement: ElementRef;
+  
+  searching(text: string) {
+    this.dataSource.filter = text.trim().toLowerCase();
+  }
+
+  searchEventHandler(){
+    this.searchStatus = !this.searchStatus;   
+    let searchedText:string = this.searchElement.nativeElement.value.trim();
+    setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
+    if(searchedText.length > 0) {
+      this.searchStatus = true;   
+      setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
+      this.searching(searchedText);
+    } 
+  }
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 
   search() {
     this.searchStatus = !this.searchStatus;

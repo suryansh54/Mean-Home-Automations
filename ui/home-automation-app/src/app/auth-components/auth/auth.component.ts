@@ -12,9 +12,9 @@ export class AuthComponent implements OnInit {
   constructor(public router: Router) { }
 
   signUpForm = new FormGroup({
-    name: new FormControl(''),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
   loginForm = new FormGroup({

@@ -1,24 +1,23 @@
 <div class="custom-login-signup">
-    <div class="auth-bg" style="background-image:url('../../../assets/auth_bg.png')"></div>
     <div class="custom-container-fluid">
         <div class="custom-row">
             <div class="custom-col">
                 <div class="sign-up">
-                    <h1>Sign Up</h1>
-                    <h4 class="sub-heading">New user signup here!</h4>
-                    <form class="form" [formGroup]="signUpForm">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Name" required autocomplete="off"  formControlName="name">
-                        </mat-form-field>
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Email" required autocomplete="off"  formControlName="email">
-                        </mat-form-field>
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Password" type="password" required autocomplete="off"  formControlName="password">
-                            <mat-hint align="end">Password should be greater than 6 in length</mat-hint>
-                        </mat-form-field>
-                        <div class="button-wrapper">
-                            <button mat-raised-button color="primary" (click)="signup()" [disabled]="!signUpForm.valid">Sign up</button>
+                    <h1>Signup</h1>
+                    <h4 class="sub-heading">New user login</h4>
+                    <form class="form custom-signup-form" [formGroup]="signUpForm">
+                        <div class="oauth">
+                            <a class="button button--social-login button--facebook" href="#"><i class="fab fa-facebook-f"></i>Signup With Facebook</a>
+                            <a class="button button--social-login button--google" href="#"><i class="fab fa-google"></i>Signup With Google</a>
+                        </div>
+                        <div class="custom-or">OR</div>
+                        <div class="input-form-wrapper">
+                            <input placeholder="Email" required autocomplete="off" formControlName="email">
+                            <input placeholder="Password" type="password" required autocomplete="off" formControlName="password">
+                            <input placeholder="Confirm Password" type="password" required autocomplete="off" formControlName="confirmPassword">
+                        </div>
+                        <div class="button-wrapper no-top-gap">
+                            <button class="signup-btn" mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Signup</button>
                         </div>
                     </form>
                 </div>
@@ -30,16 +29,21 @@
                 <div class="login">
                     <h1>Login</h1>
                     <h4 class="sub-heading">Existing user login</h4>
-                    <form class="form" [formGroup]="loginForm">
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Email" required autocomplete="off"  formControlName="email">
-                        </mat-form-field>
-                        <mat-form-field class="full-width">
-                            <input matInput placeholder="Password" type="password" required autocomplete="off"  formControlName="password">
-                            <mat-hint align="end">Password should be greater than 6 in length</mat-hint>
-                        </mat-form-field>
-                        <div class="button-wrapper">
-                            <button mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+                    <form class="form custom-login-form" [formGroup]="loginForm">
+                        <div class="oauth">
+                            <a class="button button--social-login button--facebook" href="#"><i class="fab fa-facebook-f"></i>Login With Facebook</a>
+                            <a class="button button--social-login button--google" href="#"><i class="fab fa-google"></i>Login With Google</a>
+                        </div>
+                        <div class="custom-or">OR</div>
+                        <div class="input-form-wrapper">
+                            <input placeholder="Email" required autocomplete="off" formControlName="email">
+                            <input placeholder="Password" type="password" required autocomplete="off" formControlName="password">
+                        </div>
+                        <div class="custom-forget-wrapper no-top-gap">
+                            <a class="custom-forget-password">Forget Password?</a>
+                        </div>
+                        <div class="button-wrapper no-top-gap">
+                            <button class="login-btn" mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
                         </div>
                     </form>
                 </div>
