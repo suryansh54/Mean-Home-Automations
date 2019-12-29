@@ -7,6 +7,19 @@
 	margin-top: 10px;
 	button {
 		font-size: 16px;
+		i {
+			display: none;
+			position: relative;
+			top: -2px;
+			margin-right: 10px;
+		}
+	}
+	.loading {
+		i {
+			display: inline-block;
+			animation: spin .7s infinite linear;
+			-webkit-animation: spin .7s infinite linear;
+		}
 	}
 }
 
@@ -37,6 +50,7 @@
 			float: left;
 			height: 100vh;
 			padding: 0;
+			overflow: auto;
 			h1 {
 				font-weight: 100;
 				margin-bottom: 0;
@@ -48,7 +62,7 @@
 				color: #868686;
 			}
 			.login {
-				padding: 200px 60px 20px;
+				padding: 130px 60px 20px;
 				.login-btn {
 					background-image: linear-gradient(to right, #eb3449, #ee3f47, #f04946, #f25244, #f45b43);
 					color: #fff;
@@ -139,7 +153,24 @@
 	}
 }
 
-
+.custom-icons-bg {
+    position: fixed;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+    width: 100vw;
+	height: 100vh;
+	span {
+		font-size: 300px;
+	}
+	.custom-home {
+		position: absolute;
+		color: #fff;
+		bottom: 0;
+		left: 30%;
+		opacity: 0.1;
+	}
+}
 
 .custom-login-signup {
 	height: 100vh;

@@ -16,6 +16,8 @@ export interface DialogData {
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
+  loginLoading: boolean = false;
+  signupLoading: boolean = false;
 
   constructor(public router: Router, public dialog: MatDialog, private auth: AuthService, private _snackBar: MatSnackBar) { }
 
@@ -49,31 +51,39 @@ export class AuthComponent implements OnInit {
   token(email: string, password: string) {
     this.auth.token(email, password).subscribe((data: any) => {
       sessionStorage.setItem('token', data.token);
+      this.loginLoading = false;
+      this.signupLoading = false;
       if (sessionStorage.getItem('token')) {
         this.router.navigateByUrl('/')
       }
     }, error => {
+      this.loginLoading = false;
+      this.signupLoading = false;
       if (error.status === 400) {
         this.openSnackbar(error.error.message, "Close", 5000)
       }
     })
   }
-  
+
   login() {
+    this.loginLoading = true;
     let email = this.loginForm.value.email;
     let password = this.loginForm.value.password;
     this.token(email, password);
   }
 
   signup() {
+    this.signupLoading = true;
     let email = this.signUpForm.value.email;
     let password = this.signUpForm.value.password;
     this.auth.signUp(email, password).subscribe((data: any) => {
+      this.signupLoading = false;
       if (data.user) {
         this.openSnackbar("Welcome! You are successfully registered", "Close", 5000)
         this.token(email, password);
       }
     }, error => {
+      this.signupLoading = false;
       if (error.status === 400) {
         this.openSnackbar(error.error.message, "Close", 5000)
       }

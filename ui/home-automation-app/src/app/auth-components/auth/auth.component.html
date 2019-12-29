@@ -1,4 +1,7 @@
 <div class="custom-login-signup">
+    <div class="custom-icons-bg">
+        <span class="custom-home"><i class="fas fa-home"></i></span>
+    </div>
     <div class="custom-container-fluid">
         <div class="custom-row">
             <div class="custom-col">
@@ -7,8 +10,8 @@
                     <h4 class="sub-heading">New user login</h4>
                     <form class="form custom-signup-form" [formGroup]="signUpForm">
                         <div class="oauth">
-                            <a class="button button--social-login button--facebook" href="#"><i class="fab fa-facebook-f"></i>Signup With Facebook</a>
-                            <a class="button button--social-login button--google" href="#"><i class="fab fa-google"></i>Signup With Google</a>
+                            <a class="button button--social-login button--facebook" href="javascript:;"><i class="fab fa-facebook-f"></i>Signup With Facebook</a>
+                            <a class="button button--social-login button--google" href="javascript:;"><i class="fab fa-google"></i>Signup With Google</a>
                         </div>
                         <div class="custom-or">OR</div>
                         <div class="input-form-wrapper">
@@ -17,7 +20,7 @@
                             <input placeholder="Confirm Password" type="password" required autocomplete="off" formControlName="confirmPassword">
                         </div>
                         <div class="button-wrapper no-top-gap">
-                            <button class="signup-btn" mat-raised-button color="primary" (click)="signup()" [disabled]="!signUpForm.valid">Signup</button>
+                            <button [ngClass]="{'loading': signupLoading }" class="signup-btn" mat-raised-button color="primary" (click)="signup()" [disabled]="!signUpForm.valid"><i class="fas fa-circle-notch"></i>Signup</button>
                         </div>
                     </form>
                 </div>
@@ -27,12 +30,32 @@
                     <span>Home Automation App</span>
                 </div>
                 <div class="login">
+                    <div class="avatar avatar--pinkish">
+                        <div class="avatar-body body--violet">
+                          <div class="avatar-eye avatar-eye--magenta eye--left">
+                            <div class="avatar-eye-pupil pupil--purple">
+                              <span class="avatar-eye-pupil-blackThing">
+                                <span class="avatar-eye-pupil-lightReflection"></span>
+                              </span>
+                            </div>        
+                          </div>
+                          <div class="avatar-eye avatar-eye--magenta eye--right">
+                            <div class="avatar-eye-pupil pupil--purple">
+                              <span class="avatar-eye-pupil-blackThing">
+                                <span class="avatar-eye-pupil-lightReflection"></span>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="avatar-smile">
+                          </div>
+                        </div>
+                      </div>
                     <h1>Login</h1>
                     <h4 class="sub-heading">Existing user login</h4>
                     <form class="form custom-login-form" [formGroup]="loginForm">
                         <div class="oauth">
-                            <a class="button button--social-login button--facebook" href="#"><i class="fab fa-facebook-f"></i>Login With Facebook</a>
-                            <a class="button button--social-login button--google" href="#"><i class="fab fa-google"></i>Login With Google</a>
+                            <a class="button button--social-login button--facebook" href="javascript:;"><i class="fab fa-facebook-f"></i>Login With Facebook</a>
+                            <a class="button button--social-login button--google" href="javascript:;"><i class="fab fa-google"></i>Login With Google</a>
                         </div>
                         <div class="custom-or">OR</div>
                         <div class="input-form-wrapper">
@@ -43,7 +66,7 @@
                             <a class="custom-forget-password" (click)="forgetPasswordDialogEvent()">Forget Password?</a>
                         </div>
                         <div class="button-wrapper no-top-gap">
-                            <button class="login-btn" mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+                            <button [ngClass]="{'loading': loginLoading }" class="login-btn loading" mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid"><i class="fas fa-circle-notch"></i>Login</button>
                         </div>
                     </form>
                 </div>
