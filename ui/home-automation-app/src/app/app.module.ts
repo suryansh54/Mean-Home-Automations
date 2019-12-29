@@ -40,7 +40,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { ForgetPasswordDialog } from './auth-components/auth/auth.component';
 
 // import services
 import { DeviceService } from './services/fragments_services/device.service';
@@ -84,7 +84,7 @@ import { RolesComponent } from './featured-component/profile/role-components/rol
 import { ModeComponent } from './featured-component/mode/mode.component';
 import { RoleComponent } from './featured-component/profile/role-components/roles/role/role.component';
 
-const modals = [CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
+const modals = [ForgetPasswordDialog, CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
 const matModules = [MatSnackBarModule, MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
 
 @NgModule({

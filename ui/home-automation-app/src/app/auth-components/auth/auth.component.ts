@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AuthService } from '../../services/auth-services/auth.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-auth',
@@ -9,7 +17,7 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public dialog: MatDialog, private auth: AuthService, private _snackBar: MatSnackBar) { }
 
   signUpForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -22,13 +30,73 @@ export class AuthComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
 
-  // Validation methods
-
-  login() {
-    sessionStorage.setItem('token','some_jwt_dummy_token');
-    this.router.navigateByUrl('/')
+  openSnackbar(message: string, action: string, duration: number) {
+    this._snackBar.open(message, action, {
+      duration: duration,
+    });
   }
+
+  forgetPasswordDialogEvent(): void {
+    const dialogRef = this.dialog.open(ForgetPasswordDialog, {
+      width: '350px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  token(email: string, password: string) {
+    this.auth.token(email, password).subscribe((data: any) => {
+      sessionStorage.setItem('token', data.token);
+      if (sessionStorage.getItem('token')) {
+        this.router.navigateByUrl('/')
+      }
+    }, error => {
+      if (error.status === 400) {
+        this.openSnackbar(error.error.message, "Close", 5000)
+      }
+    })
+  }
+  
+  login() {
+    let email = this.loginForm.value.email;
+    let password = this.loginForm.value.password;
+    this.token(email, password);
+  }
+
+  signup() {
+    let email = this.signUpForm.value.email;
+    let password = this.signUpForm.value.password;
+    this.auth.signUp(email, password).subscribe((data: any) => {
+      if (data.user) {
+        this.openSnackbar("Welcome! You are successfully registered", "Close", 5000)
+        this.token(email, password);
+      }
+    }, error => {
+      if (error.status === 400) {
+        this.openSnackbar(error.error.message, "Close", 5000)
+      }
+    })
+  }
+
   ngOnInit() {
+  }
+
+}
+
+@Component({
+  selector: 'forget-password-modal',
+  templateUrl: 'modal/forget-password.modal.html',
+})
+export class ForgetPasswordDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<ForgetPasswordDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

@@ -24,7 +24,6 @@ import { RoleComponent } from './featured-component/profile/role-components/role
 
 // Auth Components
 import { AuthComponent } from './auth-components/auth/auth.component';
-import { ForgotPasswordComponent } from './auth-components/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -35,10 +34,6 @@ const routes: Routes = [
   {
     path:'auth',
     component: AuthComponent
-  }, 
-  {
-    path:'forgot-password',
-    component: ForgotPasswordComponent
   }, 
   {
     path:'automation',

@@ -4,6 +4,9 @@ const port = 3200;
 const cors = require('cors');
 const connection = require('./modules/connection');
 const fileUpload = require('./modules/file_upload');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 // Swagger Setup
 const swaggerUi = require('swagger-ui-express');
@@ -30,7 +33,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 // Routing imports
-const authModule = require('./modules/auth');
+const authModule = require('./modules/auth/auth');
 const osModule = require('./modules/os');
 const deviceModule = require('./modules/device/device');
 const wifi = require('./modules/wifi_scan');

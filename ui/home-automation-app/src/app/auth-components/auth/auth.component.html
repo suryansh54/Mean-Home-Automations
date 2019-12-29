@@ -17,7 +17,7 @@
                             <input placeholder="Confirm Password" type="password" required autocomplete="off" formControlName="confirmPassword">
                         </div>
                         <div class="button-wrapper no-top-gap">
-                            <button class="signup-btn" mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Signup</button>
+                            <button class="signup-btn" mat-raised-button color="primary" (click)="signup()" [disabled]="!signUpForm.valid">Signup</button>
                         </div>
                     </form>
                 </div>
@@ -40,7 +40,7 @@
                             <input placeholder="Password" type="password" required autocomplete="off" formControlName="password">
                         </div>
                         <div class="custom-forget-wrapper no-top-gap">
-                            <a class="custom-forget-password">Forget Password?</a>
+                            <a class="custom-forget-password" (click)="forgetPasswordDialogEvent()">Forget Password?</a>
                         </div>
                         <div class="button-wrapper no-top-gap">
                             <button class="login-btn" mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
