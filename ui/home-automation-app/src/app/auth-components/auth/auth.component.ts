@@ -91,6 +91,7 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.auth.isLoggedIn()
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { LocationService } from '../../services/location.service'
+import { LocationService } from '../../services/machine-service/location.service'
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload';
 import { FormBuilder, FormGroup, FormArray, AbstractControl } from '@angular/forms';
@@ -17,6 +17,7 @@ export interface DialogData {
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
+
 export class ProfileComponent implements OnInit {
   constructor(private location: LocationService, public dialog: MatDialog, private fb: FormBuilder) {
     this.userForm = this.fb.group({

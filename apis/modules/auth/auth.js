@@ -3,7 +3,7 @@ const router = express.Router()
 const jwt = require('jsonwebtoken');
 const User = require('./auth.modal');
 const bcrypt = require('bcryptjs');
-// const verifyToken = require('../verifyToken');
+const verifyToken = require('../verifyToken');
 
 
 router.post('/token', async (req, res) => {
@@ -27,7 +27,20 @@ router.post('/token', async (req, res) => {
             )
         } else {
             // Creating JWT tokens if user exists
-            const token = jwt.sign({ _id: user._id }, 'Dummy Secret');
+            const i = 'Suryansh Corp';
+            const s = 'suryanshsrivastava8791@gmail.com';
+            const a = 'www.example.com';
+
+            const signOptions = {
+                issuer: i,
+                subject: s,
+                audience: a,
+                expiresIn: "12h",
+                algorithm:  "HS256"
+            };
+
+            const payload = { _id: user._id };
+            const token = jwt.sign(payload, process.env.PRIVATE_KEY, signOptions);
             res.header('auth-token', token).status(200).json(
                 {
                     token: token,
@@ -71,12 +84,15 @@ router.post('/register', async (req, res) => {
 })
 
 // Secure Routes
-router.get('/user/self', async (req, res) => {
-    let token = req.headers.authorization;
-    if(token) {
-        const idFromToken = jwt.verify(token, process.env.SECRET_CODE)
-        const user = await User.findOne({ _id: idFromToken._id });
-        res.send({ user: user });
+router.get('/user/self', verifyToken, async (req, res) => {
+    let userId = req.userId;
+    if (userId) {
+        const user = await User.findOne({ _id: userId });
+        if (user) {
+            res.send({ user: user });
+        } else {
+            res.send({ error: "Unable to send user details" });
+        }
     }
 })
 

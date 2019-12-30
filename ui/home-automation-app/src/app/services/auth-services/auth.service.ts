@@ -32,4 +32,14 @@ export class AuthService {
     this.router.navigateByUrl('/auth');
   }
 
+  self(){
+    return this.http.get(environment.apiUrl+"/api/user/self");
+  }
+
+  isLoggedIn() {
+    if (sessionStorage.getItem('token')) {
+      this.router.navigateByUrl('/')
+      return true;
+    }
+  }
 }

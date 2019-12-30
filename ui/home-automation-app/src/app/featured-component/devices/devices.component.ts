@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { DeviceService } from '../../services/fragments_services/device.service'
+import { DeviceService } from '../../services/featured-services/device/device.service'
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -9,7 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./devices.component.scss']
 })
 export class DevicesComponent implements OnInit {
-  devices: any;
+  devices: Array<Object>;
   totalDevice: number;
   searchStatus: boolean = false;
   constructor(private device: DeviceService, private router: Router) { }

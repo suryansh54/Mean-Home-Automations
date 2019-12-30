@@ -39,6 +39,7 @@ const deviceModule = require('./modules/device/device');
 const wifi = require('./modules/wifi_scan');
 const dynamicCrud = require('./modules/dynamic-crud/crud_routes');
 const device = require('./modules/device/device');
+const role = require('./modules/role/role');
 
 app.use('/v1/api', authModule);
 app.use('/v1/api', osModule);
@@ -47,7 +48,7 @@ app.use('/v1/api', wifi);
 app.use('/v1/api', dynamicCrud);
 app.use('/v1/api', device);
 app.use('/v1/api', fileUpload);
-
+app.use('/v1/api', role);
 
 app.listen(port, () => console.log(`Your server is runs into the port ${port}`)); // Creates a server
 

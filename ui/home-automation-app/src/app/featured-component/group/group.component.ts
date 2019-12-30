@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject, ElementRef, ViewChild } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DeviceService } from '../../services/fragments_services/device.service';
+import { DeviceService } from '../../services/featured-services/device/device.service';
 
 export interface DialogData {
   animal: string;

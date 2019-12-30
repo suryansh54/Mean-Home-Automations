@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { DeviceService } from '../../../../services/fragments_services/device.service';
+import { DeviceService } from '../../../../services/featured-services/device/device.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 

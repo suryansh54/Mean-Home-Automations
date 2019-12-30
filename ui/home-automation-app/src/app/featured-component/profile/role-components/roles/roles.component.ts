@@ -3,15 +3,11 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { RoleService } from '../../../../services/featured-services/role/role.service';
+import { IRole, IRoles } from '../../../../interfaces/role.interface';
 
-export interface Roles {
-  id: string,
-  name: string,
-  resources: string,
-  status: number
-}
 
-const ELEMENT_DATA: Roles[] = [
+/* const ELEMENT_DATA: IRoles[] = [
   { id: 'X6YGH8', name: 'Security guard Gate 01', resources: '5 Devices, 3 Camera, 1 Lock', status: 1 },
   { id: 'X6YGH8', name: 'Security guard Gate 02', resources: '5 Devices, 3 Camera, 1 Lock', status: 0 },
   { id: 'X6YGH8', name: 'Security guard Gate 03', resources: '5 Devices, 3 Camera, 1 Lock', status: 1 },
@@ -22,7 +18,7 @@ const ELEMENT_DATA: Roles[] = [
   { id: 'X6YGH8', name: 'Guest room 04', resources: '5 Devices, 3 Camera, 1 Lock', status: 1 },
   { id: 'X6YGH8', name: 'Guest room 05', resources: '5 Devices, 3 Camera, 1 Lock', status: 1 },
   { id: 'X6YGH8', name: 'Guest room 06', resources: '5 Devices, 3 Camera, 1 Lock', status: 1 }
-];
+]; */
 
 export interface DialogData {
   animal: string;
@@ -37,32 +33,44 @@ export interface DialogData {
 export class RolesComponent implements OnInit {
   searchStatus: boolean = false;
   checked: boolean = false;
-  constructor(public dialog: MatDialog) { }
+  roles: IRoles[];
+
+  constructor(public dialog: MatDialog, private roleData: RoleService) { }
   displayedColumns = ['name', 'resources', 'status', 'edit', 'delete'];
-  public dataSource = new MatTableDataSource<Roles>(ELEMENT_DATA);
+  public roleSource: any;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  @ViewChild("searchBox", {static: false}) searchElement: ElementRef;
-  
-  searching(text: string) {
-    this.dataSource.filter = text.trim().toLowerCase();
+  @ViewChild("searchBox", { static: false }) searchElement: ElementRef;
+
+  listRole() {
+    this.roleData.roleList().subscribe((roles: IRoles[]) => {
+      this.roles = roles['data'];
+      this.roleSource = new MatTableDataSource<IRoles>(this.roles)
+      this.roleSource.paginator = this.paginator;
+      this.roleSource.sort = this.sort;
+    }, error => {
+
+    })
   }
 
-  searchEventHandler(){
-    this.searchStatus = !this.searchStatus;   
-    let searchedText:string = this.searchElement.nativeElement.value.trim();
-    setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
-    if(searchedText.length > 0) {
-      this.searchStatus = true;   
-      setTimeout(()=>{this.searchElement.nativeElement.focus()}, 100)
+  searching(text: string) {
+    this.roleSource.filter = text.trim().toLowerCase();
+  }
+
+  searchEventHandler() {
+    this.searchStatus = !this.searchStatus;
+    let searchedText: string = this.searchElement.nativeElement.value.trim();
+    setTimeout(() => { this.searchElement.nativeElement.focus() }, 100)
+    if (searchedText.length > 0) {
+      this.searchStatus = true;
+      setTimeout(() => { this.searchElement.nativeElement.focus() }, 100)
       this.searching(searchedText);
-    } 
+    }
   }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.listRole()
   }
 
   createRole(): void {
@@ -71,7 +79,7 @@ export class RolesComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      this.listRole();
     });
   }
 
@@ -97,15 +105,22 @@ export class CreateRoleModal {
 
   constructor(
     public dialogRef: MatDialogRef<CreateRoleModal>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private roleData: RoleService) { }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   addRole(roleName: string) {
-    if(roleName) {
-      this.dialogRef.close();
+    let roleObj: IRole = { name: roleName };
+    if (roleObj) {
+      this.roleData.createRole(roleObj).subscribe(data => {
+        console.log(data);
+        this.dialogRef.close();
+      }, error => {
+
+      })
     } else {
       alert('Value required');
     }
@@ -121,7 +136,7 @@ export class DeleteRoleModal {
 
   constructor(
     public dialogRef: MatDialogRef<DeleteRoleModal>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   onNoClick(): void {
     this.dialogRef.close();

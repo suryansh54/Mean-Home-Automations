@@ -22,11 +22,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="custom-table-wrapper">
-                    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                    <table mat-table [dataSource]="roleSource" matSort class="mat-elevation-z8">
                         <ng-container matColumnDef="name">
                             <th mat-sort-header mat-header-cell *matHeaderCellDef class="table-col-01"> Role Name </th>
                             <td mat-cell *matCellDef="let role"> <a class="role-link"
-                                    routerLink="/role/{{role.id}}/0">{{role.name}}</a> </td>
+                                    routerLink="/role/{{role._id}}/0">{{role.RoleName}}</a> </td>
                         </ng-container>
 
                         <ng-container matColumnDef="resources">
@@ -38,7 +38,7 @@
                                         <li><a matRipple matTooltip="5 Devices" matTooltipPosition="above" class="device">5D</a></li>
                                         <li><a matRipple matTooltip="2 Camera" matTooltipPosition="above"class="camera">2C</a></li>
                                         <li><a matRipple matTooltip="2 Sensors" matTooltipPosition="above"class="sensor">2S</a></li>
-                                        <li><a routerLink="/role/{{role.id}}/1" matRipple matTooltip="Add Resources" matTooltipPosition="above"class="add-resources"><i class="fas fa-plus"></i></a></li>
+                                        <li><a routerLink="/role/{{role._id}}/1" matRipple matTooltip="Add Resources" matTooltipPosition="above"class="add-resources"><i class="fas fa-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </td>

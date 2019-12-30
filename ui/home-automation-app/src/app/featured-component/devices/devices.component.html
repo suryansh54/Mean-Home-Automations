@@ -79,8 +79,7 @@
                                             routerLink="/device/{{device._id}}">{{device.DeviceName}}</a>
                                     </div>
                                     <div class="group">{{device.DeviceGroup}}</div>
-                                    <div
-                                        [ngClass]="{'online': device.DeviceCurrentStatus==1, 'offline':device.DeviceCurrentStatus==0 }">
+                                    <div [ngClass]="{'online': device.DeviceCurrentStatus==1, 'offline':device.DeviceCurrentStatus==0 }">
                                         <b
                                             class="device-status">{{ device.DeviceCurrentStatus == 1 ? 'Online' : 'Offline' }}</b>
                                     </div>
@@ -92,6 +91,9 @@
                         </div>
                     </mat-card>
                 </div>
+            </div>
+            <div class="no-device-found" *ngIf="devices?.length == 0">
+                <h2>No Device found</h2>
             </div>
         </div>
     </div>

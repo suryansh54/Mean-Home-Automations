@@ -3,27 +3,24 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const deviceModel = require('./device.model');
 const ObjectID = require('mongodb').ObjectID;
+const verifyToken = require('../verifyToken');
 
-function verifyToken(req, res, next) {
-    if(!req.headers.authorization) {
-        return res.status(401).send('Unauthorized request');
-    }
-    let token = req.headers.authorization.split(' ')[1];
-    console.log("Token from Angular UI ", token)
-    if(token === 'null') {
-        return res.status(401).send('Unauthorized request');
-    }
-    req.userId = token; // Not ready for production Yet
-    next()
-}
-
-router.get('/device/all', verifyToken, (req, res) => {
+/* router.get('/device/all', verifyToken, (req, res) => {
     deviceModel.find({})
         .then(data => res.status(200).json({ "data": data }))
         .catch(err => console.log(err))
+}); */
+
+router.get('/device/all', verifyToken, (req, res) => {
+    const UserID = req.userId;
+    if (UserID) {
+        deviceModel.find({ UserID: UserID })
+        .then(data => res.status(200).json({ "data": data }))
+        .catch(err => console.log(err))
+    }
 });
 
-router.get('/device/:id', (req, res) => {
+router.get('/device/:id', verifyToken, (req, res) => {
     const id = new ObjectID(req.params.id);
     if (mongoose.Types.ObjectId.isValid(id)) {
         deviceModel.findOne({ _id: id })
@@ -32,7 +29,8 @@ router.get('/device/:id', (req, res) => {
     }
 });
 
-router.post('/device', (req, res) => {
+router.post('/device', verifyToken, (req, res) => {
+    let UserID = req.userId;
     let DeviceName = req.body.DeviceName
     let DeviceGroup = req.body.DeviceGroup
     let DeviceType = req.body.DeviceType
@@ -44,6 +42,7 @@ router.post('/device', (req, res) => {
     let DeviceSetting = req.body.DeviceSetting
     let DeviceCurrentStatus = req.body.DeviceCurrentStatus
     deviceModel.collection.insertOne({ 
+        UserID: UserID,
         DeviceName: DeviceName,
         DeviceGroup: DeviceGroup,
         DeviceType: DeviceType,
@@ -57,8 +56,7 @@ router.post('/device', (req, res) => {
     }).then(data => res.status(200).json({ "data": "Device created successfully" })).catch(err => console.log(err))
 });
 
-// https://stackoverflow.com/questions/39102845/my-document-is-not-getting-deleted-in-mongodb-in-nodejs
-router.delete('/device/:id', function (req, res) {
+router.delete('/device/:id', verifyToken, function (req, res) {
     const id = new ObjectID(req.params.id);
     if (mongoose.Types.ObjectId.isValid(id)) {
         deviceModel.collection.deleteOne({ _id: id })
@@ -67,7 +65,7 @@ router.delete('/device/:id', function (req, res) {
     }
 });
 
-router.patch('/device', function (req, res) {
+router.patch('/device', verifyToken, function (req, res) {
     const id = new ObjectID(req.body.id);
     let DeviceName = req.body.DeviceName
     let DeviceGroup = req.body.DeviceGroup
@@ -108,4 +106,3 @@ router.patch('/device', function (req, res) {
 });
 
 module.exports = router;
-

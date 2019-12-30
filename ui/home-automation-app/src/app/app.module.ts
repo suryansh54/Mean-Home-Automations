@@ -43,11 +43,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ForgetPasswordDialog } from './auth-components/auth/auth.component';
 
 // import services
-import { DeviceService } from './services/fragments_services/device.service';
+import { DeviceService } from './services/featured-services/device/device.service';
 import { AuthService } from './services/auth-services/auth.service';
-import { LocationService } from './services/location.service';
+import { LocationService } from './services/machine-service/location.service';
 import { WifiService } from './services/machine-service/wifi.service';
 import { TokenInterceptorService } from './services/auth-services/token-interceptor.service';
+import { RoleService } from './services/featured-services/role/role.service';
 
 // Modal Import 
 import { CreateRoutineModal } from './featured-component/routine/routine.component';
@@ -135,6 +136,7 @@ const matModules = [MatSnackBarModule, MatSidenavModule, MatPaginatorModule, Mat
     DeviceService, 
     LocationService, 
     WifiService, 
+    RoleService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent]
