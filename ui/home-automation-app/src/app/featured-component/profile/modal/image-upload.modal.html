@@ -2,12 +2,14 @@
     <div class="modal-heading">Upload profile image</div>
     <div class="modal-body">
         <input hidden type="file" multiple name="photo" ng2FileSelect [uploader]="uploader" (change)="uploader.uploadAll()" #file />
-        <button mat-raised-button color="primary" (click)="file.click()">Upload</button>
         <!-- <h3>Percentage completed: {{percentage}}</h3>
         <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()"
             [disabled]="!uploader.getNotUploadedItems().length">
             Upload an Image
         </button> -->
+    </div>
+    <div class="modal-footer">
+        <button mat-raised-button color="primary" (click)="file.click()">Upload</button>
     </div>
 </div>
 

@@ -5,8 +5,33 @@ const cors = require('cors');
 const connection = require('./modules/connection');
 const fileUpload = require('./modules/file_upload');
 const dotenv = require('dotenv');
-
 dotenv.config();
+// Body Parser
+var bodyParser = require('body-parser')
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+
+/*--------------------Apollo Server Setup----------------|START---------------*/
+const { ApolloServer } = require('apollo-server-express');
+const resolvers = require('./resolvers');
+const typeDefs = require('./typeDefs');
+
+const startServer = async () => {
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers
+  });
+  server.applyMiddleware({ app });
+};
+
+startServer();
+/*--------------------Apollo Server Setup----------------|END---------------*/
+
+
 
 // Swagger Setup
 const swaggerUi = require('swagger-ui-express');
@@ -24,13 +49,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-// Body Parser
-var bodyParser = require('body-parser')
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
 
-// parse application/json
-app.use(bodyParser.json())
 
 // Routing imports
 const authModule = require('./modules/auth/auth');
