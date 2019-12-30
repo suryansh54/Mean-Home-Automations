@@ -21,3 +21,4 @@ Go to the browser and open **http://localhost:4200/**
 - Api's runs in **http://localhost:3200**
 - UI runs in **http://localhost:4200**
 - Swagger (Apis Documentation) runs in **http://localhost:3200/api-docs**
+- Graph QL runs in **http://localhost:3200/graphql**
