@@ -1,11 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const DeviceSetting = new Schema({
-    testSetting: String
-});
 
 const device = new Schema({
+  UserID: String,
   DeviceName:  String,
   DeviceGroup: String,
   DeviceType: String,

@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const mongoConnectionString = 'mongodb+srv://suryansh54:Education54@cluster0-lo8aj.mongodb.net/Test1?retryWrites=true&w=majority';
 
-mongoose.connect(mongoConnectionString, {
+module.exports = mongoose.connect(mongoConnectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -12,5 +12,3 @@ mongoose.connect(mongoConnectionString, {
 }).catch(err => {
     console.log(`db error ${err.message}`);
 });
-
-var Test = require('./dynamic-crud/crud-model/test.model');
