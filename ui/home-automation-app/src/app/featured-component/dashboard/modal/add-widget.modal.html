@@ -1,0 +1,57 @@
+<div class="custom-modal-wrapper">
+    <!-- <div class="modal-heading">Add widget <b>Add Widget to your dashboard.</b></div> -->
+    <div class="modal-body">
+        <div class="custom-add-widgets-area">
+            <div class="custom-add-widgets-sidebar">
+                <div class="add-widget-heading">Add widget</div>
+            </div>
+            <div class="custom-add-widgets-content">
+                <div class="widget-header"></div>
+                <div class="widget-body-content"></div>
+                <div class="widget-action-wrapper">
+                    <button mat-button class="cancel" (click)="onNoClick()">Cancel</button>
+                    <button mat-button color="primary" class="action-btn normal">Install</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal-footer">
+        
+    </div> -->
+</div>
+
+<style>
+.custom-add-widgets-area {
+    margin: -5px -20px;
+    overflow: hidden;
+    height: 450px;
+}
+
+.custom-add-widgets-area .custom-add-widgets-sidebar {
+    width: 200px;
+    background: #e2e2e2;
+    padding: 10px;
+    float: left;
+    height: 100%;
+}
+
+.custom-add-widgets-area .custom-add-widgets-content {
+    float: right;
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
+.custom-add-widgets-area .add-widget-heading {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.custom-add-widgets-area .widget-body-content {
+    height: 390px;
+}
+
+.custom-add-widgets-area .widget-action-wrapper {
+    text-align: right;
+    padding: 10px;
+}
+</style>

@@ -64,6 +64,7 @@ import { DeleteRoleModal } from './featured-component/profile/role-components/ro
 import { CreateModeModal } from './featured-component/mode/mode.component';
 import { DeleteModeModal } from './featured-component/mode/mode.component';
 import { ForgetPasswordDialog } from './auth-components/auth/auth.component';
+import { AddWidgetDialog } from './featured-component/dashboard/dashboard.component';
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -87,7 +88,7 @@ import { RolesComponent } from './featured-component/profile/role-components/rol
 import { ModeComponent } from './featured-component/mode/mode.component';
 import { RoleComponent } from './featured-component/profile/role-components/roles/role/role.component';
 
-const modals = [ForgetPasswordDialog, CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
+const modals = [AddWidgetDialog, ForgetPasswordDialog, CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
 const matModules = [MatDividerModule, MatMenuModule, MatSnackBarModule, MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
 
 @NgModule({

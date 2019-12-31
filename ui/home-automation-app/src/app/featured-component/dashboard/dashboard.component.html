@@ -4,22 +4,24 @@
             <div class="custom-tab-wrapper custom-dashboard-wrapper">
                 <mat-tab-group>
                     <mat-tab label="Dashboard">
-                        <div class="container">
+                        <div class="container" id="dashboard-wrapper">
                             <div class="row">
                                 <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
                                     <mat-card>
                                         <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Total Device</span></div>
+                                            <div class="dashboard-item-heading"><span class="text">Total Device</span>
+                                            </div>
                                             <div class="dashboard-item-body">
                                                 <span class="total-count">5<b>Devices</b></span>
                                             </div>
                                         </div>
                                     </mat-card>
                                 </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
+                                <div class="col-lg-8 col-sm-6 col-md-6 col-xs-1 col-xl-8">
                                     <mat-card>
                                         <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Recent history</span></div>
+                                            <div class="dashboard-item-heading"><span class="text">Recent history</span>
+                                            </div>
                                         </div>
                                     </mat-card>
                                 </div>
@@ -40,14 +42,16 @@
                                 <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
                                     <mat-card>
                                         <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Important Links</span></div>
+                                            <div class="dashboard-item-heading"><span class="text">Important
+                                                    Links</span></div>
                                         </div>
                                     </mat-card>
                                 </div>
                                 <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
                                     <mat-card>
                                         <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Electricity Used</span></div>
+                                            <div class="dashboard-item-heading"><span class="text">Electricity
+                                                    Used</span></div>
                                         </div>
                                     </mat-card>
                                 </div>
@@ -61,9 +65,24 @@
                                 <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
                                     <mat-card>
                                         <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Active Device</span></div>
+                                            <div class="dashboard-item-heading"><span class="text">Active Device</span>
+                                            </div>
                                             <div class="dashboard-item-body">
                                                 <span class="total-count">8<b>Devices</b></span>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
+                                    <mat-card>
+                                        <div class="dashboard-item" (click)="addWidgetDialogEvent()" tabindex="0" matRipple class="add-widgets-section">
+                                            <div class="dashboard-item-body">
+                                                <div class="custom-add-widgets">
+                                                    <div class="add-widget-icon"><i class="fas fa-plus"></i></div>
+                                                    <div class="add-widget-text">
+                                                        <h4>Add widgets</h4>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </mat-card>

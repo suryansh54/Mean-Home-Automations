@@ -84,6 +84,13 @@ mat-slide-toggle.small.mat-checked {
 .mat-divider {
     border-top-color: rgba(0,0,0,.05);
 }
+
+#dashboard-wrapper {
+    .mat-card {
+        padding: 0 !important;
+    }
+}
+
 /*----------------Material Custom Badges-----------------------|END-----------*/
 
 /*----------------------Custom Dropdown Style----------|START--------------*/
