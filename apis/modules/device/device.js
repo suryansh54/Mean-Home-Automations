@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const deviceModel = require('./device.model');
 const ObjectID = require('mongodb').ObjectID;
-const verifyToken = require('../verifyToken');
+const verifyToken = require('../auth/verifyToken');
 
 /* router.get('/device/all', verifyToken, (req, res) => {
     deviceModel.find({})

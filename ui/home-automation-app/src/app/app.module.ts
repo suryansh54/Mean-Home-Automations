@@ -40,7 +40,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { ForgetPasswordDialog } from './auth-components/auth/auth.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 
 // import services
 import { DeviceService } from './services/featured-services/device/device.service';
@@ -62,6 +63,7 @@ import { CreateRoleModal } from './featured-component/profile/role-components/ro
 import { DeleteRoleModal } from './featured-component/profile/role-components/roles/roles.component';
 import { CreateModeModal } from './featured-component/mode/mode.component';
 import { DeleteModeModal } from './featured-component/mode/mode.component';
+import { ForgetPasswordDialog } from './auth-components/auth/auth.component';
 
 // Featured Components
 import { DashboardComponent } from './featured-component/dashboard/dashboard.component';
@@ -86,7 +88,7 @@ import { ModeComponent } from './featured-component/mode/mode.component';
 import { RoleComponent } from './featured-component/profile/role-components/roles/role/role.component';
 
 const modals = [ForgetPasswordDialog, CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
-const matModules = [MatSnackBarModule, MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
+const matModules = [MatDividerModule, MatMenuModule, MatSnackBarModule, MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
 
 @NgModule({
   declarations: [

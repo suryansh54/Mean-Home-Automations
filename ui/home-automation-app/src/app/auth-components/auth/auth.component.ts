@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute  } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth-services/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -18,8 +18,11 @@ export interface DialogData {
 export class AuthComponent implements OnInit {
   loginLoading: boolean = false;
   signupLoading: boolean = false;
+  model: any = {};
+  loading = false;
+  returnUrl: string;
 
-  constructor(public router: Router, public dialog: MatDialog, private auth: AuthService, private _snackBar: MatSnackBar) { }
+  constructor(private route: ActivatedRoute,public router: Router, public dialog: MatDialog, private auth: AuthService, private _snackBar: MatSnackBar) { }
 
   signUpForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -54,7 +57,7 @@ export class AuthComponent implements OnInit {
       this.loginLoading = false;
       this.signupLoading = false;
       if (sessionStorage.getItem('token')) {
-        this.router.navigateByUrl('/')
+        this.router.navigateByUrl(this.returnUrl)
       }
     }, error => {
       this.loginLoading = false;
@@ -91,6 +94,7 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     this.auth.isLoggedIn()
   }
 

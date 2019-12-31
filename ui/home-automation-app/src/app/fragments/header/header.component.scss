@@ -62,3 +62,24 @@
 }
 
 
+.custom-header-dropdown-menu {
+    margin: 0;
+    padding-left: 0;
+    min-width: 201px;
+    li {
+        height: auto;
+        line-height: 1.2;
+        padding: 0;
+        a {
+            display: block;
+            text-decoration: none;
+            color: #6f6f6f;
+            font-size: 14px;
+            padding: 10px 20px;
+            .icon {
+                margin-right: 18px;
+                font-size: 16px;
+            }
+        }
+    }
+}

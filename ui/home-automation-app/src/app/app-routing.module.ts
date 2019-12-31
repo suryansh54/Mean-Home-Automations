@@ -37,71 +37,88 @@ const routes: Routes = [
   }, 
   {
     path:'automation',
-    component: AutomationComponent
+    component: AutomationComponent,
+    canActivate: [AuthRoute]
   }, 
   {
     path:'routine',
-    component: RoutineComponent
+    component: RoutineComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'mode',
-    component: ModeComponent
+    component: ModeComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'add-device',
-    component: AddDeviceComponent
+    component: AddDeviceComponent,
+    canActivate: [AuthRoute]
   }, 
   {
     path:'about',
-    component: AboutComponent
+    component: AboutComponent,
+    canActivate: [AuthRoute]
   }, 
   {
     path:'group',
-    component: GroupComponent
+    component: GroupComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'devices',
-    component: DevicesComponent
+    component: DevicesComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'device/:id',
-    component: DeviceComponent
+    component: DeviceComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'device/setting/:id',
-    component: DeviceSettingComponent
+    component: DeviceSettingComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'firmware-update',
-    component: UpdateComponent
+    component: UpdateComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'account-and-security',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'role',
-    component: RolesComponent
+    component: RolesComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'role/:id/:activeTabId',
-    component: RoleComponent
+    component: RoleComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'faq',
-    component: FaqComponent
+    component: FaqComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'feedback',
-    component: FeedbackComponent
+    component: FeedbackComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'setting',
-    component: SettingComponent
+    component: SettingComponent,
+    canActivate: [AuthRoute]
   },
   {
     path:'notification',
-    component: NotificationComponent
+    component: NotificationComponent,
+    canActivate: [AuthRoute]
   }
 ];
 

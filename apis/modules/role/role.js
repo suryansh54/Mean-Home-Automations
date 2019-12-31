@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const roleModel = require('./role.model');
 const ObjectID = require('mongodb').ObjectID;
-const verifyToken = require('../verifyToken');
+const verifyToken = require('../auth/verifyToken');
 
 /* router.get('/role/all', verifyToken, (req, res) => {
     roleModel.find({})

@@ -2,6 +2,7 @@
 
 [tabindex] {
     outline: 0;
+    cursor: pointer;
 }
 /*----------------Animation-----------------------|START-----------*/
 @keyframes spin {
@@ -70,6 +71,20 @@ mat-slide-toggle.small.mat-checked {
     }
 } 
 /*----------------Material Slide toggle override-----------------------|END-----------*/
+
+/*----------------Material Custom Badges-----------------------|START-----------*/
+.custom-badges.mat-badge-medium.mat-badge-above {
+    .mat-badge-content {
+        top: -1px;
+        right: -35px !important;
+        background: #009688;
+        border-radius: 5px;
+    }
+}
+.mat-divider {
+    border-top-color: rgba(0,0,0,.05);
+}
+/*----------------Material Custom Badges-----------------------|END-----------*/
 
 /*----------------------Custom Dropdown Style----------|START--------------*/
 .custom-select-mode {

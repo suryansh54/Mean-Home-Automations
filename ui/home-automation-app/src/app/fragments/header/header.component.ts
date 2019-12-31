@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { AuthService } from '../../services/auth-services/auth.service';
 
 export interface DialogData {
   animal: string;
@@ -14,7 +15,7 @@ export interface DialogData {
 export class HeaderComponent implements OnInit {
   @Input() childMessage: string;
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private auth: AuthService) {
     // console.log("Console from Constructor");
    }
   message: string = "light";
@@ -40,6 +41,10 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  logout() {
+    this.auth.logout()
+  }
+  
 }
 
 
