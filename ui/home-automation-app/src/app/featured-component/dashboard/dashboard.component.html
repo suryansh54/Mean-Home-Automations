@@ -6,8 +6,35 @@
                     <mat-tab-group>
                         <mat-tab label="Dashboard">
                             <div class="container" id="dashboard-wrapper">
+                                <div class="dashboard-always-block">
+                                    <div class="temp-humid-pollution">
+                                        <ul>
+                                            <li>
+                                                <a matRipple href="javascript:;">
+                                                    <div class="icon"><i class="fas fa-thermometer-quarter"></i></div>
+                                                    <div class="text"><b>36 °C</b>Temperature</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a matRipple href="javascript:;">
+                                                    <div class="icon"><i class="fas fa-tint"></i></div>
+                                                    <div class="text"><b>92%</b>Humidity</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a matRipple href="javascript:;">
+                                                    <div class="icon"><i class="fas fa-smog"></i></div>
+                                                    <div class="text"><b>92%</b>Pollution</div>
+                                                </a >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="image-home-banner">
+                                    <span style="background-image:url('./assets/home_1.jpg');"></span>
+                                </div>
                                 <div class="grid-container" style="overflow: hidden;">
-                                    <mat-grid-list cols="9" rowHeight="200px" gutterSize="30px">
+                                    <mat-grid-list cols="9" rowHeight="200px" gutterSize="0px">
                                         <mat-grid-tile *ngFor="let widget of widgets; let i = index;"
                                             [colspan]="widget.cols" [rowspan]="widget.rows">
                                             <cdk-drop-list [cdkDropListConnectedTo]="drops" [cdkDropListData]="i">
@@ -25,7 +52,13 @@
                                                         </span>
                                                     </div>
                                                     <mat-card-content class="dashboard-widget-content">
-
+                                                        <div class="load-wrapp" *ngIf="loading">
+                                                            <div class="load-3">
+                                                                <div class="line"></div>
+                                                                <div class="line"></div>
+                                                                <div class="line"></div>
+                                                            </div>
+                                                        </div>
                                                     </mat-card-content>
                                                 </mat-card>
                                             </cdk-drop-list>

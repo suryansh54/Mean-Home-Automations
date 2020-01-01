@@ -20,10 +20,11 @@ export interface IWidget {
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  loading: boolean = true;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+    setTimeout(() => { this.loading = false },3000);
   }
 
   addWidgetDialogEvent(): void {
@@ -40,6 +41,7 @@ export class DashboardComponent implements OnInit {
   entered($event: CdkDragEnter) {
     console.log($event.item.data, $event.container.data);
     moveItemInArray(this.widgets, $event.item.data, $event.container.data);
+    console.log("New Data",this.widgets);
   }
 
   @ViewChildren(CdkDropList) dropsQuery: QueryList<CdkDropList>;
@@ -56,12 +58,13 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+
   widgets: IWidget[] = [
     { title: 'Total Device', cols: 3, rows: 1, color: '#fff' },
     { title: 'Recent history', cols: 3, rows: 1, color: '#fff' },
     { title: 'Up Time', cols: 3, rows: 1, color: '#fff' },
     { title: 'Camera', cols: 3, rows: 1, color: '#fff' },
-    { title: 'Important Links', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Important Links', cols: 6, rows: 2, color: '#fff' },
     { title: 'Electricity Used', cols: 3, rows: 1, color: '#fff' },
     { title: 'Routine', cols: 3, rows: 1, color: '#fff' },
     { title: 'Active Device', cols: 3, rows: 1, color: '#fff' },
