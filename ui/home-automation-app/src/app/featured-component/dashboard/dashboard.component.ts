@@ -1,9 +1,17 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChildren, QueryList } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CdkDropList, CdkDragDrop, CdkDragEnter, moveItemInArray } from '@angular/cdk/drag-drop';
 
 export interface DialogData {
   animal: string;
   name: string;
+}
+
+export interface IWidget {
+  color: string;
+  cols: number;
+  rows: number;
+  title: string;
 }
 
 @Component({
@@ -28,6 +36,36 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+
+  entered($event: CdkDragEnter) {
+    console.log($event.item.data, $event.container.data);
+    moveItemInArray(this.widgets, $event.item.data, $event.container.data);
+  }
+
+  @ViewChildren(CdkDropList) dropsQuery: QueryList<CdkDropList>;
+
+  drops: CdkDropList[];
+
+  ngAfterViewInit() {
+    this.dropsQuery.changes.subscribe(() => {
+      this.drops = this.dropsQuery.toArray()
+    })
+    Promise.resolve().then(() => {
+      this.drops = this.dropsQuery.toArray();
+      console.log(this.drops);
+    })
+  }
+
+  widgets: IWidget[] = [
+    { title: 'Total Device', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Recent history', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Up Time', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Camera', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Important Links', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Electricity Used', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Routine', cols: 3, rows: 1, color: '#fff' },
+    { title: 'Active Device', cols: 3, rows: 1, color: '#fff' },
+  ];
 }
 
 

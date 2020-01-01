@@ -1,97 +1,54 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="custom-tab-wrapper custom-dashboard-wrapper">
-                <mat-tab-group>
-                    <mat-tab label="Dashboard">
-                        <div class="container" id="dashboard-wrapper">
-                            <div class="row">
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Total Device</span>
-                                            </div>
-                                            <div class="dashboard-item-body">
-                                                <span class="total-count">5<b>Devices</b></span>
-                                            </div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-8 col-sm-6 col-md-6 col-xs-1 col-xl-8">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Recent history</span>
-                                            </div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Up Time</span></div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Camera</span></div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Important
-                                                    Links</span></div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Electricity
-                                                    Used</span></div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Routine</span></div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item">
-                                            <div class="dashboard-item-heading"><span class="text">Active Device</span>
-                                            </div>
-                                            <div class="dashboard-item-body">
-                                                <span class="total-count">8<b>Devices</b></span>
-                                            </div>
-                                        </div>
-                                    </mat-card>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-md-6 col-xs-1 col-xl-4">
-                                    <mat-card>
-                                        <div class="dashboard-item" (click)="addWidgetDialogEvent()" tabindex="0" matRipple class="add-widgets-section">
-                                            <div class="dashboard-item-body">
-                                                <div class="custom-add-widgets">
-                                                    <div class="add-widget-icon"><i class="fas fa-plus"></i></div>
-                                                    <div class="add-widget-text">
-                                                        <h4>Add widgets</h4>
+<div class="drag-area-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="custom-tab-wrapper custom-dashboard-wrapper">
+                    <mat-tab-group>
+                        <mat-tab label="Dashboard">
+                            <div class="container" id="dashboard-wrapper">
+                                <div class="grid-container" style="overflow: hidden;">
+                                    <mat-grid-list cols="9" rowHeight="200px" gutterSize="30px">
+                                        <mat-grid-tile *ngFor="let widget of widgets; let i = index;"
+                                            [colspan]="widget.cols" [rowspan]="widget.rows">
+                                            <cdk-drop-list [cdkDropListConnectedTo]="drops" [cdkDropListData]="i">
+                                                <mat-card cdkDrag (cdkDragEntered)="entered($event)" [cdkDragData]="i"
+                                                    class="dashboard-widget" [style.backgroundColor]="widget.color">
+                                                    <div class="dashboard-item-heading">
+                                                        <span class="text">{{widget.title}}</span>
+                                                        <span class="widget-handle" cdkDragHandle>
+                                                            <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+                                                                </path>
+                                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                            </svg>
+                                                        </span>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-card>
+                                                    <mat-card-content class="dashboard-widget-content">
+
+                                                    </mat-card-content>
+                                                </mat-card>
+                                            </cdk-drop-list>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile colspan="3" rowspan="1">
+                                            <mat-card class="dashboard-widget">
+                                                <mat-card-content class="dashboard-widget-content">
+                                                    <div class="custom-add-widgets" (click)="addWidgetDialogEvent()" tabindex="0">
+                                                        <div class="add-widget-icon"><i class="fas fa-plus"></i></div>
+                                                        <div class="add-widget-text">
+                                                            <h4>Add widgets</h4>
+                                                        </div>
+                                                    </div>
+                                                </mat-card-content>
+                                            </mat-card>
+                                        </mat-grid-tile>
+                                    </mat-grid-list>
                                 </div>
                             </div>
-                        </div>
-                    </mat-tab>
-                    <mat-tab label="Activity">Activity</mat-tab>
-                </mat-tab-group>
+                        </mat-tab>
+                        <mat-tab label="Activity">Activity</mat-tab>
+                    </mat-tab-group>
+                </div>
             </div>
         </div>
     </div>
