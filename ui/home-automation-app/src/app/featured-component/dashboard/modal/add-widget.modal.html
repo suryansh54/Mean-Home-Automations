@@ -4,54 +4,237 @@
         <div class="custom-add-widgets-area">
             <div class="custom-add-widgets-sidebar">
                 <div class="add-widget-heading">Add widget</div>
+                <div class="widget-search-wrapper">
+                    <input type="text" class="widget-search" placeholder="Search" [(ngModel)]="searchWidget">
+                    <button mat-button class="widget-search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="widget-category-wrapper">
+                    <h4>Category</h4>
+                    <ul>
+                        <li><a>All</a></li>
+                        <li><a>Plain data</a></li>
+                        <li><a>Graphs</a></li>
+                        <li><a>Others</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="custom-add-widgets-content">
                 <div class="widget-header"></div>
-                <div class="widget-body-content"></div>
-                <div class="widget-action-wrapper">
+                <div class="widget-body-content">
+                    <div class="custom-widgets-body-wrapper"> 
+                        <h3 class="heading-widget"><span *ngIf="searchWidget">Searching for: </span>{{ searchWidget || "Widgets" }}</h3>
+                    </div>
+                    <div class="body-widget-list">
+                        <ul>
+                            <li>
+                                <div class="widget-item">
+                                    <div class="widget-icon"><img src="./assets/widget.png"></div>
+                                    <div class="widget-description-area">
+                                        <div class="widget-description-heading">Total Devices</div>
+                                        <div class="widget-description"><p>Dummy description about this widgets, shows the total device in your application.</p></div>
+                                        <div class="add-widget-btn"><button mat-button>Add widget</button></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="widget-item">
+                                    <div class="widget-icon"><img src="./assets/widget.png"></div>
+                                    <div class="widget-description-area">
+                                        <div class="widget-description-heading">Total Roles</div>
+                                        <div class="widget-description"><p>Dummy description about this widgets, shows the total device in your application.</p></div>
+                                        <div class="add-widget-btn"><button mat-button>Add widget</button></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="widget-item">
+                                    <div class="widget-icon"><img src="./assets/widget.png"></div>
+                                    <div class="widget-description-area">
+                                        <div class="widget-description-heading">Total Roles</div>
+                                        <div class="widget-description"><p>Dummy description about this widgets, shows the total device in your application.</p></div>
+                                        <div class="add-widget-btn"><button mat-button>Add widget</button></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="widget-item">
+                                    <div class="widget-icon"><img src="./assets/widget.png"></div>
+                                    <div class="widget-description-area">
+                                        <div class="widget-description-heading">Sensors Reading</div>
+                                        <div class="widget-description"><p>Dummy description about this widgets, shows the total device in your application.</p></div>
+                                        <div class="add-widget-btn"><button mat-button>Add widget</button></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="widget-action-wrapper">
                     <button mat-button class="cancel" (click)="onNoClick()">Cancel</button>
                     <button mat-button color="primary" class="action-btn normal">Install</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
-    <!-- <div class="modal-footer">
-        
-    </div> -->
 </div>
 
 <style>
 .custom-add-widgets-area {
     margin: -5px -20px;
     overflow: hidden;
-    height: 450px;
+    height: 500px;
 }
 
 .custom-add-widgets-area .custom-add-widgets-sidebar {
-    width: 200px;
-    background: #e2e2e2;
+    width: 250px;
     padding: 10px;
     float: left;
+    background: #F44336;
+    overflow: auto;
     height: 100%;
+    background-image: linear-gradient(to right, #eb3449, #ee3f47, #f04946, #f25244, #f45b43);
 }
 
 .custom-add-widgets-area .custom-add-widgets-content {
     float: right;
-    width: calc(100% - 200px);
+    width: calc(100% - 250px);
     height: 100%;
 }
 
 .custom-add-widgets-area .add-widget-heading {
-    font-weight: bold;
+    font-weight: 600;
     padding: 10px;
+    color: #fff;
+    font-size: 18px;
 }
 
 .custom-add-widgets-area .widget-body-content {
-    height: 390px;
+    height: 440px;
 }
 
 .custom-add-widgets-area .widget-action-wrapper {
     text-align: right;
     padding: 10px;
 }
+
+.widget-search-wrapper {
+    position: relative;
+    padding: 10px;
+}
+
+.widget-search-wrapper .widget-search {
+    width: 100%;
+    padding: 8px;
+    outline: 0;
+    border: 0;
+    padding-right: 40px;
+    background-color: #FAFAFA;
+}
+
+.widget-search-wrapper .widget-search-btn {
+    position: absolute;
+    right: 10px;
+    padding: 0;
+    line-height: 31px;
+    min-width: 38px;
+    top: 11px;
+    color: #b7b7b7;
+}
+
+.widget-category-wrapper {
+    padding: 10px;
+}
+
+.widget-category-wrapper h4 {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.widget-category-wrapper ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 10px 0;
+}
+
+.widget-category-wrapper ul li {
+    display: block;
+}
+
+.widget-category-wrapper ul li a {
+    font-size: 12px;
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.widget-body-content .custom-widgets-body-wrapper .heading-widget {
+    margin: 0;
+    padding: 20px 20px;
+}
+
+.widget-item {
+    display: block;
+    overflow: hidden;
+}
+
+.widget-item .widget-icon {
+    width: 100px;
+    float: left;
+    padding: 10px;
+}
+
+.widget-item .widget-icon img {
+    width: 100%;
+}
+
+.body-widget-list {
+    overflow: auto;
+    height: calc(100% - 5px);
+}
+
+.body-widget-list ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+.body-widget-list ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.widget-item .widget-description-area {
+    float: right;
+    padding-left: 10px;
+    width: calc(100% - 100px);
+    padding-right: 20px;
+}
+
+.widget-item .widget-description-area .widget-description-heading {
+    font-weight: 600;
+}
+
+.widget-item .widget-description-area .widget-description p {
+    margin: 0;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.widget-item .widget-description-area .add-widget-btn {
+    text-align: right;
+}
+
+.widget-item .widget-description-area .add-widget-btn button {
+    background: #F44336;
+    overflow: auto;
+    height: 100%;
+    background-image: linear-gradient(to right, #eb3449, #ee3f47, #f04946, #f25244, #f45b43);
+    color: #fff;
+}
+
+.custom-widgets-body-wrapper {
+    height: 65px;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
 </style>
