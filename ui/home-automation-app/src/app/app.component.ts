@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 })
 export class AppComponent {
   showFragments: boolean = true;
-  theme:string;
+  theme:string = "light";
   parentMessage: string = "Message from Parent";
   constructor(private router: Router, private route: ActivatedRoute){
     

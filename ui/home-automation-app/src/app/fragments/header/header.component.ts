@@ -18,12 +18,12 @@ export class HeaderComponent implements OnInit {
   constructor(public dialog: MatDialog, private auth: AuthService) {
     // console.log("Console from Constructor");
    }
-  message: string = "light";
+  theme: string = "light";
   @Output() messageEvent = new EventEmitter<string>();
   
   ngOnInit() {
     // console.log("Console from ngOnInit");
-    this.messageEvent.emit(this.message);
+    this.messageEvent.emit(this.theme);
     // console.log(this.childMessage)
   }
 
