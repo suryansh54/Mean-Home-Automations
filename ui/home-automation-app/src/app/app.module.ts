@@ -101,6 +101,9 @@ import { CameraComponent } from './featured-component/devices/device/camera/came
 import { RolesComponent } from './featured-component/profile/role-components/roles/roles.component';
 import { ModeComponent } from './featured-component/mode/mode.component';
 import { RoleComponent } from './featured-component/profile/role-components/roles/role/role.component';
+import { LoaderComponent } from './services/common/global-loader/loader/loader.component';
+import { LoaderService } from './services/common/global-loader/loader.service';
+import { LoaderInterceptor } from './services/common/global-loader/loader.interceptor';
 
 const modals = [AddWidgetDialog, ForgetPasswordDialog, CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
 const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperModule, MatSliderModule, MatAutocompleteModule, MatListModule,MatCheckboxModule, MatChipsModule, MatButtonToggleModule, MatGridListModule, MatDividerModule, MatMenuModule, MatSnackBarModule, MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
@@ -128,10 +131,11 @@ const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperMo
     BreadcrumbComponent,
     DeviceSettingComponent,
     CameraComponent,
-    ...modals,
     RolesComponent,
     ModeComponent,
-    RoleComponent // Import all modal
+    RoleComponent,
+    LoaderComponent,
+    ...modals, // Import all modal
   ],
   entryComponents: [
     ...modals // Import all modal
@@ -154,6 +158,8 @@ const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperMo
     LocationService, 
     WifiService, 
     RoleService,
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
   ],
   bootstrap: [AppComponent]
