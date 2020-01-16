@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "home-automation-app"
+  "defaultProject": "home-automation-app",
+  "cli": {
+    "analytics": "6b49e1cd-c626-49d0-9782-48f6957f4686"
+  }
 }
