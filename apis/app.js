@@ -1,10 +1,11 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const app = express();
-const port = 3200;
+const port = process.env.PORT || 3200;
 const cors = require('cors');
 const connection = require('./modules/connection');
 const fileUpload = require('./modules/file_upload');
-const dotenv = require('dotenv');
 
 
 
@@ -16,7 +17,6 @@ const typeDefs = require('./typeDefs');
 
 const startServer = async () => {
 
-  dotenv.config();
   // Body Parser
   var bodyParser = require('body-parser')
   // parse application/x-www-form-urlencoded
