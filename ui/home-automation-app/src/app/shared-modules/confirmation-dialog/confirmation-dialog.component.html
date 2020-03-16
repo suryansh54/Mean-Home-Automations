@@ -1,0 +1,12 @@
+<div class="confirmation-modal-container">
+    <h2 class="confirmation-modal-heading">Confirmation</h2>
+    <div class="confirmation-modal-content">
+        <p>Are you sure you want to {{data.type}} <span>{{data.value}}</span> ? </p>
+    </div>
+    <div class="confirmation-modal-footer">
+        <div class="confirmation-modal-action">
+            <button mat-raised-button class="plain-btn" (click)="onCancel()">Cancel</button>
+            <button mat-raised-button color="primary" class="delete-btn" [mat-dialog-close]="data">OK</button>
+        </div>
+    </div>
+</div>

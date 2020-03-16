@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthService } from '../../services/auth-services/auth.service';
 
 export interface DialogData {
@@ -17,10 +17,10 @@ export class HeaderComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private auth: AuthService) {
     // console.log("Console from Constructor");
-   }
-  theme: string = "light";
+  }
+  theme: string = 'light';
   @Output() messageEvent = new EventEmitter<string>();
-  
+
   ngOnInit() {
     // console.log("Console from ngOnInit");
     this.messageEvent.emit(this.theme);
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(ModeModal, {
+    const dialogRef = this.dialog.open(ModeModal , {
       width: '400px'
     });
 
@@ -42,9 +42,9 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.auth.logout()
+    this.auth.logout();
   }
-  
+
 }
 
 
@@ -56,7 +56,7 @@ export class ModeModal {
 
   constructor(
     public dialogRef: MatDialogRef<ModeModal>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   onNoClick(): void {
     this.dialogRef.close();

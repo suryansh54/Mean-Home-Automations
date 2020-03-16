@@ -7,7 +7,7 @@ import { DashboardComponent } from './featured-component/dashboard/dashboard.com
 import { AddDeviceComponent } from './featured-component/add-device/add-device.component';
 import { AboutComponent } from './featured-component/about/about.component';
 import { DevicesComponent } from './featured-component/devices/devices.component';
-import { DeviceComponent } from './featured-component/devices/device/device.component'
+import { DeviceComponent } from './featured-component/devices/device/device.component';
 import { UpdateComponent } from './featured-component/update/update.component';
 import { ProfileComponent } from './featured-component/profile/profile.component';
 import { GroupComponent } from './featured-component/group/group.component';
@@ -27,96 +27,96 @@ import { AuthComponent } from './auth-components/auth/auth.component';
 
 const routes: Routes = [
   {
-    path:'' ,
+    path: '' ,
     component: DashboardComponent,
     canActivate: [AuthRoute]
-  }, 
+  },
   {
-    path:'auth',
+    path: 'auth',
     component: AuthComponent
-  }, 
+  },
   {
-    path:'automation',
+    path: 'automation',
     component: AutomationComponent,
     canActivate: [AuthRoute]
-  }, 
+  },
   {
-    path:'routine',
+    path: 'routine',
     component: RoutineComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'mode',
+    path: 'mode',
     component: ModeComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'add-device',
+    path: 'add-device',
     component: AddDeviceComponent,
     canActivate: [AuthRoute]
-  }, 
+  },
   {
-    path:'about',
+    path: 'about',
     component: AboutComponent,
     canActivate: [AuthRoute]
-  }, 
+  },
   {
-    path:'group',
+    path: 'group',
     component: GroupComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'devices',
+    path: 'devices',
     component: DevicesComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'device/:id',
+    path: 'device/:id',
     component: DeviceComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'device/setting/:id',
+    path: 'device/setting/:id',
     component: DeviceSettingComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'firmware-update',
+    path: 'firmware-update',
     component: UpdateComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'account-and-security',
+    path: 'account-and-security',
     component: ProfileComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'role',
+    path: 'role',
     component: RolesComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'role/:id/:activeTabId',
+    path: 'role/:id/:activeTabId',
     component: RoleComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'faq',
+    path: 'faq',
     component: FaqComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'feedback',
+    path: 'feedback',
     component: FeedbackComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'setting',
+    path: 'setting',
     component: SettingComponent,
     canActivate: [AuthRoute]
   },
   {
-    path:'notification',
+    path: 'notification',
     component: NotificationComponent,
     canActivate: [AuthRoute]
   }

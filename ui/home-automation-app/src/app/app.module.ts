@@ -9,7 +9,7 @@ import { NgxContentLoadingModule } from 'ngx-content-loading';
 import { FileUploadModule } from 'ng2-file-upload';
 
 // Auth Module
-import { AuthModule } from './auth-components/auth.module'; 
+import { AuthModule } from './auth-components/auth.module';
 
 // Fragments Components
 import { HeaderComponent } from './fragments/header/header.component';
@@ -55,7 +55,7 @@ import {
   MatFormFieldModule,
   MatIconModule
 } from '@angular/material';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 // import services
 import { DeviceService } from './services/featured-services/device/device.service';
@@ -65,7 +65,7 @@ import { WifiService } from './services/machine-service/wifi.service';
 import { TokenInterceptorService } from './services/auth-services/token-interceptor.service';
 import { RoleService } from './services/featured-services/role/role.service';
 
-// Modal Import 
+// Modal Import
 import { CreateRoutineModal } from './featured-component/routine/routine.component';
 import { CreateGroupModal } from './featured-component/group/group.component';
 import { CreateAutomationModal } from './featured-component/automation/automation.component';
@@ -104,9 +104,10 @@ import { RoleComponent } from './featured-component/profile/role-components/role
 import { LoaderComponent } from './services/common/global-loader/loader/loader.component';
 import { LoaderService } from './services/common/global-loader/loader.service';
 import { LoaderInterceptor } from './services/common/global-loader/loader.interceptor';
+import { ConfirmationDialogComponent } from './shared-modules/confirmation-dialog/confirmation-dialog.component';
 
-const modals = [AddWidgetDialog, ForgetPasswordDialog, CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal]
-const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperModule, MatSliderModule, MatAutocompleteModule, MatListModule,MatCheckboxModule, MatChipsModule, MatButtonToggleModule, MatGridListModule, MatDividerModule, MatMenuModule, MatSnackBarModule, MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule]
+const modals = [AddWidgetDialog, ForgetPasswordDialog, CreateModeModal, DeleteModeModal, CreateRoleModal, DeleteRoleModal, CreateRoutineModal, CreateGroupModal, CreateAutomationModal, ModeModal, AddDeviceModal, RemoveDeviceModal, ProfileImageModal];
+const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperModule, MatSliderModule, MatAutocompleteModule, MatListModule,MatCheckboxModule, MatChipsModule, MatButtonToggleModule, MatGridListModule, MatDividerModule, MatMenuModule, MatSnackBarModule, MatSidenavModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatRippleModule, MatBadgeModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule, MatDatepickerModule, MatTabsModule, MatProgressBarModule, MatCardModule, MatTooltipModule, MatSelectModule, MatRadioModule, DragDropModule, MatDialogModule, MatProgressSpinnerModule, MatTableModule, MatBottomSheetModule, MatNativeDateModule];
 
 @NgModule({
   declarations: [
@@ -135,7 +136,8 @@ const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperMo
     ModeComponent,
     RoleComponent,
     LoaderComponent,
-    ...modals, // Import all modal
+    ...modals,
+    ConfirmationDialogComponent, // Import all modal
   ],
   entryComponents: [
     ...modals // Import all modal
@@ -153,10 +155,10 @@ const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperMo
     ...matModules // Mat Modules
   ],
   providers: [
-    AuthService, 
-    DeviceService, 
-    LocationService, 
-    WifiService, 
+    AuthService,
+    DeviceService,
+    LocationService,
+    WifiService,
     RoleService,
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
@@ -164,6 +166,6 @@ const matModules = [MatIconModule, MatTreeModule, MatToolbarModule, MatStepperMo
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  constructor(){}
+export class AppModule {
+  constructor() {}
 }
